@@ -44,11 +44,9 @@ const Navbar = () => {
     >
       <nav className="container mx-auto px-4 flex items-center justify-between gap-4">
         <Link href="/" className="flex items-center gap-3 group">
-          <img src={logo} alt="Khadija Overseas" className="h-12 w-12 transition-transform group-hover:scale-110" />
           <div className="leading-tight">
             <div className="font-serif font-bold text-primary text-lg sm:text-xl tracking-tight">KHADIJA</div>
             <div className="font-serif font-bold text-primary text-lg sm:text-xl tracking-tight -mt-1">OVERSEAS</div>
-            <div className="text-[10px] text-muted-foreground hidden sm:block">Premium Dehydrated Products</div>
           </div>
         </Link>
 

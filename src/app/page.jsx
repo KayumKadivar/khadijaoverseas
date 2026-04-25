@@ -13,13 +13,6 @@ import ProductCard from "@/components/ProductCard";
 import SectionHeading from "@/components/SectionHeading";
 import { FadeUp, Stagger, StaggerItem } from "@/components/Reveal";
 
-const trust = [
-  { icon: Leaf, label: "100% Natural", sub: "No Preservatives" },
-  { icon: Award, label: "Premium Quality", sub: "Assured" },
-  { icon: Globe, label: "Global Export", sub: "Worldwide Shipping" },
-  { icon: Truck, label: "On-time Delivery", sub: "Every Time" },
-];
-
 const rangeIcons = {
   "pink-onion": "🧅",
   "red-onion": "🧅",
@@ -152,24 +145,6 @@ export default function Home() {
             </motion.div>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="mt-12 bg-card/95 backdrop-blur rounded-2xl shadow-soft p-6 grid grid-cols-2 md:grid-cols-4 gap-6"
-          >
-            {trust.map((t) => (
-              <div key={t.label} className="flex items-center gap-3">
-                <div className="h-12 w-12 rounded-full bg-secondary flex items-center justify-center shrink-0">
-                  <t.icon className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <div className="font-semibold text-sm text-primary">{t.label}</div>
-                  <div className="text-xs text-muted-foreground">{t.sub}</div>
-                </div>
-              </div>
-            ))}
-          </motion.div>
         </div>
         <div className="absolute bottom-0 inset-x-0 h-12 bg-gradient-dark wave-bottom z-10" />
       </section>
