@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Dancing+Script:wght@600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Khadija Overseas — Premium dehydrated foods palette */
+  --color-background: hsl(44 38% 97%);
+  --color-foreground: hsl(140 35% 12%);
+
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(140 35% 12%);
+
+  --color-popover: hsl(0 0% 100%);
+  --color-popover-foreground: hsl(140 35% 12%);
+
+  /* Deep forest green */
+  --color-primary: hsl(140 55% 14%);
+  --color-primary-foreground: hsl(44 38% 97%);
+  --color-primary-glow: hsl(140 45% 22%);
+
+  /* Warm cream */
+  --color-secondary: hsl(42 45% 92%);
+  --color-secondary-foreground: hsl(140 55% 14%);
+
+  --color-muted: hsl(42 30% 94%);
+  --color-muted-foreground: hsl(140 15% 35%);
+
+  /* Gold accent */
+  --color-accent: hsl(42 78% 52%);
+  --color-accent-foreground: hsl(140 55% 14%);
+  --color-accent-glow: hsl(42 90% 65%);
+
+  --color-destructive: hsl(0 70% 45%);
+  --color-destructive-foreground: hsl(0 0% 100%);
+
+  --color-border: hsl(42 25% 86%);
+  --color-input: hsl(42 25% 86%);
+  --color-ring: hsl(140 55% 14%);
+
+  --radius-lg: 0.75rem;
+  --radius-md: calc(0.75rem - 2px);
+  --radius-sm: calc(0.75rem - 4px);
+
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-script: 'Dancing Script', cursive;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-float-slow: float-slow 9s ease-in-out infinite;
+  --animate-fade-up: fade-up 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
+  --animate-scale-in: scale-in 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
+  --animate-marquee: marquee 30s linear infinite;
+  --animate-spin-slow: spin-slow 20s linear infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(2deg); }
+  }
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-25px) rotate(-3deg); }
+  }
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes scale-in {
+    from { opacity: 0; transform: scale(0.92); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-serif tracking-tight;
+  }
+}
+
+@layer utilities {
+  .bg-gradient-hero {
+    background: linear-gradient(135deg, hsl(44 50% 96%) 0%, hsl(42 45% 90%) 100%);
+  }
+  .bg-gradient-dark {
+    background: linear-gradient(135deg, hsl(140 55% 10%) 0%, hsl(140 45% 18%) 100%);
+  }
+  .bg-gradient-gold {
+    background: linear-gradient(135deg, hsl(42 85% 55%) 0%, hsl(38 75% 45%) 100%);
+  }
+  
+  .shadow-soft { box-shadow: 0 4px 20px -4px hsl(140 30% 15% / 0.08); }
+  .shadow-elegant { box-shadow: 0 20px 50px -15px hsl(140 40% 15% / 0.18); }
+  .shadow-gold { box-shadow: 0 10px 30px -10px hsl(42 80% 50% / 0.4); }
+  .shadow-product { box-shadow: 0 12px 40px -12px hsl(140 30% 20% / 0.25); }
+
+  .text-balance { text-wrap: balance; }
+
+  /* Wave divider */
+  .wave-bottom {
+    mask-image: radial-gradient(ellipse 100% 60px at 50% 100%, transparent 99%, black 100%);
+  }
+}
