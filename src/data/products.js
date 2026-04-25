@@ -11,170 +11,192 @@ import pinkOnion from "@/assets/pink-onion.webp";
 import whiteOnion from "@/assets/white-onion.webp";
 
 export const products = [
+  // --- WHITE ONION ---
   {
-    slug: "pink-onion",
-    name: "Dehydrated Pink Onion",
-    short: "Subtle flavor with beautiful pink hue.",
-    description:
-      "Our dehydrated pink onions are known for their mild flavor and attractive appearance, making them a favorite for gourmet dishes and garnishing.",
-    image: pinkOnion,
-    features: ["Natural Pink Color", "Mild Flavor", "No Additives", "Premium Grade"],
-    specs: [
-      { label: "Color", value: "Pinkish" },
-      { label: "Moisture", value: "Max 6%" },
-      { label: "Packing", value: "10kg / 25kg" },
-      { label: "Shelf Life", value: "18 Months" },
-    ],
-  },
-  {
-    slug: "red-onion",
-    name: "Dehydrated Red Onion",
-    short: "Bold, pungent and vibrant red flakes.",
-    description:
-      "Premium quality dehydrated red onion that retains its natural pungency and deep color. Perfect for adding a bold kick to any recipe.",
-    image: redOnion,
-    features: ["Deep Red Color", "Strong Pungency", "100% Pure", "Hygienic Process"],
-    specs: [
-      { label: "Color", value: "Deep Red" },
-      { label: "Moisture", value: "Max 6%" },
-      { label: "Packing", value: "10kg / 25kg" },
-      { label: "Shelf Life", value: "18 Months" },
-    ],
-  },
-  {
-    slug: "white-onion",
-    name: "Dehydrated White Onion",
-    short: "Classic, versatile white onion flakes.",
-    description:
-      "Selected from the finest white onions, our dehydrated white onion flakes offer a clean, sweet flavor ideal for all culinary applications.",
+    slug: "white-onion-flakes",
+    name: "Dehydrated White Onion Flakes",
+    short: "Premium kibbled white onion for bulk export.",
+    description: "Our White Onion Flakes are processed from the finest harvest to ensure a clean, sweet flavor and bright color. Ideal for soups, sauces, and instant meals.",
     image: whiteOnion,
-    features: ["Bright White", "Sweet & Savory", "Versatile Use", "Natural Aroma"],
-    specs: [
-      { label: "Color", value: "Creamy White" },
-      { label: "Moisture", value: "Max 6%" },
-      { label: "Packing", value: "10kg / 25kg" },
-      { label: "Shelf Life", value: "18 Months" },
-    ],
+    features: ["A-Grade Quality", "Clean Aroma", "8-20mm Size", "Hygienic Process"],
+    specs: [{ label: "HSN Code", value: "07122000" }, { label: "Moisture", value: "Max 6%" }, { label: "Origin", value: "India" }]
   },
   {
-    slug: "garlic",
-    name: "Dehydrated Garlic",
-    short: "Intense, aromatic premium garlic.",
-    description:
-      "Our dehydrated garlic is processed to preserve its strong characteristic aroma and medicinal properties. A staple for spice blends and global cuisines.",
+    slug: "white-onion-chopped",
+    name: "Dehydrated White Onion Chopped",
+    short: "Uniformly chopped for visible texture.",
+    description: "Perfectly chopped dehydrated white onions that rehydrate quickly while maintaining their firm texture and sweet pungency.",
+    image: whiteOnion,
+    features: ["Uniform 3-5mm", "No Additives", "Sweet Pungency", "Long Shelf Life"],
+    specs: [{ label: "Size", value: "3 - 5 mm" }, { label: "Moisture", value: "Max 6%" }, { label: "Packing", value: "25kg Bag/Carton" }]
+  },
+  {
+    slug: "white-onion-minced",
+    name: "Dehydrated White Onion Minced",
+    short: "Finely minced for smooth integration.",
+    description: "Finely minced white onion pieces designed for quick rehydration in sauces, seasonings, and ready-to-eat products.",
+    image: mincedOnion,
+    features: ["1-3mm Fine Cut", "Rich Taste", "Export Standard", "Pure White"],
+    specs: [{ label: "Size", value: "1 - 3 mm" }, { label: "Moisture", value: "Max 6%" }, { label: "Packing", value: "25kg Bag/Carton" }]
+  },
+  {
+    slug: "white-onion-granules",
+    name: "Dehydrated White Onion Granules",
+    short: "Perfect for spice blends and dry mixes.",
+    description: "Highly versatile granules that provide the authentic taste of fresh white onion in a concentrated, easy-to-mix dry form.",
+    image: onionGranules,
+    features: ["0.1-1mm Size", "Flowing Texture", "Natural Flavor", "Premium Grade"],
+    specs: [{ label: "Size", value: "0.1 - 1 mm" }, { label: "Moisture", value: "Max 6%" }, { label: "Shelf Life", value: "18 Months" }]
+  },
+  {
+    slug: "white-onion-powder",
+    name: "Dehydrated White Onion Powder",
+    short: "Fine free-flowing culinary powder.",
+    description: "Our white onion powder is finely ground to 80-100 mesh, making it perfect for seasoning blends, snacks, and high-end food processing.",
+    image: onionPowder,
+    features: ["80-100 Mesh", "Intense Aroma", "Free Flowing", "100% Pure"],
+    specs: [{ label: "Mesh", value: "80 - 100" }, { label: "Moisture", value: "Max 6%" }, { label: "Quality", value: "Premium" }]
+  },
+
+  // --- RED ONION ---
+  {
+    slug: "red-onion-flakes",
+    name: "Dehydrated Red Onion Flakes",
+    short: "Vibrant and pungent red onion kibbled.",
+    description: "Our red onion flakes retain the characteristic sharp flavor and deep color of fresh red onions, adding both taste and visual appeal.",
+    image: redOnion,
+    features: ["Deep Red Color", "Sharp Flavor", "Export Grade", "8-20mm"],
+    specs: [{ label: "HSN Code", value: "07122000" }, { label: "Moisture", value: "Max 6%" }, { label: "Origin", value: "India" }]
+  },
+  {
+    slug: "red-onion-chopped",
+    name: "Dehydrated Red Onion Chopped",
+    short: "Bold red pieces for gourmet dishes.",
+    description: "Premium chopped red onions, ideal for spice mixes and condiments where color and texture are critical.",
+    image: redOnion,
+    features: ["Vibrant Hue", "Uniform Cut", "Consistent Quality", "No Fillers"],
+    specs: [{ label: "Size", value: "3 - 5 mm" }, { label: "Moisture", value: "Max 6%" }, { label: "Shelf Life", value: "18 Months" }]
+  },
+  {
+    slug: "red-onion-minced",
+    name: "Dehydrated Red Onion Minced",
+    short: "Fine red onion pieces for seasonings.",
+    description: "Perfectly minced red onions that deliver a punchy flavor. Excellent for topping and industrial seasoning blends.",
+    image: redOnion,
+    features: ["Quick Rehydration", "Intense Color", "Pure Quality", "1-3mm"],
+    specs: [{ label: "Size", value: "1 - 3 mm" }, { label: "Moisture", value: "Max 6%" }, { label: "Packing", value: "25kg Bag" }]
+  },
+  {
+    slug: "red-onion-granules",
+    name: "Dehydrated Red Onion Granules",
+    short: "Consistent granules for all food sectors.",
+    description: "Uniform red onion granules that are easy to store and use, providing consistent flavor profile for large scale food production.",
+    image: redOnion,
+    features: ["Easy Dispersion", "Bold Taste", "Natural Ingredients", "HACCP"],
+    specs: [{ label: "Size", value: "0.5 - 1 mm" }, { label: "Moisture", value: "Max 6%" }, { label: "Quality", value: "A-Grade" }]
+  },
+  {
+    slug: "red-onion-powder",
+    name: "Dehydrated Red Onion Powder",
+    short: "Potent and colorful red onion powder.",
+    description: "Finely ground red onion powder with exceptional aroma and color. A versatile ingredient for many global cuisines.",
+    image: redOnion,
+    features: ["Fine Powder", "Vibrant Red", "Rich Aroma", "Bulk Supply"],
+    specs: [{ label: "Mesh", value: "80 - 100" }, { label: "Moisture", value: "Max 6%" }, { label: "Packing", value: "25kg Carton" }]
+  },
+
+  // --- PINK ONION ---
+  {
+    slug: "pink-onion-flakes",
+    name: "Dehydrated Pink Onion Flakes",
+    short: "Mild flavor with elegant pink appearance.",
+    description: "Dehydrated pink onion flakes offer a milder flavor profile and a unique visual touch to food products.",
+    image: pinkOnion,
+    features: ["Unique Pink Hue", "Mild Taste", "Premium Selection", "Natural"],
+    specs: [{ label: "HSN Code", value: "07122000" }, { label: "Moisture", value: "Max 6%" }, { label: "Origin", value: "India" }]
+  },
+  {
+    slug: "pink-onion-chopped",
+    name: "Dehydrated Pink Onion Chopped",
+    short: "Consistent pink pieces for specialty mixes.",
+    description: "Specialty chopped pink onions, processed carefully to maintain their delicate color and aroma.",
+    image: pinkOnion,
+    features: ["3-5mm Size", "Delicate Color", "Pure Process", "No Additives"],
+    specs: [{ label: "Size", value: "3 - 5 mm" }, { label: "Moisture", value: "Max 6%" }, { label: "Packing", value: "25kg Bag" }]
+  },
+  {
+    slug: "pink-onion-minced",
+    name: "Dehydrated Pink Onion Minced",
+    short: "Fine pink onion for gourmet seasonings.",
+    description: "Fine minced pink onions that add a subtle sweetness and aesthetic value to dry mixes and toppings.",
+    image: pinkOnion,
+    features: ["1-3mm Size", "Sweet Notes", "High Purity", "Export Ready"],
+    specs: [{ label: "Size", value: "1 - 3 mm" }, { label: "Moisture", value: "Max 6%" }, { label: "Shelf Life", value: "18 Months" }]
+  },
+  {
+    slug: "pink-onion-granules",
+    name: "Dehydrated Pink Onion Granules",
+    short: "Versatile pink granules for all industries.",
+    description: "Concentrated pink onion flavor in a granular format, perfect for sauces, dressings, and seasoning industries.",
+    image: pinkOnion,
+    features: ["Grain Texture", "Mild Aroma", "Consistent Quality", "Natural"],
+    specs: [{ label: "Size", value: "0.5 - 1.5 mm" }, { label: "Moisture", value: "Max 6%" }, { label: "Packing", value: "25kg Bag" }]
+  },
+  {
+    slug: "pink-onion-powder",
+    name: "Dehydrated Pink Onion Powder",
+    short: "Smooth pink powder for culinary excellence.",
+    description: "Finely milled pink onion powder that blends seamlessly into any liquid or dry formulation.",
+    image: pinkOnion,
+    features: ["Fine Mesh", "Consistent Color", "Rich Aroma", "100% Pure"],
+    specs: [{ label: "Mesh", value: "80 - 100" }, { label: "Moisture", value: "Max 6%" }, { label: "Quality", value: "Premium" }]
+  },
+
+  // --- GARLIC ---
+  {
+    slug: "garlic-flakes",
+    name: "Dehydrated Garlic Flakes",
+    short: "Strong aromatic garlic cloves/flakes.",
+    description: "High-quality garlic flakes processed to preserve the intense aroma and medicinal properties of fresh garlic.",
     image: garlicFlakes,
     features: ["Rich Allicin", "Bold Aroma", "Uniform Flakes", "Export Quality"],
-    specs: [
-      { label: "Color", value: "Pale Yellow to Creamy" },
-      { label: "Moisture", value: "Max 6%" },
-      { label: "Packing", value: "10kg / 25kg" },
-      { label: "Shelf Life", value: "18 Months" },
-    ],
+    specs: [{ label: "HSN Code", value: "07129030" }, { label: "Moisture", value: "Max 4%" }, { label: "Grade", value: "A-Grade" }]
   },
   {
-    slug: "onion-flakes",
-    name: "Dehydrated Onion Flakes",
-    short: "Crisp golden flakes with rich aroma.",
-    description:
-      "Our dehydrated onion flakes are made from carefully selected fresh white onions, processed under strict quality control to retain their natural flavor, color and nutrients.",
-    image: onionFlakes,
-    features: ["100% Natural", "No Preservatives", "Long Shelf Life", "Bulk Quantity"],
-    specs: [
-      { label: "Color", value: "White to Light Cream" },
-      { label: "Moisture", value: "Max 6%" },
-      { label: "Packing", value: "10kg / 20kg / 25kg" },
-      { label: "Shelf Life", value: "12-24 Months" },
-    ],
+    slug: "garlic-chopped",
+    name: "Dehydrated Garlic Chopped",
+    short: "Coarsely chopped for visible texture.",
+    description: "Coarsely chopped dehydrated garlic perfect for HoReCa, ready meals, and gourmet seasonings.",
+    image: choppedGarlic,
+    features: ["Visible Texture", "Rich Flavor", "Hygienic", "Bulk Pack"],
+    specs: [{ label: "Size", value: "3 - 5 mm" }, { label: "Moisture", value: "Max 6%" }, { label: "Packing", value: "25kg Carton" }]
   },
   {
-    slug: "onion-powder",
-    name: "Dehydrated Onion Powder",
-    short: "Fine, free-flowing white onion powder.",
-    description:
-      "Premium quality onion powder made by grinding sun-dried onion flakes. Ideal for seasonings, soups, snacks and ready-to-eat meals.",
-    image: onionPowder,
-    features: ["Fine Mesh", "Strong Aroma", "Hygienic", "Export Quality"],
-    specs: [
-      { label: "Mesh Size", value: "80-100" },
-      { label: "Moisture", value: "Max 5%" },
-      { label: "Packing", value: "10kg / 25kg" },
-      { label: "Shelf Life", value: "18 Months" },
-    ],
-  },
-  {
-    slug: "onion-granules",
-    name: "Dehydrated Onion Granules",
-    short: "Versatile granules for all cuisines.",
-    description:
-      "Uniform-sized dehydrated onion granules perfect for spice blends, seasonings and snack manufacturing.",
-    image: onionGranules,
-    features: ["Uniform Size", "Natural Color", "Easy Mix", "HACCP Certified"],
-    specs: [
-      { label: "Size", value: "0.5 - 1.5 mm" },
-      { label: "Moisture", value: "Max 6%" },
-      { label: "Packing", value: "10kg / 25kg" },
-      { label: "Shelf Life", value: "18 Months" },
-    ],
-  },
-  {
-    slug: "minced-onion",
-    name: "Minced Dehydrated Onion",
-    short: "Finely minced for instant rehydration.",
-    description:
-      "Minced dehydrated onion that rehydrates quickly and is ideal for soups, sauces and ready meals.",
+    slug: "garlic-minced",
+    name: "Dehydrated Garlic Minced",
+    short: "Finely minced garlic for industrial use.",
+    description: "Precision minced garlic that provides a consistent garlic profile across large food production batches.",
     image: mincedOnion,
-    features: ["Instant Rehydration", "Rich Flavor", "Pure & Clean", "Bulk Pack"],
-    specs: [
-      { label: "Size", value: "1 - 3 mm" },
-      { label: "Moisture", value: "Max 6%" },
-      { label: "Packing", value: "10kg / 25kg" },
-      { label: "Shelf Life", value: "18 Months" },
-    ],
-  },
-  {
-    slug: "garlic-powder",
-    name: "Dehydrated Garlic Powder",
-    short: "Smooth, fine premium garlic powder.",
-    description:
-      "Finely ground garlic powder with intense flavor — perfect for seasonings, marinades, and spice blends.",
-    image: garlicPowder,
-    features: ["Premium Grade", "Strong Aroma", "Free Flowing", "Export Quality"],
-    specs: [
-      { label: "Mesh", value: "80-100" },
-      { label: "Moisture", value: "Max 5%" },
-      { label: "Packing", value: "10kg / 25kg" },
-      { label: "Shelf Life", value: "18 Months" },
-    ],
+    features: ["1-3mm Size", "Intense Flavor", "Clean Process", "High Allicin"],
+    specs: [{ label: "Size", value: "1 - 3 mm" }, { label: "Moisture", value: "Max 6%" }, { label: "Packing", value: "25kg Bag" }]
   },
   {
     slug: "garlic-granules",
     name: "Dehydrated Garlic Granules",
-    short: "Coarse granules for spice blends.",
-    description:
-      "Granulated dehydrated garlic ideal for industrial seasonings, ready meals and snack mixes.",
+    short: "Uniform granules for spice blends.",
+    description: "Garlic granules that offer the perfect balance of texture and intense garlic flavor for seasoning blends.",
     image: garlicGranules,
-    features: ["Uniform Granules", "Bold Taste", "HACCP", "Bulk Supply"],
-    specs: [
-      { label: "Size", value: "0.5 - 1.5 mm" },
-      { label: "Moisture", value: "Max 6%" },
-      { label: "Packing", value: "10kg / 25kg" },
-      { label: "Shelf Life", value: "18 Months" },
-    ],
+    features: ["Grainy Texture", "Powerful Aroma", "No Additives", "Premium Grade"],
+    specs: [{ label: "Size", value: "0.5 - 1.5 mm" }, { label: "Moisture", value: "Max 6%" }, { label: "Shelf Life", value: "18 Months" }]
   },
   {
-    slug: "chopped-garlic",
-    name: "Chopped Dehydrated Garlic",
-    short: "Coarsely chopped for visible texture.",
-    description:
-      "Coarsely chopped dehydrated garlic perfect for HoReCa, ready meals, and gourmet seasonings.",
-    image: choppedGarlic,
-    features: ["Visible Texture", "Rich Flavor", "Hygienic", "Bulk Pack"],
-    specs: [
-      { label: "Size", value: "3 - 5 mm" },
-      { label: "Moisture", value: "Max 6%" },
-      { label: "Packing", value: "10kg / 25kg" },
-      { label: "Shelf Life", value: "18 Months" },
-    ],
+    slug: "garlic-powder",
+    name: "Dehydrated Garlic Powder",
+    short: "Fine free-flowing garlic powder.",
+    description: "Pure dehydrated garlic powder ground to a fine mesh, ideal for soups, seasonings, and health supplements.",
+    image: garlicPowder,
+    features: ["80-100 Mesh", "Strong Aroma", "Free Flowing", "100% Pure"],
+    specs: [{ label: "Mesh Size", value: "80-100" }, { label: "Moisture", value: "Max 5%" }, { label: "Quality", value: "A-Grade" }]
   },
 ];
 

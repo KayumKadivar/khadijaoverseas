@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
       <body className="min-h-full flex flex-col font-sans" suppressHydrationWarning>
         <Navbar />
-        <main className="flex-1 pt-24">{children}</main>
+        <main>{children}</main>
         <Footer />
         <Toaster position="top-right" richColors />
       </body>

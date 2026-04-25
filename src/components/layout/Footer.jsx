@@ -81,10 +81,7 @@ const Footer = () => {
 
         <div className="mt-12 pt-6 border-t border-primary-foreground/10 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-primary-foreground/60">
           <p>© 2026 Khadija Overseas. All Rights Reserved.</p>
-          <div className="flex gap-5">
-            <Link href="/" className="hover:text-accent">Privacy Policy</Link>
-            <Link href="/" className="hover:text-accent">Terms & Conditions</Link>
-          </div>
+         
         </div>
       </div>
     </footer>

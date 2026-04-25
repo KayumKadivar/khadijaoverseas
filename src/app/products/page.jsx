@@ -1,59 +1,86 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { products } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
 import SectionHeading from "@/components/SectionHeading";
 import { Stagger, StaggerItem, FadeUp } from "@/components/Reveal";
-import heroImg from "@/assets/hero-products.webp";
-import { Leaf, Award, Shield, Globe } from "lucide-react";
+import { cn } from "@/lib/utils";
+
+const tags = [
+  { id: "all", label: "All Products" },
+  { id: "white", label: "White Onion" },
+  { id: "red", label: "Red Onion" },
+  { id: "pink", label: "Pink Onion" },
+  { id: "garlic", label: "Garlic" },
+];
 
 export default function ProductsPage() {
+  const searchParams = useSearchParams();
+  const [activeTag, setActiveTag] = useState("all");
+
+  useEffect(() => {
+    const category = searchParams.get("category");
+    const validTagIds = tags.map((tag) => tag.id);
+    if (category && validTagIds.includes(category)) {
+      setActiveTag(category);
+    } else {
+      setActiveTag("all");
+    }
+  }, [searchParams]);
+
+  const filteredProducts = products.filter((p) => {
+    if (activeTag === "all") return true;
+    if (activeTag === "white") return p.name.toLowerCase().includes("white onion");
+    if (activeTag === "red") return p.name.toLowerCase().includes("red onion");
+    if (activeTag === "pink") return p.name.toLowerCase().includes("pink onion");
+    if (activeTag === "garlic") return p.name.toLowerCase().includes("garlic");
+    return true;
+  });
+
   return (
     <>
-      <section className="relative bg-gradient-hero py-16 md:py-20 overflow-hidden">
-        <div className="absolute top-10 left-10 text-6xl opacity-20 animate-float">🌿</div>
+      <section className="py-24">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
-            <FadeUp>
-              <span className="text-xs font-semibold tracking-[0.3em] text-accent uppercase">Our Products</span>
-              <h1 className="mt-3 font-serif text-4xl md:text-6xl text-primary font-bold leading-tight">
-                Premium Quality<br /><span className="text-primary">Dehydrated Food Products</span>
-              </h1>
-              <p className="mt-5 text-muted-foreground text-base md:text-lg max-w-lg">
-                We offer a wide range of dehydrated products processed with advanced technology and strict quality control to retain natural taste, color and nutrients.
-              </p>
-              <div className="mt-6 flex flex-wrap gap-5">
-                {[
-                  { i: Leaf, t: "100% Natural" },
-                  { i: Award, t: "Premium Quality" },
-                  { i: Shield, t: "Hygienic" },
-                  { i: Globe, t: "Global Export" },
-                ].map((b) => (
-                  <div key={b.t} className="flex items-center gap-2 text-sm text-primary">
-                    <b.i className="h-5 w-5 text-accent" /> {b.t}
-                  </div>
-                ))}
-              </div>
-            </FadeUp>
-            <FadeUp delay={0.2}>
-              <div className="rounded-2xl overflow-hidden shadow-elegant">
-                <img src={heroImg.src || heroImg} alt="Dehydrated products range" className="w-full h-auto" />
-              </div>
-            </FadeUp>
-          </div>
-        </div>
-      </section>
+          <FadeUp>
+            <SectionHeading kicker="Range" title="Our Product Range" subtitle="High quality dehydrated products for every need" />
+          </FadeUp>
 
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <SectionHeading kicker="Range" title="Our Product Range" subtitle="High quality dehydrated products for every need" />
-          <Stagger className="mt-14 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-            {products.map((p) => (
+          {/* Tags Section */}
+          <FadeUp delay={0.1}>
+            <div className="mt-12 flex flex-wrap justify-center gap-3">
+              {tags.map((tag) => (
+                <button
+                  key={tag.id}
+                  onClick={() => setActiveTag(tag.id)}
+                  className={cn(
+                    "px-6 py-2.5 rounded-full text-sm font-bold tracking-wider uppercase transition-all duration-300 border-2",
+                    activeTag === tag.id
+                      ? "bg-primary text-primary-foreground border-primary shadow-elegant scale-105"
+                      : "bg-transparent text-primary/60 border-primary/10 hover:border-primary/30 hover:text-primary hover:bg-primary/5"
+                  )}
+                >
+                  {tag.label}
+                </button>
+              ))}
+            </div>
+          </FadeUp>
+
+          {/* Products Grid */}
+          <Stagger key={activeTag} className="mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
+            {filteredProducts.map((p) => (
               <StaggerItem key={p.slug}>
                 <ProductCard product={p} />
               </StaggerItem>
             ))}
           </Stagger>
+
+          {filteredProducts.length === 0 && (
+            <div className="mt-20 text-center py-20 bg-secondary/20 rounded-3xl border-2 border-dashed border-border">
+              <p className="text-muted-foreground italic">No products found in this category.</p>
+            </div>
+          )}
         </div>
       </section>
     </>

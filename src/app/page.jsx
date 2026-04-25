@@ -3,68 +3,98 @@
 import Link from "next/link";
 import { ArrowRight, Leaf, Award, Globe, Truck, CheckCircle2, Phone } from "lucide-react";
 import { motion } from "framer-motion";
-import heroBowls from "@/assets/hero-bowls.webp";
-import heroFlakesBowl from "@/assets/hero-flakes-bowl.webp";
 import ingredientsFlatlay from "@/assets/ingredients-flatlay.webp";
 import cooking2 from "@/assets/cooking-2.webp";
 import ctaBg from "@/assets/cta-bg.webp";
+import herosection from "@/assets/herosection.png";
 import { products, industries, certifications } from "@/data/products";
-import ProductCard from "@/components/ProductCard";
 import SectionHeading from "@/components/SectionHeading";
 import { FadeUp, Stagger, StaggerItem } from "@/components/Reveal";
 
 const rangeIcons = {
-  "pink-onion": "🧅",
-  "red-onion": "🧅",
-  "white-onion": "🧅",
-  "garlic": "🧄",
-  "onion-flakes": "🧅",
-  "onion-powder": "🥣",
-  "onion-granules": "🌰",
-  "minced-onion": "🍥",
-  "garlic-flakes": "🧄",
-  "garlic-powder": "🥣",
-  "garlic-granules": "🌰",
-  "chopped-garlic": "🌿",
+  "white-onion-flakes": "🧅",
+  "white-onion-chopped": "🧅",
+  "white-onion-minced": "🧅",
+  "white-onion-granules": "🧅",
+  "white-onion-powder": "🥣",
+  "red-onion-flakes": "🧅",
+  "red-onion-chopped": "🧅",
+  "red-onion-minced": "🧅",
+  "red-onion-granules": "🧅",
+  "red-onion-powder": "🥣",
 };
 
 export default function Home() {
+  const productCategories = [
+    {
+      id: "white",
+      name: "White Onion",
+      description: "Flakes, chopped, minced, granules, and powder.",
+      image: products.find((p) => p.slug === "white-onion-flakes")?.image,
+      href: "/products?category=white",
+    },
+    {
+      id: "red",
+      name: "Red Onion",
+      description: "Premium red onion range for flavor and color.",
+      image: products.find((p) => p.slug === "red-onion-flakes")?.image,
+      href: "/products?category=red",
+    },
+    {
+      id: "pink",
+      name: "Pink Onion",
+      description: "Mild profile formats for specialty products.",
+      image: products.find((p) => p.slug === "pink-onion-flakes")?.image,
+      href: "/products?category=pink",
+    },
+    {
+      id: "garlic",
+      name: "Garlic",
+      description: "Garlic flakes, chopped, minced, granules, and powder.",
+      image: products.find((p) => p.slug === "garlic-flakes")?.image,
+      href: "/products?category=garlic",
+    },
+  ];
+
+  const heroRangeItems = [
+    { slug: "white-onion-flakes", label: "Onion Flakes" },
+    { slug: "white-onion-powder", label: "Onion Powder" },
+    { slug: "white-onion-granules", label: "Onion Granules" },
+    { slug: "white-onion-minced", label: "Minced Onion" },
+    { slug: "garlic-flakes", label: "Garlic Flakes" },
+    { slug: "garlic-powder", label: "Garlic Powder" },
+    { slug: "garlic-granules", label: "Garlic Granules" },
+    { slug: "garlic-chopped", label: "Chopped Garlic" },
+  ];
+
   return (
     <>
       {/* HERO */}
-      <section className="relative overflow-hidden bg-gradient-hero">
-        <div
-          className="pointer-events-none fixed inset-0 -z-0"
-          aria-hidden
-          style={{
-            backgroundImage:
-              "radial-gradient(circle at 2% 8%, hsl(var(--primary) / 0.08) 0 2px, transparent 3px), radial-gradient(circle at 98% 92%, hsl(var(--primary) / 0.06) 0 2px, transparent 3px)",
-          }}
-        />
-        <div className="pointer-events-none fixed top-24 left-2 text-7xl opacity-30 animate-float-slow -z-0" aria-hidden>🌿</div>
-        <div className="pointer-events-none fixed top-40 right-6 text-6xl opacity-25 animate-float -z-0" aria-hidden>🍃</div>
-        <div className="pointer-events-none fixed bottom-20 left-10 text-5xl opacity-20 animate-float -z-0" aria-hidden>🌱</div>
+      <section className="relative overflow-hidden bg-gradient-hero pt-30 pb-18 lg:pt-34 lg:pb-22">
+        <div className="pointer-events-none absolute -left-10 top-24 h-24 w-24 rounded-full bg-primary/8 blur-2xl" aria-hidden />
+        <div className="pointer-events-none absolute right-8 top-16 h-20 w-20 rounded-full bg-primary/10 blur-xl" aria-hidden />
+        <div className="pointer-events-none absolute -right-6 bottom-20 h-24 w-24 rounded-full bg-primary/8 blur-2xl" aria-hidden />
 
-        <div className="container mx-auto px-4 pt-10 pb-28 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid lg:grid-cols-[1.02fr_1.18fr] gap-8 lg:gap-0 items-center">
             <motion.div initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
-              <div className="flex items-center gap-3 mb-5">
-                <span className="h-px w-10 bg-accent" />
-                <span className="text-xs tracking-[0.3em] font-semibold text-accent uppercase">Welcome to Khadija Overseas</span>
+              <div className="flex items-center gap-3 mb-4">
+                <span className="h-px w-14 bg-primary/20" />
+                <span className="text-xs tracking-[0.22em] font-semibold text-primary uppercase">Welcome to Khadija Overseas</span>
               </div>
-              <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-primary leading-[1.05] text-balance">
+              <h1 className="font-serif text-5xl md:text-6xl xl:text-7xl font-bold text-primary leading-[0.98] text-balance">
                 Dehydrated Food <br />
                 Products Supplier
               </h1>
-              <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-lg leading-relaxed">
+              <p className="mt-5 text-base md:text-[1.12rem] text-foreground/80 max-w-xl leading-relaxed">
                 Khadija Overseas is a leading dehydrated food products supplier and exporter from India. We deliver premium quality products that meet international standards.
               </p>
-              <div className="mt-8 flex flex-wrap gap-4">
-                <Link href="/products" className="group inline-flex items-center gap-2 bg-primary text-primary-foreground px-7 py-4 rounded-lg text-sm font-semibold tracking-wider uppercase hover:bg-primary-glow shadow-soft hover:shadow-elegant transition-all">
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link href="/products" className="group inline-flex items-center gap-2 bg-primary text-primary-foreground px-7 py-3.5 rounded-xl text-sm font-semibold tracking-wide uppercase hover:bg-primary-glow shadow-soft transition-all">
                   Explore Products
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
-                <Link href="/contact" className="group inline-flex items-center gap-2 border-2 border-primary text-primary px-7 py-4 rounded-lg text-sm font-semibold tracking-wider uppercase hover:bg-primary hover:text-primary-foreground transition-all">
+                <Link href="/contact" className="group inline-flex items-center gap-2 border border-primary/30 bg-white/70 text-primary px-7 py-3.5 rounded-xl text-sm font-semibold tracking-wide uppercase hover:bg-white transition-all">
                   Get a Quote
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
@@ -75,68 +105,46 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.9, delay: 0.2 }}
-              className="relative min-h-[520px] lg:min-h-[600px] lg:left-[27%]"
+              className="relative min-h-[360px] sm:min-h-[430px] lg:min-h-[560px] flex items-center justify-center"
             >
-              <img
-                src={heroBowls.src || heroBowls}
-                alt="Premium dehydrated onion and garlic ingredients"
-                className="absolute right-[26%] top-[145px] w-full h-auto object-contain z-0"
-              />
-
-              <motion.img
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.9, delay: 0.5 }}
-                src={heroFlakesBowl.src || heroFlakesBowl}
-                alt="Bowl of dehydrated onion flakes"
-                className="absolute right-[28%] bottom-[122px] w-[48%] h-auto object-contain drop-shadow-2xl z-20"
-              />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <img
+                  src={herosection.src || herosection}
+                  alt="Premium Dehydrated Products"
+                  className="w-full h-full object-cover rounded-[1.75rem] lg:rounded-none lg:rounded-l-[4rem] drop-shadow-[0_24px_60px_rgba(14,36,23,0.24)]"
+                />
+              </div>
 
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
-                className="absolute left-0 lg:-left-4 top-6 bg-gradient-dark text-primary-foreground rounded-2xl p-5 shadow-elegant border border-accent/30 w-[260px] z-18"
+                className="bg-[linear-gradient(160deg,_hsl(140_65%_10%)_0%,_hsl(140_58%_14%)_55%,_hsl(140_52%_18%)_100%)] backdrop-blur-md text-primary-foreground rounded-[1.7rem] p-5 md:p-6 shadow-[0_26px_60px_rgba(6,20,14,0.5)] border border-accent/45 w-[290px] md:w-[310px] lg:w-[320px] absolute left-1/2 -translate-x-1/2 lg:left-0 lg:-translate-x-18 z-20"
               >
-                <div className="text-center mb-3">
-                  <h3 className="font-script text-3xl text-accent">Our Range</h3>
-                  <div className="flex items-center justify-center gap-2 mt-1">
-                    <span className="h-px w-10 bg-accent/50" />
-                    <Leaf className="h-3.5 w-3.5 text-accent" />
-                    <span className="h-px w-10 bg-accent/50" />
+                <div className="mb-4">
+                  <h3 className="font-script text-[2.1rem] text-accent leading-none">Our Range</h3>
+                  <div className="flex items-center gap-3 mt-2">
+                    <span className="h-px w-14 bg-accent/35" />
+                    <Leaf className="h-3.5 w-3.5 text-accent/95" />
                   </div>
                 </div>
-                <ul className="space-y-1.5 text-sm">
-                  {products.slice(0, 4).map((p) => (
-                    <li key={p.slug}>
+
+                <ul className="grid grid-cols-1 gap-1">
+                  {heroRangeItems.map((item, idx) => (
+                    <li key={item.slug} className={idx === 4 ? "mt-1 pt-2 border-t border-accent/25" : ""}>
                       <Link
-                        href={`/products/${p.slug}`}
-                        className="flex items-center justify-between gap-2 px-2 py-1.5 rounded hover:bg-primary-foreground/10 transition-colors"
+                        href={`/products/${item.slug}`}
+                        className="flex items-center justify-between gap-3 px-2 py-1.5 rounded-lg hover:bg-white/10 transition-all group"
                       >
-                        <span className="flex items-center gap-2.5">
-                          <span className="h-7 w-7 rounded-full border border-accent/60 flex items-center justify-center text-sm">
-                            {rangeIcons[p.slug] ?? "🌿"}
+                        <span className="flex items-center gap-3">
+                          <span className="h-8 w-8 rounded-full bg-primary/20 border border-accent/35 flex items-center justify-center text-base text-accent group-hover:scale-110 transition-transform">
+                            {rangeIcons[item.slug] ?? "🌿"}
                           </span>
-                          <span className="font-medium">{p.name.replace("Dehydrated ", "")}</span>
-                        </span>
-                        <ArrowRight className="h-3.5 w-3.5 text-accent" />
-                      </Link>
-                    </li>
-                  ))}
-                  <li><div className="my-2 h-px bg-accent/20" /></li>
-                  {products.slice(4, 8).map((p) => (
-                    <li key={p.slug}>
-                      <Link
-                        href={`/products/${p.slug}`}
-                        className="flex items-center justify-between gap-2 px-2 py-1.5 rounded hover:bg-primary-foreground/10 transition-colors"
-                      >
-                        <span className="flex items-center gap-2.5">
-                          <span className="h-7 w-7 rounded-full border border-accent/60 flex items-center justify-center text-sm">
-                            {rangeIcons[p.slug] ?? "🧄"}
+                          <span className="font-medium tracking-wide text-[0.96rem] group-hover:text-accent transition-colors">
+                            {item.label}
                           </span>
-                          <span className="font-medium">{p.name.replace("Dehydrated ", "")}</span>
                         </span>
-                        <ArrowRight className="h-3.5 w-3.5 text-accent" />
+                        <ArrowRight className="h-4 w-4 text-accent/80 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
                       </Link>
                     </li>
                   ))}
@@ -145,8 +153,27 @@ export default function Home() {
             </motion.div>
           </div>
 
+          <div className="mt-8 lg:mt-9 bg-white/95 rounded-2xl border border-border shadow-soft px-4 sm:px-6 py-4">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                { icon: Leaf, title: "100% Natural", sub: "No Preservatives" },
+                { icon: Award, title: "Premium Quality", sub: "Assured" },
+                { icon: Globe, title: "Global Export", sub: "Worldwide Shipping" },
+                { icon: Truck, title: "On-time Delivery", sub: "Every Time" },
+              ].map((point) => (
+                <div key={point.title} className="flex items-center gap-3 sm:justify-center lg:justify-start">
+                  <div className="h-10 w-10 rounded-full border border-primary/20 bg-primary/5 flex items-center justify-center shrink-0">
+                    <point.icon className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-primary leading-none">{point.title}</p>
+                    <p className="text-xs text-muted-foreground mt-1">{point.sub}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-        <div className="absolute bottom-0 inset-x-0 h-12 bg-gradient-dark wave-bottom z-10" />
       </section>
 
       {/* ABOUT */}
@@ -213,9 +240,49 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {products.slice(0, 4).map((p, idx) => (
-              <FadeUp key={p.slug} delay={idx * 0.1}>
-                <ProductCard product={p} />
+            {productCategories.map((category, idx) => (
+              <FadeUp key={category.id} delay={idx * 0.1}>
+                <Link
+                  href={category.href}
+                  className="group relative block aspect-[4/5] rounded-3xl overflow-hidden shadow-elegant hover:shadow-gold transition-all duration-700 bg-card border border-primary/10"
+                >
+                  <div className="absolute inset-0 overflow-hidden">
+                    <img
+                      src={category.image?.src || category.image}
+                      alt={`${category.name} products`}
+                      loading="lazy"
+                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent opacity-70 group-hover:opacity-85 transition-opacity duration-500" />
+                  </div>
+
+                  <div className="absolute top-4 right-4 transition-all duration-500">
+                    <div className="h-10 w-10 rounded-full bg-accent/30 border border-accent/40 flex items-center justify-center">
+                      <Leaf className="h-5 w-5 text-accent" />
+                    </div>
+                  </div>
+
+                  <div className="absolute inset-x-0 bottom-0 p-6 flex flex-col justify-end transition-transform duration-500">
+                    <div className="bg-black/80 border border-white/10 rounded-2xl p-5 shadow-2xl">
+                      <span className="text-[10px] tracking-[0.2em] font-bold text-accent uppercase mb-1 block">Premium Export</span>
+                      <h3 className="font-serif text-2xl text-white font-bold leading-tight drop-shadow-sm">
+                        {category.name}
+                      </h3>
+                      <p className="text-white/80 text-xs mt-2 line-clamp-2 transition-opacity duration-500 leading-relaxed">
+                        {category.description}
+                      </p>
+
+                      <div className="flex items-center justify-between mt-4">
+                        <div className="h-px flex-1 bg-white/20 mr-4" />
+                        <div className="h-10 w-10 rounded-full bg-accent text-accent-foreground flex items-center justify-center shadow-gold transition-transform duration-500 group-hover:scale-110">
+                          <ArrowRight className="h-5 w-5" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="absolute inset-0 border-2 border-accent/0 group-hover:border-accent/40 rounded-3xl transition-colors duration-700 pointer-events-none" />
+                </Link>
               </FadeUp>
             ))}
           </div>

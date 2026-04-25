@@ -37,10 +37,7 @@ const Navbar = () => {
 
   return (
     <header
-      className={cn(
-        "fixed top-0 inset-x-0 z-50 transition-all duration-500",
-        scrolled ? "bg-background/90 backdrop-blur-xl shadow-soft py-2" : "bg-background/60 backdrop-blur-sm py-4"
-      )}
+      className="fixed top-0 inset-x-0 z-50 transition-all duration-500 bg-white/95 backdrop-blur-xl shadow  py-2 border-b border-border/50"
     >
       <nav className="container mx-auto px-4 flex items-center justify-between gap-4">
         <Link href="/" className="flex items-center gap-3 group">
@@ -56,34 +53,15 @@ const Navbar = () => {
               <Link
                 href={l.to}
                 className={cn(
-                  "flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors relative",
-                  (l.to === "/" ? pathname === "/" : pathname.startsWith(l.to)) ? "text-primary" : "text-foreground/75 hover:text-primary"
+                  "flex items-center gap-1 px-3 py-2 text-sm font-semibold transition-colors relative",
+                  (l.to === "/" ? pathname === "/" : pathname.startsWith(l.to)) ? "text-primary" : "text-foreground/85 hover:text-primary"
                 )}
               >
                 {l.label}
-                {l.hasDropdown && <ChevronDown className="h-3.5 w-3.5" />}
                 {(l.to === "/" ? pathname === "/" : pathname.startsWith(l.to)) && (
                   <span className="absolute -bottom-0.5 left-3 right-3 h-0.5 bg-accent rounded-full" />
                 )}
               </Link>
-
-              {l.hasDropdown && productsOpen && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 mt-1 w-72 bg-card rounded-xl shadow-elegant border border-border p-2 animate-scale-in">
-                  {products.slice(0, 8).map((p) => (
-                    <Link
-                      key={p.slug}
-                      href={`/products/${p.slug}`}
-                      className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-secondary transition-colors text-sm text-foreground/80"
-                    >
-                      <img src={p.image} alt={p.name} className="h-8 w-8 rounded object-cover" loading="lazy" />
-                      {p.name}
-                    </Link>
-                  ))}
-                  <Link href="/products" className="block text-center px-3 py-2 mt-1 text-sm font-semibold text-accent hover:bg-accent/10 rounded-lg">
-                    View All Products →
-                  </Link>
-                </div>
-              )}
             </li>
           ))}
         </ul>
