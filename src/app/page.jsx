@@ -69,106 +69,117 @@ export default function Home() {
 
   return (
     <>
-      {/* HERO */}
-      <section className="relative overflow-hidden bg-gradient-hero pt-30 pb-18 lg:pt-34 lg:pb-22">
-        <div className="pointer-events-none absolute -left-10 top-24 h-24 w-24 rounded-full bg-primary/8 blur-2xl" aria-hidden />
-        <div className="pointer-events-none absolute right-8 top-16 h-20 w-20 rounded-full bg-primary/10 blur-xl" aria-hidden />
-        <div className="pointer-events-none absolute -right-6 bottom-20 h-24 w-24 rounded-full bg-primary/8 blur-2xl" aria-hidden />
+      {/* HERO SECTION - MODERN EDITORIAL FLOATING LAYOUT */}
+      <section className="relative min-h-[90vh] lg:min-h-screen flex items-center justify-center pt-24 pb-20 lg:pt-32 lg:pb-40 overflow-hidden bg-[#faf9f6]">
+        {/* Massive Background Text for Depth - Hidden on mobile for performance */}
+        <div className="absolute inset-0 hidden md:flex items-center justify-center pointer-events-none select-none overflow-hidden">
+          <h1 className="text-[22vw] font-bold text-primary/[0.03] uppercase tracking-tighter whitespace-nowrap">
+            Premium • Dehydrated • Quality
+          </h1>
+        </div>
 
+        {/* Floating Decorative Glows */}
+        <div className="absolute top-[15%] left-[5%] w-32 h-32 bg-accent/15 rounded-full blur-3xl animate-pulse pointer-events-none" />
+        <div className="absolute bottom-[15%] right-[5%] w-48 h-48 bg-primary/10 rounded-full blur-3xl animate-pulse pointer-events-none" />
+        
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-[1.02fr_1.18fr] gap-8 lg:gap-0 items-center">
-            <motion.div initial={{ opacity: 0, x: -40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
-              <div className="flex items-center gap-3 mb-4">
-                <span className="h-px w-14 bg-primary/20" />
-                <span className="text-xs tracking-[0.22em] font-semibold text-primary uppercase">Welcome to Khadija Overseas</span>
-              </div>
-              <h1 className="font-serif text-5xl md:text-6xl xl:text-7xl font-bold text-primary leading-[0.98] text-balance">
-                Dehydrated Food <br />
-                Products Supplier
-              </h1>
-              <p className="mt-5 text-base md:text-[1.12rem] text-foreground/80 max-w-xl leading-relaxed">
-                Khadija Overseas is a leading dehydrated food products supplier and exporter from India. We deliver premium quality products that meet international standards.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Link href="/products" className="group inline-flex items-center gap-2 bg-primary text-primary-foreground px-7 py-3.5 rounded-xl text-sm font-semibold tracking-wide uppercase hover:bg-primary-glow shadow-soft transition-all">
-                  Explore Products
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-                <Link href="/contact" className="group inline-flex items-center gap-2 border border-primary/30 bg-white/70 text-primary px-7 py-3.5 rounded-xl text-sm font-semibold tracking-wide uppercase hover:bg-white transition-all">
-                  Get a Quote
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </div>
-            </motion.div>
+          <div className="flex flex-col items-center">
+            {/* Header Text - Editorial Style */}
+            <div className="max-w-5xl text-center mb-12 lg:mb-20">
+              <FadeUp>
+                <div className="inline-block px-4 py-1.5 rounded-full border border-primary/15 bg-white/60 backdrop-blur-md shadow-sm mb-6 animate-fade-in">
+                  <span className="text-[10px] font-bold tracking-[0.4em] text-primary uppercase">Est. 2012 • Global Exporters</span>
+                </div>
+                <h1 className="font-serif text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-primary font-bold leading-[0.95] tracking-tight">
+                  Taste of <br />
+                  <span className="text-accent italic font-script lowercase text-6xl sm:text-7xl md:text-9xl">nature,</span> <br />
+                  Supplied.
+                </h1>
+                <p className="mt-8 md:mt-12 text-muted-foreground text-base md:text-xl max-w-xl mx-auto leading-relaxed px-4">
+                  We bridge the gap between Indian farms and global kitchens with premium grade dehydrated products.
+                </p>
+                
+                <div className="mt-10 md:mt-14 flex flex-wrap justify-center gap-4 md:gap-6 px-4">
+                  <Link href="/products" className="relative overflow-hidden group bg-primary text-white px-8 md:px-12 py-4 md:py-5 rounded-full text-[11px] md:text-xs font-bold tracking-widest uppercase transition-all hover:pr-14 md:hover:pr-16 shadow-2xl">
+                    <span className="relative z-10">Explore Collection</span>
+                    <ArrowRight className="absolute right-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all h-5 w-5" />
+                  </Link>
+                  <Link href="/contact" className="px-8 md:px-12 py-4 md:py-5 rounded-full border border-primary/25 text-primary text-[11px] md:text-xs font-bold tracking-widest uppercase hover:bg-white transition-all shadow-sm">
+                    Inquiry Now
+                  </Link>
+                </div>
+              </FadeUp>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.9, delay: 0.2 }}
-              className="relative min-h-[360px] sm:min-h-[430px] lg:min-h-[560px] flex items-center justify-center"
-            >
-              <div className="absolute inset-0 flex items-center justify-center">
-                <img
-                  src={herosection.src || herosection}
-                  alt="Premium Dehydrated Products"
-                  className="w-full h-full object-cover rounded-[1.75rem] lg:rounded-none lg:rounded-l-[4rem] drop-shadow-[0_24px_60px_rgba(14,36,23,0.24)]"
-                />
-              </div>
-
+            {/* Central Floating Visual Section */}
+            <div className="relative w-full max-w-5xl px-4 mt-4 lg:mt-0">
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 60 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                className="bg-[linear-gradient(160deg,_hsl(140_65%_10%)_0%,_hsl(140_58%_14%)_55%,_hsl(140_52%_18%)_100%)] backdrop-blur-md text-primary-foreground rounded-[1.7rem] p-5 md:p-6 shadow-[0_26px_60px_rgba(6,20,14,0.5)] border border-accent/45 w-[290px] md:w-[310px] lg:w-[320px] absolute left-1/2 -translate-x-1/2 lg:left-0 lg:-translate-x-18 z-20"
+                transition={{ duration: 1.2, ease: "circOut" }}
+                className="relative z-10"
               >
-                <div className="mb-4">
-                  <h3 className="font-script text-[2.1rem] text-accent leading-none">Our Range</h3>
-                  <div className="flex items-center gap-3 mt-2">
-                    <span className="h-px w-14 bg-accent/35" />
-                    <Leaf className="h-3.5 w-3.5 text-accent/95" />
+                <div className="relative group">
+                  {/* The Main Image with modern editorial frame */}
+                  <div className="relative rounded-[2.5rem] md:rounded-[4rem] overflow-hidden shadow-[0_40px_100px_-25px_rgba(0,0,0,0.35)] transition-transform duration-700 hover:scale-[1.01]">
+                    <img 
+                      src={herosection.src || herosection} 
+                      alt="Premium Dehydrated Ingredients Showcase" 
+                      className="w-full h-auto object-cover min-h-[300px] md:min-h-auto" 
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent opacity-50" />
+                  </div>
+                  
+                  {/* Floating Content - Onion Pill */}
+                  <div className="absolute -top-6 -left-4 md:-top-10 md:-left-12 lg:-left-24 animate-float-slow z-20">
+                    <div className="bg-white/95 backdrop-blur-xl p-3 md:p-4 rounded-2xl md:rounded-3xl shadow-2xl border border-white flex items-center gap-3 md:gap-4">
+                      <div className="h-10 w-10 md:h-14 md:w-14 rounded-xl md:rounded-2xl bg-accent/20 flex items-center justify-center text-xl md:text-3xl">🧅</div>
+                      <div>
+                        <div className="text-[9px] md:text-[10px] font-bold text-accent uppercase tracking-widest">Premium</div>
+                        <div className="text-xs md:text-sm font-bold text-primary">Onion Flakes</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Floating Content - Garlic Pill */}
+                  <div className="absolute -bottom-6 -right-4 md:-bottom-10 md:-right-12 lg:-right-24 animate-float z-20">
+                    <div className="bg-gradient-dark p-3 md:p-4 rounded-2xl md:rounded-3xl shadow-2xl border border-white/10 flex items-center gap-3 md:gap-4 text-white">
+                      <div className="h-10 w-10 md:h-14 md:w-14 rounded-xl md:rounded-2xl bg-white/10 flex items-center justify-center text-xl md:text-3xl">🧄</div>
+                      <div>
+                        <div className="text-[9px] md:text-[10px] font-bold text-accent uppercase tracking-widest">A-Grade Export</div>
+                        <div className="text-xs md:text-sm font-bold">Garlic Powder</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Desktop Quality Badge */}
+                  <div className="absolute top-1/2 -right-10 lg:-right-16 -translate-y-1/2 hidden lg:block animate-float-slow z-20">
+                    <div className="h-28 w-28 rounded-full bg-accent border-[6px] border-white shadow-2xl flex items-center justify-center text-center p-3 -rotate-12 hover:rotate-0 transition-transform duration-500 cursor-default">
+                      <span className="text-[11px] font-black leading-tight text-primary uppercase">100% Organic Quality</span>
+                    </div>
                   </div>
                 </div>
-
-                <ul className="grid grid-cols-1 gap-1">
-                  {heroRangeItems.map((item, idx) => (
-                    <li key={item.slug} className={idx === 4 ? "mt-1 pt-2 border-t border-accent/25" : ""}>
-                      <Link
-                        href={`/products/${item.slug}`}
-                        className="flex items-center justify-between gap-3 px-2 py-1.5 rounded-lg hover:bg-white/10 transition-all group"
-                      >
-                        <span className="flex items-center gap-3">
-                          <span className="h-8 w-8 rounded-full bg-primary/20 border border-accent/35 flex items-center justify-center text-base text-accent group-hover:scale-110 transition-transform">
-                            {rangeIcons[item.slug] ?? "🌿"}
-                          </span>
-                          <span className="font-medium tracking-wide text-[0.96rem] group-hover:text-accent transition-colors">
-                            {item.label}
-                          </span>
-                        </span>
-                        <ArrowRight className="h-4 w-4 text-accent/80 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all" />
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
               </motion.div>
-            </motion.div>
+              
+              {/* Central Background Glow */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-accent/15 rounded-full blur-[100px] md:blur-[140px] -z-0" />
+            </div>
           </div>
+        </div>
 
-          <div className="mt-8 lg:mt-9 bg-white/95 rounded-2xl border border-border shadow-soft px-4 sm:px-6 py-4">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        {/* Feature Ticker / Quick Stats */}
+        <div className="absolute bottom-10 inset-x-0 z-20 overflow-hidden py-4 border-y border-primary/5 bg-white/30 backdrop-blur-sm">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
               {[
-                { icon: Leaf, title: "100% Natural", sub: "No Preservatives" },
-                { icon: Award, title: "Premium Quality", sub: "Assured" },
-                { icon: Globe, title: "Global Export", sub: "Worldwide Shipping" },
-                { icon: Truck, title: "On-time Delivery", sub: "Every Time" },
-              ].map((point) => (
-                <div key={point.title} className="flex items-center gap-3 sm:justify-center lg:justify-start">
-                  <div className="h-10 w-10 rounded-full border border-primary/20 bg-primary/5 flex items-center justify-center shrink-0">
-                    <point.icon className="h-5 w-5 text-primary" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-primary leading-none">{point.title}</p>
-                    <p className="text-xs text-muted-foreground mt-1">{point.sub}</p>
-                  </div>
+                { icon: Leaf, text: "Natural Pure" },
+                { icon: Award, text: "Certified Quality" },
+                { icon: Globe, text: "Global Export" },
+                { icon: Truck, text: "Safe Logistics" },
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-2 text-primary/60 group">
+                  <item.icon className="h-4 w-4 text-accent group-hover:scale-125 transition-transform" />
+                  <span className="text-[10px] font-bold tracking-widest uppercase">{item.text}</span>
                 </div>
               ))}
             </div>
