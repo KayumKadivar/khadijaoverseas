@@ -3,186 +3,137 @@
 import Link from "next/link";
 import { ArrowRight, Leaf, Award, Globe, Truck, CheckCircle2, Phone } from "lucide-react";
 import { motion } from "framer-motion";
+import heroSectionImage from "@/assets/herosection.png";
 import ingredientsFlatlay from "@/assets/ingredients-flatlay.webp";
 import cooking2 from "@/assets/cooking-2.webp";
 import ctaBg from "@/assets/cta-bg.webp";
-import herosection from "@/assets/herosection.png";
-import { products, industries, certifications } from "@/data/products";
+import { products, industries, certifications, mainCategories } from "@/data/products";
+import ProductCard from "@/components/ProductCard";
 import SectionHeading from "@/components/SectionHeading";
 import { FadeUp, Stagger, StaggerItem } from "@/components/Reveal";
 
 const rangeIcons = {
-  "white-onion-flakes": "🧅",
-  "white-onion-chopped": "🧅",
-  "white-onion-minced": "🧅",
-  "white-onion-granules": "🧅",
-  "white-onion-powder": "🥣",
-  "red-onion-flakes": "🧅",
-  "red-onion-chopped": "🧅",
-  "red-onion-minced": "🧅",
-  "red-onion-granules": "🧅",
-  "red-onion-powder": "🥣",
+  "pink-onion": "🧅",
+  "red-onion": "🧅",
+  "white-onion": "🧅",
+  "garlic": "🧄",
+  "onion-flakes": "🧅",
+  "onion-powder": "🥣",
+  "onion-granules": "🌰",
+  "minced-onion": "🍥",
+  "garlic-flakes": "🧄",
+  "garlic-powder": "🥣",
+  "garlic-granules": "🌰",
+  "chopped-garlic": "🌿",
 };
 
+const heroRange = [
+  { icon: rangeIcons["onion-flakes"], label: "Onion Flakes", href: "/products/onion-flakes" },
+  { icon: rangeIcons["onion-powder"], label: "Onion Powder", href: "/products/onion-powder" },
+  { icon: rangeIcons["onion-granules"], label: "Onion Granules", href: "/products/onion-granules" },
+  { icon: rangeIcons["minced-onion"], label: "Minced Onion", href: "/products/minced-onion" },
+  { icon: rangeIcons["garlic-flakes"], label: "Garlic Flakes", href: "/products/garlic-flakes" },
+  { icon: rangeIcons["garlic-powder"], label: "Garlic Powder", href: "/products/garlic-powder" },
+  { icon: rangeIcons["garlic-granules"], label: "Garlic Granules", href: "/products/garlic-granules" },
+  { icon: rangeIcons["chopped-garlic"], label: "Chopped Garlic", href: "/products/chopped-garlic" },
+];
+
 export default function Home() {
-  const productCategories = [
-    {
-      id: "white",
-      name: "White Onion",
-      description: "Flakes, chopped, minced, granules, and powder.",
-      image: products.find((p) => p.slug === "white-onion-flakes")?.image,
-      href: "/products?category=white",
-    },
-    {
-      id: "red",
-      name: "Red Onion",
-      description: "Premium red onion range for flavor and color.",
-      image: products.find((p) => p.slug === "red-onion-flakes")?.image,
-      href: "/products?category=red",
-    },
-    {
-      id: "pink",
-      name: "Pink Onion",
-      description: "Mild profile formats for specialty products.",
-      image: products.find((p) => p.slug === "pink-onion-flakes")?.image,
-      href: "/products?category=pink",
-    },
-    {
-      id: "garlic",
-      name: "Garlic",
-      description: "Garlic flakes, chopped, minced, granules, and powder.",
-      image: products.find((p) => p.slug === "garlic-flakes")?.image,
-      href: "/products?category=garlic",
-    },
-  ];
-
-  const heroRangeItems = [
-    { slug: "white-onion-flakes", label: "Onion Flakes" },
-    { slug: "white-onion-powder", label: "Onion Powder" },
-    { slug: "white-onion-granules", label: "Onion Granules" },
-    { slug: "white-onion-minced", label: "Minced Onion" },
-    { slug: "garlic-flakes", label: "Garlic Flakes" },
-    { slug: "garlic-powder", label: "Garlic Powder" },
-    { slug: "garlic-granules", label: "Garlic Granules" },
-    { slug: "garlic-chopped", label: "Chopped Garlic" },
-  ];
-
   return (
     <>
-      {/* HERO SECTION - MODERN EDITORIAL FLOATING LAYOUT */}
-      <section className="relative min-h-[90vh] lg:min-h-screen flex items-center justify-center pt-24 pb-20 lg:pt-32 lg:pb-40 overflow-hidden bg-[#faf9f6]">
-        {/* Massive Background Text for Depth - Hidden on mobile for performance */}
-        <div className="absolute inset-0 hidden md:flex items-center justify-center pointer-events-none select-none overflow-hidden">
-          <h1 className="text-[22vw] font-bold text-primary/[0.03] uppercase tracking-tighter whitespace-nowrap">
-            Premium • Dehydrated • Quality
-          </h1>
-        </div>
+      {/* HERO */}
+      <section className="relative overflow-hidden bg-gradient-hero border-b border-border/50">
+        <div className="absolute -left-20 top-20 h-48 w-48 rounded-full bg-primary/10 blur-3xl pointer-events-none" />
+        <div className="absolute -right-20 bottom-16 h-56 w-56 rounded-full bg-primary/10 blur-3xl pointer-events-none" />
+        <div className="container mx-auto px-4 pt-10 pb-8 relative z-10">
+          <div className="relative grid lg:grid-cols-[1fr_1.1fr] gap-6 xl:gap-8 items-center">
+            <motion.div initial={{ opacity: 0, x: -28 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }}>
+              <div className="flex items-center gap-3 mb-5">
+                <span className="h-px w-10 bg-accent" />
+                <span className="text-xs tracking-[0.24em] font-semibold text-primary uppercase">Welcome To Khadija Overseas</span>
+              </div>
+              <h1 className="font-serif text-5xl md:text-6xl xl:text-7xl font-bold text-primary leading-[1.03] text-balance">
+                Dehydrated Food <br />
+                Products Supplier
+              </h1>
+              <p className="mt-6 text-[1.08rem] text-muted-foreground max-w-xl leading-relaxed">
+                Khadija Overseas is a leading dehydrated food products supplier and exporter from India. We deliver premium quality products that meet international standards.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <Link href="/products" className="group inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-xl text-sm font-semibold tracking-wide uppercase hover:bg-primary-glow shadow-soft hover:shadow-elegant transition-all">
+                  Explore Products
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+                <Link href="/contact" className="group inline-flex items-center gap-2 border-2 border-primary/45 text-primary px-8 py-4 rounded-xl text-sm font-semibold tracking-wide uppercase hover:bg-primary hover:text-primary-foreground transition-all">
+                  Get a Quote
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </motion.div>
 
-        {/* Floating Decorative Glows */}
-        <div className="absolute top-[15%] left-[5%] w-32 h-32 bg-accent/15 rounded-full blur-3xl animate-pulse pointer-events-none" />
-        <div className="absolute bottom-[15%] right-[5%] w-48 h-48 bg-primary/10 rounded-full blur-3xl animate-pulse pointer-events-none" />
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="flex flex-col items-center">
-            {/* Header Text - Editorial Style */}
-            <div className="max-w-5xl text-center mb-12 lg:mb-20">
-              <FadeUp>
-                <div className="inline-block px-4 py-1.5 rounded-full border border-primary/15 bg-white/60 backdrop-blur-md shadow-sm mb-6 animate-fade-in">
-                  <span className="text-[10px] font-bold tracking-[0.4em] text-primary uppercase">Est. 2012 • Global Exporters</span>
-                </div>
-                <h1 className="font-serif text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-primary font-bold leading-[0.95] tracking-tight">
-                  Taste of <br />
-                  <span className="text-accent italic font-script lowercase text-6xl sm:text-7xl md:text-9xl">nature,</span> <br />
-                  Supplied.
-                </h1>
-                <p className="mt-8 md:mt-12 text-muted-foreground text-base md:text-xl max-w-xl mx-auto leading-relaxed px-4">
-                  We bridge the gap between Indian farms and global kitchens with premium grade dehydrated products.
-                </p>
-                
-                <div className="mt-10 md:mt-14 flex flex-wrap justify-center gap-4 md:gap-6 px-4">
-                  <Link href="/products" className="relative overflow-hidden group bg-primary text-white px-8 md:px-12 py-4 md:py-5 rounded-full text-[11px] md:text-xs font-bold tracking-widest uppercase transition-all hover:pr-14 md:hover:pr-16 shadow-2xl">
-                    <span className="relative z-10">Explore Collection</span>
-                    <ArrowRight className="absolute right-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all h-5 w-5" />
-                  </Link>
-                  <Link href="/contact" className="px-8 md:px-12 py-4 md:py-5 rounded-full border border-primary/25 text-primary text-[11px] md:text-xs font-bold tracking-widest uppercase hover:bg-white transition-all shadow-sm">
-                    Inquiry Now
-                  </Link>
-                </div>
-              </FadeUp>
-            </div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="relative min-h-[540px] lg:min-h-[560px]"
+            >
+              <img
+                src={heroSectionImage.src || heroSectionImage}
+                alt="Premium dehydrated onion and garlic ingredients"
+                className="absolute right-0 top-0 h-full w-full object-cover object-center"
+              />
 
-            {/* Central Floating Visual Section */}
-            <div className="relative w-full max-w-5xl px-4 mt-4 lg:mt-0">
               <motion.div
-                initial={{ opacity: 0, y: 60 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1.2, ease: "circOut" }}
-                className="relative z-10"
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.75, delay: 0.35 }}
+                className="absolute left-4 top-10 sm:left-6 bg-gradient-dark text-primary-foreground rounded-[28px] px-5 py-5 shadow-elegant border border-accent/30 w-[260px] z-20"
               >
-                <div className="relative group">
-                  {/* The Main Image with modern editorial frame */}
-                  <div className="relative rounded-[2.5rem] md:rounded-[4rem] overflow-hidden shadow-[0_40px_100px_-25px_rgba(0,0,0,0.35)] transition-transform duration-700 hover:scale-[1.01]">
-                    <img 
-                      src={herosection.src || herosection} 
-                      alt="Premium Dehydrated Ingredients Showcase" 
-                      className="w-full h-auto object-cover min-h-[300px] md:min-h-auto" 
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent opacity-50" />
-                  </div>
-                  
-                  {/* Floating Content - Onion Pill */}
-                  <div className="absolute -top-6 -left-4 md:-top-10 md:-left-12 lg:-left-24 animate-float-slow z-20">
-                    <div className="bg-white/95 backdrop-blur-xl p-3 md:p-4 rounded-2xl md:rounded-3xl shadow-2xl border border-white flex items-center gap-3 md:gap-4">
-                      <div className="h-10 w-10 md:h-14 md:w-14 rounded-xl md:rounded-2xl bg-accent/20 flex items-center justify-center text-xl md:text-3xl">🧅</div>
-                      <div>
-                        <div className="text-[9px] md:text-[10px] font-bold text-accent uppercase tracking-widest">Premium</div>
-                        <div className="text-xs md:text-sm font-bold text-primary">Onion Flakes</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Floating Content - Garlic Pill */}
-                  <div className="absolute -bottom-6 -right-4 md:-bottom-10 md:-right-12 lg:-right-24 animate-float z-20">
-                    <div className="bg-gradient-dark p-3 md:p-4 rounded-2xl md:rounded-3xl shadow-2xl border border-white/10 flex items-center gap-3 md:gap-4 text-white">
-                      <div className="h-10 w-10 md:h-14 md:w-14 rounded-xl md:rounded-2xl bg-white/10 flex items-center justify-center text-xl md:text-3xl">🧄</div>
-                      <div>
-                        <div className="text-[9px] md:text-[10px] font-bold text-accent uppercase tracking-widest">A-Grade Export</div>
-                        <div className="text-xs md:text-sm font-bold">Garlic Powder</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Desktop Quality Badge */}
-                  <div className="absolute top-1/2 -right-10 lg:-right-16 -translate-y-1/2 hidden lg:block animate-float-slow z-20">
-                    <div className="h-28 w-28 rounded-full bg-accent border-[6px] border-white shadow-2xl flex items-center justify-center text-center p-3 -rotate-12 hover:rotate-0 transition-transform duration-500 cursor-default">
-                      <span className="text-[11px] font-black leading-tight text-primary uppercase">100% Organic Quality</span>
-                    </div>
+                <div className="text-center mb-4">
+                  <h3 className="font-script text-3xl text-accent">Our Range</h3>
+                  <div className="flex items-center justify-center gap-2 mt-1">
+                    <span className="h-px w-10 bg-accent/50" />
+                    <Leaf className="h-3.5 w-3.5 text-accent" />
+                    <span className="h-px w-10 bg-accent/50" />
                   </div>
                 </div>
+                <ul className="space-y-1.5 text-sm">
+                  {heroRange.slice(0, 4).map((item) => (
+                    <li key={item.label}>
+                      <Link
+                        href={item.href}
+                        className="flex items-center justify-between gap-2 px-2 py-1.5 rounded-lg hover:bg-primary-foreground/10 transition-colors"
+                      >
+                        <span className="flex items-center gap-2.5">
+                          <span className="h-7 w-7 rounded-full border border-accent/60 bg-primary-foreground/5 flex items-center justify-center text-sm">
+                            {item.icon}
+                          </span>
+                          <span className="font-medium">{item.label}</span>
+                        </span>
+                        <ArrowRight className="h-3.5 w-3.5 text-accent" />
+                      </Link>
+                    </li>
+                  ))}
+                  <li><div className="my-2 h-px bg-accent/20" /></li>
+                  {heroRange.slice(4).map((item) => (
+                    <li key={item.label}>
+                      <Link
+                        href={item.href}
+                        className="flex items-center justify-between gap-2 px-2 py-1.5 rounded-lg hover:bg-primary-foreground/10 transition-colors"
+                      >
+                        <span className="flex items-center gap-2.5">
+                          <span className="h-7 w-7 rounded-full border border-accent/60 bg-primary-foreground/5 flex items-center justify-center text-sm">
+                            {item.icon}
+                          </span>
+                          <span className="font-medium">{item.label}</span>
+                        </span>
+                        <ArrowRight className="h-3.5 w-3.5 text-accent" />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
-              
-              {/* Central Background Glow */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[90%] bg-accent/15 rounded-full blur-[100px] md:blur-[140px] -z-0" />
-            </div>
-          </div>
-        </div>
-
-        {/* Feature Ticker / Quick Stats */}
-        <div className="absolute bottom-10 inset-x-0 z-20 overflow-hidden py-4 border-y border-primary/5 bg-white/30 backdrop-blur-sm">
-          <div className="container mx-auto px-4">
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-              {[
-                { icon: Leaf, text: "Natural Pure" },
-                { icon: Award, text: "Certified Quality" },
-                { icon: Globe, text: "Global Export" },
-                { icon: Truck, text: "Safe Logistics" },
-              ].map((item, i) => (
-                <div key={i} className="flex items-center gap-2 text-primary/60 group">
-                  <item.icon className="h-4 w-4 text-accent group-hover:scale-125 transition-transform" />
-                  <span className="text-[10px] font-bold tracking-widest uppercase">{item.text}</span>
-                </div>
-              ))}
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -251,49 +202,9 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {productCategories.map((category, idx) => (
-              <FadeUp key={category.id} delay={idx * 0.1}>
-                <Link
-                  href={category.href}
-                  className="group relative block aspect-[4/5] rounded-3xl overflow-hidden shadow-elegant hover:shadow-gold transition-all duration-700 bg-card border border-primary/10"
-                >
-                  <div className="absolute inset-0 overflow-hidden">
-                    <img
-                      src={category.image?.src || category.image}
-                      alt={`${category.name} products`}
-                      loading="lazy"
-                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent opacity-70 group-hover:opacity-85 transition-opacity duration-500" />
-                  </div>
-
-                  <div className="absolute top-4 right-4 transition-all duration-500">
-                    <div className="h-10 w-10 rounded-full bg-accent/30 border border-accent/40 flex items-center justify-center">
-                      <Leaf className="h-5 w-5 text-accent" />
-                    </div>
-                  </div>
-
-                  <div className="absolute inset-x-0 bottom-0 p-6 flex flex-col justify-end transition-transform duration-500">
-                    <div className="bg-black/80 border border-white/10 rounded-2xl p-5 shadow-2xl">
-                      <span className="text-[10px] tracking-[0.2em] font-bold text-accent uppercase mb-1 block">Premium Export</span>
-                      <h3 className="font-serif text-2xl text-white font-bold leading-tight drop-shadow-sm">
-                        {category.name}
-                      </h3>
-                      <p className="text-white/80 text-xs mt-2 line-clamp-2 transition-opacity duration-500 leading-relaxed">
-                        {category.description}
-                      </p>
-
-                      <div className="flex items-center justify-between mt-4">
-                        <div className="h-px flex-1 bg-white/20 mr-4" />
-                        <div className="h-10 w-10 rounded-full bg-accent text-accent-foreground flex items-center justify-center shadow-gold transition-transform duration-500 group-hover:scale-110">
-                          <ArrowRight className="h-5 w-5" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="absolute inset-0 border-2 border-accent/0 group-hover:border-accent/40 rounded-3xl transition-colors duration-700 pointer-events-none" />
-                </Link>
+            {mainCategories.map((p, idx) => (
+              <FadeUp key={p.slug} delay={idx * 0.1}>
+                <ProductCard product={p} />
               </FadeUp>
             ))}
           </div>

@@ -10,6 +10,33 @@ import redOnion from "@/assets/red-onion.webp";
 import pinkOnion from "@/assets/pink-onion.webp";
 import whiteOnion from "@/assets/white-onion.webp";
 
+export const mainCategories = [
+  {
+    slug: "?category=white",
+    name: "White Onion",
+    short: "Premium quality dehydrated white onions available in flakes, powder, and granules.",
+    image: whiteOnion,
+  },
+  {
+    slug: "?category=red",
+    name: "Red Onion",
+    short: "Vibrant and pungent red onions, ideal for spice mixes and gourmet preparations.",
+    image: redOnion,
+  },
+  {
+    slug: "?category=pink",
+    name: "Pink Onion",
+    short: "Mild flavored pink onions offering a unique visual touch and delicate aroma.",
+    image: pinkOnion,
+  },
+  {
+    slug: "?category=garlic",
+    name: "Garlic",
+    short: "Strong aromatic garlic processed to preserve its intense flavor and medicinal properties.",
+    image: garlicFlakes,
+  },
+];
+
 export const products = [
   // --- WHITE ONION ---
   {
