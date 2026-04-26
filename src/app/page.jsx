@@ -294,30 +294,38 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={ctaBg.src || ctaBg} alt="" className="w-full h-full object-cover" loading="lazy" />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/70" />
+      <section className="relative py-24 overflow-hidden bg-background">
+        <div className="absolute inset-0 opacity-[0.03]">
+          <img src={ctaBg.src || ctaBg} alt="" className="w-full h-full object-cover grayscale" loading="lazy" />
         </div>
+        
         <div className="container mx-auto px-4 relative">
-          <div className="grid md:grid-cols-2 gap-8 items-center text-primary-foreground">
-            <FadeUp>
-              <div className="flex items-center gap-4">
-                <div className="h-16 w-16 rounded-full border-2 border-accent flex items-center justify-center shrink-0">
-                  <Phone className="h-7 w-7 text-accent" />
+          <div className="relative rounded-[3rem] overflow-hidden bg-gradient-hero border border-border shadow-soft p-8 md:p-16">
+            <div className="grid lg:grid-cols-[1fr_auto] gap-12 items-center">
+              <FadeUp>
+                <div className="flex flex-col md:flex-row items-center gap-10">
+                  <div className="relative">
+                    <div className="h-24 w-24 rounded-full bg-primary flex items-center justify-center shadow-elegant z-10 relative">
+                      <Phone className="h-10 w-10 text-accent animate-pulse" />
+                    </div>
+                    <div className="absolute -inset-4 bg-accent/20 rounded-full animate-ping" />
+                  </div>
+                  <div className="text-center md:text-left">
+                    <h3 className="font-serif text-3xl md:text-5xl font-bold text-primary leading-tight text-balance">Bulk Supply Solutions</h3>
+                    <p className="text-muted-foreground text-lg mt-4 max-w-xl leading-relaxed">
+                      Connecting your business to the finest dehydrated products from India. Quality, reliability, and global standards in every shipment.
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-serif text-2xl md:text-3xl font-bold">Need Bulk Supply?</h3>
-                  <p className="text-primary-foreground/80 text-sm mt-1">We provide customized solutions for your business needs.</p>
-                </div>
-              </div>
-            </FadeUp>
-            <FadeUp delay={0.15} className="md:text-right">
-              <Link href="/contact" className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-7 py-4 rounded-lg text-sm font-semibold tracking-wider uppercase hover:bg-accent-glow shadow-gold transition-all group">
-                Get a Quote
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </FadeUp>
+              </FadeUp>
+              
+              <FadeUp delay={0.15}>
+                <Link href="/contact" className="inline-flex items-center gap-4 bg-primary text-primary-foreground px-12 py-6 rounded-2xl text-sm font-bold tracking-widest uppercase hover:bg-primary-glow shadow-elegant transition-all duration-500 group">
+                  Contact For Inquiry
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
+                </Link>
+              </FadeUp>
+            </div>
           </div>
         </div>
       </section>
