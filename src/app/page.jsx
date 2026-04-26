@@ -57,7 +57,7 @@ export default function Home() {
           className="absolute -right-20 bottom-16 h-[500px] w-[500px] rounded-full bg-accent blur-[150px] pointer-events-none" 
         />
 
-        <div className="container mx-auto px-4 pt-40 pb-16 relative z-10">
+        <div className="container mx-auto px-4 pt-28 pb-16 relative z-10">
           <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-12 items-center">
             {/* Hero Content */}
             <motion.div 
