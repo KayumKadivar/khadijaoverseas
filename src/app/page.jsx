@@ -41,292 +41,270 @@ const heroRange = [
 export default function Home() {
   return (
     <>
-      {/* HERO */}
-      <section className="relative overflow-hidden bg-gradient-hero border-b border-border/50">
-        <div className="absolute -left-20 top-20 h-48 w-48 rounded-full bg-primary/10 blur-3xl pointer-events-none" />
-        <div className="absolute -right-20 bottom-16 h-56 w-56 rounded-full bg-primary/10 blur-3xl pointer-events-none" />
-        <div className="container mx-auto px-4 pt-10 pb-8 relative z-10">
-          <div className="relative grid lg:grid-cols-[1fr_1.1fr] gap-6 xl:gap-8 items-center">
-            <motion.div initial={{ opacity: 0, x: -28 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7 }}>
-              <div className="flex items-center gap-3 mb-5">
-                <span className="h-px w-10 bg-accent" />
-                <span className="text-xs tracking-[0.24em] font-semibold text-primary uppercase">Welcome To Khadija Overseas</span>
+      {/* HERO SECTION */}
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-hero border-b border-border/50">
+        {/* Background decorative elements */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 0.15, scale: 1 }}
+          transition={{ duration: 1.5 }}
+          className="absolute -left-20 top-20 h-96 w-96 rounded-full bg-primary blur-[120px] pointer-events-none" 
+        />
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 0.1, scale: 1 }}
+          transition={{ duration: 2, delay: 0.5 }}
+          className="absolute -right-20 bottom-16 h-[500px] w-[500px] rounded-full bg-accent blur-[150px] pointer-events-none" 
+        />
+
+        <div className="container mx-auto px-4 pt-40 pb-16 relative z-10">
+          <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-12 items-center">
+            {/* Hero Content */}
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <motion.span 
+                  initial={{ width: 0 }}
+                  whileInView={{ width: 40 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+                  className="h-0.5 bg-accent" 
+                />
+                <span className="text-xs sm:text-sm tracking-[0.3em] font-bold text-primary uppercase">Welcome To Khadija Overseas</span>
               </div>
-              <h1 className="font-serif text-5xl md:text-6xl xl:text-7xl font-bold text-primary leading-[1.03] text-balance">
+              
+              <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl xl:text-8xl font-bold text-primary leading-[1.1] tracking-tight text-balance">
                 Dehydrated Food <br />
-                Products Supplier
+                <span className="text-accent italic font-script capitalize">Products</span> Supplier
               </h1>
-              <p className="mt-6 text-[1.08rem] text-muted-foreground max-w-xl leading-relaxed">
+              
+              <p className="mt-8 text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed">
                 Khadija Overseas is a leading dehydrated food products supplier and exporter from India. We deliver premium quality products that meet international standards.
               </p>
-              <div className="mt-8 flex flex-wrap gap-4">
-                <Link href="/products" className="group inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-xl text-sm font-semibold tracking-wide uppercase hover:bg-primary-glow shadow-soft hover:shadow-elegant transition-all">
+              
+              <div className="mt-10 flex flex-col sm:flex-row gap-5">
+                <Link href="/products" className="group inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-10 py-5 rounded-2xl text-sm font-bold tracking-widest uppercase hover:bg-primary-glow shadow-elegant transition-all">
                   Explore Products
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
                 </Link>
-                <Link href="/contact" className="group inline-flex items-center gap-2 border-2 border-primary/45 text-primary px-8 py-4 rounded-xl text-sm font-semibold tracking-wide uppercase hover:bg-primary hover:text-primary-foreground transition-all">
+                <Link href="/contact" className="group inline-flex items-center justify-center gap-3 border-2 border-primary/20 text-primary px-10 py-5 rounded-2xl text-sm font-bold tracking-widest uppercase hover:bg-primary hover:text-primary-foreground transition-all">
                   Get a Quote
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  <Phone className="h-5 w-5" />
                 </Link>
               </div>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              className="relative min-h-[540px] lg:min-h-[560px]"
-            >
-              <img
-                src={heroSectionImage.src || heroSectionImage}
-                alt="Premium dehydrated onion and garlic ingredients"
-                className="absolute right-0 top-0 h-full w-full object-cover object-center"
-              />
+            {/* Hero Image & Range Card */}
+            <div className="relative min-h-[540px] lg:min-h-[600px]">
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1 }}
+                className="absolute inset-0"
+              >
+                <img
+                  src={heroSectionImage.src || heroSectionImage}
+                  alt="Premium dehydrated ingredients"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute" />
+              </motion.div>
 
+              {/* Floating Range Card - Restored to Absolute */}
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.75, delay: 0.35 }}
-                className="absolute left-4 top-10 sm:left-6 bg-gradient-dark text-primary-foreground rounded-[28px] px-5 py-5 shadow-elegant border border-accent/30 w-[260px] z-20"
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="absolute left-4 top-10 sm:left-10 bg-gradient-dark text-primary-foreground rounded-[2rem] p-6 sm:p-8 shadow-2xl border border-accent/20 w-[240px] sm:w-[280px] z-20"
               >
-                <div className="text-center mb-4">
-                  <h3 className="font-script text-3xl text-accent">Our Range</h3>
+                <div className="text-center mb-6">
+                  <h3 className="font-script text-3xl sm:text-4xl text-accent">Our Range</h3>
                   <div className="flex items-center justify-center gap-2 mt-1">
-                    <span className="h-px w-10 bg-accent/50" />
+                    <span className="h-px w-6 bg-accent/30" />
                     <Leaf className="h-3.5 w-3.5 text-accent" />
-                    <span className="h-px w-10 bg-accent/50" />
+                    <span className="h-px w-6 bg-accent/30" />
                   </div>
                 </div>
-                <ul className="space-y-1.5 text-sm">
-                  {heroRange.slice(0, 4).map((item) => (
-                    <li key={item.label}>
+                
+                <div className="space-y-2">
+                  {heroRange.slice(0, 6).map((item, i) => (
+                    <motion.div
+                      key={item.label}
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.6 + i * 0.1 }}
+                    >
                       <Link
                         href={item.href}
-                        className="flex items-center justify-between gap-2 px-2 py-1.5 rounded-lg hover:bg-primary-foreground/10 transition-colors"
+                        className="flex items-center justify-between gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group"
                       >
-                        <span className="flex items-center gap-2.5">
-                          <span className="h-7 w-7 rounded-full border border-accent/60 bg-primary-foreground/5 flex items-center justify-center text-sm">
+                        <span className="flex items-center gap-3">
+                          <span className="h-8 w-8 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center text-sm">
                             {item.icon}
                           </span>
-                          <span className="font-medium">{item.label}</span>
+                          <span className="text-xs sm:text-sm font-bold tracking-tight">{item.label}</span>
                         </span>
-                        <ArrowRight className="h-3.5 w-3.5 text-accent" />
+                        <ArrowRight className="h-3 w-3 text-accent opacity-0 group-hover:opacity-100 transition-all -translate-x-1 group-hover:translate-x-0" />
                       </Link>
-                    </li>
+                    </motion.div>
                   ))}
-                  <li><div className="my-2 h-px bg-accent/20" /></li>
-                  {heroRange.slice(4).map((item) => (
-                    <li key={item.label}>
-                      <Link
-                        href={item.href}
-                        className="flex items-center justify-between gap-2 px-2 py-1.5 rounded-lg hover:bg-primary-foreground/10 transition-colors"
-                      >
-                        <span className="flex items-center gap-2.5">
-                          <span className="h-7 w-7 rounded-full border border-accent/60 bg-primary-foreground/5 flex items-center justify-center text-sm">
-                            {item.icon}
-                          </span>
-                          <span className="font-medium">{item.label}</span>
-                        </span>
-                        <ArrowRight className="h-3.5 w-3.5 text-accent" />
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+                </div>
               </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ABOUT SECTION */}
+      <section className="py-20 sm:py-32 bg-background overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <span className="h-px w-8 bg-accent" />
+                <span className="text-xs font-bold tracking-[0.4em] text-accent uppercase">History & Values</span>
+              </div>
+              <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl text-primary font-bold leading-tight">
+                Quality You Can Trust,<br />
+                <span className="italic text-accent/80">Service You Can Rely On</span>
+              </h2>
+              <div className="mt-8 space-y-6 text-lg text-muted-foreground leading-relaxed">
+                <p>
+                  We, <strong className="text-primary font-bold">KHADIJA OVERSEAS</strong>, are a trusted exporter and supplier of high-quality dehydrated products, including White, Red, and Pink <strong className="text-primary">Onion and Dehydrated Garlic</strong>.
+                </p>
+                <p>
+                  We serve food processing, seasoning, snack, and HoReCa industries worldwide. Based in Wankaner, Gujarat, India, we operate with strong sourcing and reliable logistics support.
+                </p>
+              </div>
+              <Link href="/about" className="mt-10 inline-flex items-center gap-4 bg-primary text-primary-foreground px-8 py-4 rounded-2xl text-sm font-bold tracking-widest uppercase hover:bg-primary-glow shadow-elegant transition-all group">
+                Discover Our Story
+                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
+              </Link>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1 }}
+              className="relative"
+            >
+              <div className="relative rounded-[3rem] overflow-hidden shadow-2xl">
+                <img
+                  src={ingredientsFlatlay.src || ingredientsFlatlay}
+                  alt="Dehydrated onions and garlic"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+              <div className="absolute -bottom-8 -left-8 h-32 w-32 rounded-full bg-accent/10 blur-2xl animate-pulse" />
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* ABOUT */}
-      <section className="py-20 md:py-28 relative overflow-hidden bg-background">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <FadeUp>
-              <span className="text-xs font-semibold tracking-[0.25em] text-accent uppercase">About Us</span>
-              <h2 className="mt-3 font-serif text-3xl md:text-5xl text-primary font-bold leading-tight text-balance">
-                Quality You Can Trust,<br />Service You Can Rely On
-              </h2>
-              <p className="mt-5 text-muted-foreground leading-relaxed">
-                We, <strong className="text-primary">KHADIJA OVERSEAS</strong>, are a trusted exporter and supplier of high-quality dehydrated products, including White, Red, and Pink <strong className="text-primary">Onion and Dehydrated Garlic</strong>, available in various forms such as flakes, chopped, minced, granules, and powder.
-              </p>
-              <p className="mt-4 text-muted-foreground leading-relaxed">
-                We serve food processing, seasoning, snack, and HoReCa industries worldwide. Based in Wankaner, Gujarat, India, we operate with strong sourcing and reliable logistics support to major ports like Mundra.
-              </p>
-              <Link href="/about" className="mt-8 inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3.5 rounded-lg text-sm font-semibold tracking-wider uppercase hover:bg-primary-glow shadow-soft transition-all group">
-                Read More About Us
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </FadeUp>
-
-            <FadeUp delay={0.2}>
-              <div className="relative">
-                <div className="relative rounded-2xl overflow-hidden shadow-elegant">
-                  <img
-                    src={ingredientsFlatlay.src || ingredientsFlatlay}
-                    alt="Premium variety of dehydrated onions and garlic"
-                    width={1280}
-                    height={960}
-                    className="w-full h-auto"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="absolute -top-6 -right-6 h-24 w-24 rounded-full bg-accent/20 animate-float" />
-              </div>
-            </FadeUp>
-          </div>
-        </div>
-      </section>
-
-      {/* PRODUCTS */}
-      <section className="relative py-28 md:py-40 overflow-hidden bg-gradient-dark">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute inset-0 opacity-[0.03] grayscale invert" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/carbon-fibre.webp')" }} />
-        </div>
-
-        <div className="container mx-auto px-4 relative">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
-            <div className="max-w-2xl">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="h-px w-8 bg-accent" />
-                <span className="text-xs font-bold tracking-[0.4em] text-accent uppercase">Our Production</span>
-              </div>
-              <h2 className="font-serif text-4xl md:text-6xl font-bold text-white leading-tight">
-                Premium <span className="font-script text-accent italic">Dehydrated</span> <br />
-                Nature's Best
-              </h2>
-            </div>
-            <p className="max-w-sm text-white/60 text-lg leading-relaxed border-l-2 border-accent/30 pl-6">
-              Carefully crafted dehydrated ingredients — bold flavor, long shelf life, and export-grade quality for global markets.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {mainCategories.map((p, idx) => (
-              <FadeUp key={p.slug} delay={idx * 0.1}>
-                <ProductCard product={p} />
-              </FadeUp>
-            ))}
-          </div>
-
-          <FadeUp className="mt-20 flex flex-col items-center gap-6" delay={0.4}>
-            <div className="flex items-center gap-4 text-white/40 mb-2">
-              <span className="h-px w-20 bg-white/10" />
-              <Leaf className="h-5 w-5" />
-              <span className="h-px w-20 bg-white/10" />
-            </div>
-            <Link href="/products" className="group relative inline-flex items-center gap-4 bg-transparent text-white px-10 py-5 rounded-full text-sm font-bold tracking-[0.2em] uppercase border border-white/20 hover:border-accent transition-all duration-500">
-              <span className="relative z-10">View All Collections</span>
-              <div className="absolute inset-0 bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-full" />
-              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2 relative z-10 group-hover:text-primary" />
-            </Link>
-          </FadeUp>
-        </div>
-      </section>
-
-      {/* INDUSTRIES */}
-      <section className="py-20 md:py-28 bg-background">
-        <div className="container mx-auto px-4">
-          <SectionHeading kicker="Industries" title="Industries We Serve" subtitle="Our dehydrated products are widely used across multiple industries worldwide." />
-          <Stagger className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {industries.map((i) => (
-              <StaggerItem key={i.name}>
-                <div className="group bg-card rounded-2xl p-7 shadow-soft hover:shadow-elegant border border-border/50 transition-all hover:-translate-y-1">
-                  <div className="h-14 w-14 rounded-xl bg-gradient-dark flex items-center justify-center text-3xl mb-5 group-hover:scale-110 transition-transform">
-                    {i.icon}
-                  </div>
-                  <h3 className="font-serif text-xl text-primary font-semibold">{i.name}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{i.desc}</p>
-                </div>
-              </StaggerItem>
-            ))}
-          </Stagger>
-        </div>
-      </section>
-
-      {/* WHY CHOOSE US */}
-      <section className="py-20 md:py-28 bg-secondary/40 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20 pointer-events-none">
-          <img src={cooking2.src || cooking2} alt="" className="w-full h-full object-cover" loading="lazy" />
-          <div className="absolute inset-0 bg-secondary/80" />
-        </div>
-        <div className="container mx-auto px-4 relative">
-          <SectionHeading kicker="Why Choose Us" title="Why Choose Khadija Overseas?" subtitle="We ensure premium quality products and the best experience for our clients." />
-          <Stagger className="mt-14 grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
-            {[
-              { t: "Premium Quality", d: "Premium quality at every processing step." },
-              { t: "Advanced Processing", d: "Modern technology ensures hygiene and quality." },
-              { t: "Global Standards", d: "Products meet international standards." },
-              { t: "Timely Delivery", d: "On-time delivery across the globe." },
-              { t: "Customer Support", d: "Our team is always ready to support you." },
-            ].map((w) => (
-              <StaggerItem key={w.t}>
-                <div className="bg-card rounded-2xl p-6 text-center shadow-soft hover:shadow-elegant transition-all hover:-translate-y-1 h-full border border-border/50">
-                  <div className="h-14 w-14 mx-auto rounded-full bg-gradient-gold flex items-center justify-center mb-4 shadow-gold">
-                    <CheckCircle2 className="h-7 w-7 text-primary" />
-                  </div>
-                  <h4 className="font-serif text-base text-primary font-semibold">{w.t}</h4>
-                  <p className="mt-2 text-xs text-muted-foreground leading-relaxed">{w.d}</p>
-                </div>
-              </StaggerItem>
-            ))}
-          </Stagger>
-        </div>
-      </section>
-
-      {/* CERTIFICATIONS */}
-      <section className="py-16 bg-card border-y border-border">
-        <div className="container mx-auto px-4">
-          <FadeUp>
-            <p className="text-center text-xs font-semibold tracking-[0.3em] text-muted-foreground uppercase mb-8">Certifications & Compliance</p>
-            <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16">
-              {certifications.map((c) => (
-                <div key={c} className="text-center group cursor-default">
-                  <div className="h-20 w-20 mx-auto rounded-full border-2 border-primary/20 flex items-center justify-center font-serif font-bold text-primary group-hover:border-accent group-hover:text-accent transition-colors">
-                    {c.split(" ")[0]}
-                  </div>
-                  <div className="mt-2 text-[10px] tracking-widest text-muted-foreground uppercase">Certified</div>
-                </div>
-              ))}
-            </div>
-          </FadeUp>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="relative py-24 overflow-hidden bg-background">
-        <div className="absolute inset-0 opacity-[0.03]">
-          <img src={ctaBg.src || ctaBg} alt="" className="w-full h-full object-cover grayscale" loading="lazy" />
+      {/* PRODUCTS GRID */}
+      <section className="py-24 sm:py-32 bg-gradient-dark relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
+          <Globe className="absolute top-0 right-0 h-[600px] w-[600px] text-white" />
         </div>
         
         <div className="container mx-auto px-4 relative">
-          <div className="relative rounded-[3rem] overflow-hidden bg-gradient-hero border border-border shadow-soft p-8 md:p-16">
-            <div className="grid lg:grid-cols-[1fr_auto] gap-12 items-center">
-              <FadeUp>
-                <div className="flex flex-col md:flex-row items-center gap-10">
-                  <div className="relative">
-                    <div className="h-24 w-24 rounded-full bg-primary flex items-center justify-center shadow-elegant z-10 relative">
-                      <Phone className="h-10 w-10 text-accent animate-pulse" />
-                    </div>
-                    <div className="absolute -inset-4 bg-accent/20 rounded-full animate-ping" />
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col md:flex-row md:items-end justify-between gap-10 mb-20"
+          >
+            <div className="max-w-3xl">
+              <div className="flex items-center gap-4 mb-6">
+                <span className="h-px w-12 bg-accent" />
+                <span className="text-xs font-bold tracking-[0.5em] text-accent uppercase">Explore Our Range</span>
+              </div>
+              <h2 className="font-serif text-4xl sm:text-6xl font-bold text-white leading-[1.1]">
+                Premium <span className="font-script text-accent italic">Dehydrated</span> <br />
+                Export Quality
+              </h2>
+            </div>
+            <p className="max-w-sm text-white/50 text-xl leading-relaxed border-l-4 border-accent/20 pl-8">
+              Sourced from the heart of Gujarat, processed with precision for the global market.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {mainCategories.map((p, idx) => (
+              <motion.div
+                key={p.slug}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+              >
+                <ProductCard product={p} />
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="mt-20 flex flex-col items-center"
+          >
+            <Link href="/products" className="group relative inline-flex items-center gap-6 bg-transparent text-white px-12 py-6 rounded-full text-sm font-bold tracking-[0.3em] uppercase border border-white/10 hover:border-accent transition-all duration-500 overflow-hidden">
+              <span className="relative z-10">All Products</span>
+              <div className="absolute inset-0 bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-full" />
+              <ArrowRight className="h-6 w-6 transition-transform group-hover:translate-x-3 relative z-10 group-hover:text-primary" />
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CTA SECTION */}
+      <section className="py-20 sm:py-32 bg-background relative overflow-hidden">
+        <div className="container mx-auto px-4">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="relative rounded-[3rem] sm:rounded-[5rem] overflow-hidden bg-gradient-hero border border-border shadow-2xl p-10 sm:p-24"
+          >
+            <div className="grid lg:grid-cols-[1.1fr_auto] gap-16 items-center">
+              <div>
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="h-16 w-16 rounded-2xl bg-primary flex items-center justify-center shadow-lg">
+                    <Phone className="h-8 w-8 text-accent" />
                   </div>
-                  <div className="text-center md:text-left">
-                    <h3 className="font-serif text-3xl md:text-5xl font-bold text-primary leading-tight text-balance">Bulk Supply Solutions</h3>
-                    <p className="text-muted-foreground text-lg mt-4 max-w-xl leading-relaxed">
-                      Connecting your business to the finest dehydrated products from India. Quality, reliability, and global standards in every shipment.
-                    </p>
+                  <div>
+                    <span className="text-xs font-bold tracking-widest text-accent uppercase">Let's Connect</span>
+                    <h3 className="text-lg font-bold text-primary">Call Support</h3>
                   </div>
                 </div>
-              </FadeUp>
-              
-              <FadeUp delay={0.15}>
-                <Link href="/contact" className="inline-flex items-center gap-4 bg-primary text-primary-foreground px-12 py-6 rounded-2xl text-sm font-bold tracking-widest uppercase hover:bg-primary-glow shadow-elegant transition-all duration-500 group">
-                  Contact For Inquiry
-                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
-                </Link>
-              </FadeUp>
+                <h2 className="font-serif text-4xl sm:text-6xl font-bold text-primary leading-tight">
+                  Ready to elevate your <br />
+                  <span className="text-accent italic font-script">Culinary</span> business?
+                </h2>
+                <p className="mt-8 text-xl text-muted-foreground leading-relaxed max-w-2xl">
+                  Whether you need bulk supply or custom processing, we are here to provide the best solutions for your global requirements.
+                </p>
+              </div>
+              <Link href="/contact" className="inline-flex items-center justify-center gap-5 bg-primary text-primary-foreground px-12 py-7 rounded-[2rem] text-sm font-bold tracking-[0.2em] uppercase hover:bg-primary-glow shadow-2xl transition-all active:scale-95">
+                Get Quotation
+                <ArrowRight className="h-6 w-6" />
+              </Link>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
     </>

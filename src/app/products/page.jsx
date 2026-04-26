@@ -1,12 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { products } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
 import SectionHeading from "@/components/SectionHeading";
 import { Stagger, StaggerItem, FadeUp } from "@/components/Reveal";
 import { cn } from "@/lib/utils";
+import { Leaf } from "lucide-react";
 
 const tags = [
   { id: "all", label: "All Products" },
@@ -16,7 +17,7 @@ const tags = [
   { id: "garlic", label: "Garlic" },
 ];
 
-export default function ProductsPage() {
+function ProductsContent() {
   const searchParams = useSearchParams();
   const [activeTag, setActiveTag] = useState("all");
 
@@ -40,49 +41,66 @@ export default function ProductsPage() {
   });
 
   return (
-    <>
-      <section className="py-24">
-        <div className="container mx-auto px-4">
-          <FadeUp>
-            <SectionHeading kicker="Range" title="Our Product Range" subtitle="High quality dehydrated products for every need" />
-          </FadeUp>
+    <div className="container mx-auto px-4">
+      <FadeUp>
+        <SectionHeading 
+          kicker="Our Range" 
+          title="Premium Dehydrated Products" 
+          subtitle="High quality products processed with care to preserve flavor and aroma." 
+        />
+      </FadeUp>
 
-          {/* Tags Section */}
-          <FadeUp delay={0.1}>
-            <div className="mt-12 flex flex-wrap justify-center gap-3">
-              {tags.map((tag) => (
-                <button
-                  key={tag.id}
-                  onClick={() => setActiveTag(tag.id)}
-                  className={cn(
-                    "px-6 py-2.5 rounded-full text-sm font-bold tracking-wider uppercase transition-all duration-300 border-2",
-                    activeTag === tag.id
-                      ? "bg-primary text-primary-foreground border-primary shadow-elegant scale-105"
-                      : "bg-transparent text-primary/60 border-primary/10 hover:border-primary/30 hover:text-primary hover:bg-primary/5"
-                  )}
-                >
-                  {tag.label}
-                </button>
-              ))}
-            </div>
-          </FadeUp>
-
-          {/* Products Grid */}
-          <Stagger key={activeTag} className="mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
-            {filteredProducts.map((p) => (
-              <StaggerItem key={p.slug}>
-                <ProductCard product={p} />
-              </StaggerItem>
-            ))}
-          </Stagger>
-
-          {filteredProducts.length === 0 && (
-            <div className="mt-20 text-center py-20 bg-secondary/20 rounded-3xl border-2 border-dashed border-border">
-              <p className="text-muted-foreground italic">No products found in this category.</p>
-            </div>
-          )}
+      {/* Tags Section - Restored to Light Style */}
+      <FadeUp delay={0.1}>
+        <div className="mt-12 flex flex-wrap justify-center gap-3">
+          {tags.map((tag) => (
+            <button
+              key={tag.id}
+              onClick={() => setActiveTag(tag.id)}
+              className={cn(
+                "px-6 py-2.5 rounded-full text-xs font-bold tracking-wider uppercase transition-all duration-300 border-2",
+                activeTag === tag.id
+                  ? "bg-primary text-primary-foreground border-primary shadow-soft scale-105"
+                  : "bg-transparent text-primary/60 border-primary/10 hover:border-primary/30 hover:text-primary hover:bg-primary/5"
+              )}
+            >
+              {tag.label}
+            </button>
+          ))}
         </div>
+      </FadeUp>
+
+      {/* Products Grid - Using Homepage spacing (gap-8) and FadeUp style */}
+      <div className="mt-20">
+        <Stagger key={activeTag} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {filteredProducts.map((p) => (
+            <StaggerItem key={p.slug}>
+              <ProductCard product={p} />
+            </StaggerItem>
+          ))}
+        </Stagger>
+      </div>
+
+      {filteredProducts.length === 0 && (
+        <div className="mt-20 text-center py-24 bg-secondary/20 rounded-[3rem] border-2 border-dashed border-border">
+          <div className="flex justify-center mb-6">
+            <Leaf className="h-12 w-12 text-primary/10" />
+          </div>
+          <p className="text-muted-foreground italic text-lg">No products found in this category.</p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default function ProductsPage() {
+  return (
+    <main className="bg-background min-h-screen">
+      <section className="pt-40 pb-24">
+        <Suspense fallback={<div className="container mx-auto px-4 py-20 text-center">Loading Products...</div>}>
+          <ProductsContent />
+        </Suspense>
       </section>
-    </>
+    </main>
   );
 }

@@ -110,8 +110,11 @@
 
   .text-balance { text-wrap: balance; }
 
-  /* Wave divider */
-  .wave-bottom {
-    mask-image: radial-gradient(ellipse 100% 60px at 50% 100%, transparent 99%, black 100%);
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }
