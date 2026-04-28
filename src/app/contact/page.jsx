@@ -16,7 +16,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <section className="bg-gradient-hero py-16 md:py-20 text-center">
+      <section className="pt-22 pb-16 text-center">
         <div className="container mx-auto px-4">
           <FadeUp>
             <span className="text-xs font-semibold tracking-[0.3em] text-accent uppercase">Contact Us</span>
@@ -28,7 +28,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="py-10">
         <div className="container mx-auto px-4 grid lg:grid-cols-5 gap-10">
           <FadeUp className="lg:col-span-2">
             <h3 className="font-serif text-2xl text-primary font-bold">Contact Information</h3>
