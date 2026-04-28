@@ -3,10 +3,7 @@
 import Link from "next/link";
 import { ArrowRight, Leaf, Award, Globe, Truck, CheckCircle2, Phone } from "lucide-react";
 import { motion } from "framer-motion";
-import heroSectionImage from "@/assets/herosection.png";
 import ingredientsFlatlay from "@/assets/ingredients-flatlay.webp";
-import cooking2 from "@/assets/cooking-2.webp";
-import ctaBg from "@/assets/cta-bg.webp";
 import { products, industries, certifications, mainCategories } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
 import SectionHeading from "@/components/SectionHeading";
@@ -20,29 +17,33 @@ const rangeIcons = {
   "onion-flakes": "🧅",
   "onion-powder": "🥣",
   "onion-granules": "🌰",
-  "minced-onion": "🍥",
+  "onion-chopped": "🌿",
+  "onion-minced": "🍥",
   "garlic-flakes": "🧄",
   "garlic-powder": "🥣",
   "garlic-granules": "🌰",
-  "chopped-garlic": "🌿",
+  "garlic-chopped": "🌿",
+  "garlic-minced": "🍥",
 };
 
 const heroRange = [
   { icon: rangeIcons["onion-flakes"], label: "Onion Flakes", href: "/products/onion-flakes" },
   { icon: rangeIcons["onion-powder"], label: "Onion Powder", href: "/products/onion-powder" },
   { icon: rangeIcons["onion-granules"], label: "Onion Granules", href: "/products/onion-granules" },
-  { icon: rangeIcons["minced-onion"], label: "Minced Onion", href: "/products/minced-onion" },
+  { icon: rangeIcons["onion-chopped"], label: "Onion Chopped", href: "/products/onion-chopped" },
+  { icon: rangeIcons["onion-minced"], label: "Onion Minced", href: "/products/onion-minced" },
   { icon: rangeIcons["garlic-flakes"], label: "Garlic Flakes", href: "/products/garlic-flakes" },
   { icon: rangeIcons["garlic-powder"], label: "Garlic Powder", href: "/products/garlic-powder" },
   { icon: rangeIcons["garlic-granules"], label: "Garlic Granules", href: "/products/garlic-granules" },
-  { icon: rangeIcons["chopped-garlic"], label: "Chopped Garlic", href: "/products/chopped-garlic" },
+  { icon: rangeIcons["garlic-chopped"], label: "Garlic Chopped", href: "/products/garlic-chopped" },
+  { icon: rangeIcons["garlic-minced"], label: "Garlic Minced", href: "/products/garlic-minced" },
 ];
 
 export default function Home() {
   return (
     <>
       {/* HERO SECTION */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-gradient-hero border-b border-border/50">
+      <section className="relative flex items-center overflow-hidden bg-gradient-hero">
         {/* Background decorative elements */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.8 }}
@@ -66,24 +67,24 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <div className="flex items-center gap-3 mb-6">
-                <motion.span 
-                  initial={{ width: 0 }}
-                  whileInView={{ width: 40 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: 0.5 }}
-                  className="h-0.5 bg-accent" 
-                />
-                <span className="text-xs sm:text-sm tracking-[0.3em] font-bold text-primary uppercase">Welcome To Khadija Overseas</span>
+              <div className="mb-6 relative z-10">
+                {/* Background Leaf Watermark */}
+                <div className="absolute -left-12 sm:-left-24 -top-8 opacity-40 pointer-events-none -z-10 animate-pulse" style={{ animationDuration: '4s' }}>
+                  <svg width="120" height="120" viewBox="0 0 24 24" fill="#a3e635" className="-rotate-12">
+                    <path d="M17 8C8 10 5 16 5 22C5 22 4 19 4 15C4 11 7 8 11 6C15 4 20 2 20 2C20 2 19 6 17 8Z" opacity="0.9"/>
+                    <path d="M11 6C8 4 4 3 2 3C2 3 4 6 5 9C6 12 9 14 12 14C15 14 17 11 17 11C17 11 14 10 11 6Z" opacity="0.7"/>
+                    <path d="M17 8C20 8 22 10 22 13C22 16 19 19 15 19C11 19 9 16 9 16C9 16 12 16 15 13C18 10 17 8 17 8Z" opacity="0.7"/>
+                  </svg>
+                </div>
               </div>
               
-              <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl xl:text-8xl font-bold text-primary leading-[1.1] tracking-tight text-balance">
-                Dehydrated Food <br />
-                <span className="text-accent italic font-script capitalize">Products</span> Supplier
+              <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-primary leading-[1.1] tracking-tight text-balance">
+                Premium Dehydrated Food <br />
+                <span className="text-accent italic font-script capitalize">Products</span> Exporter from India
               </h1>
               
               <p className="mt-8 text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-                Khadija Overseas is a leading dehydrated food products supplier and exporter from India. We deliver premium quality products that meet international standards.
+                Khadija Overseas is a trusted exporter of premium dehydrated food products from Gujarat, India. Supplying high-quality dehydrated onion and garlic products to food manufacturers and bulk buyers worldwide.
               </p>
               
               <div className="mt-10 flex flex-col sm:flex-row gap-5">
@@ -98,63 +99,49 @@ export default function Home() {
               </div>
             </motion.div>
 
-            {/* Hero Image & Range Card */}
-            <div className="relative min-h-[540px] lg:min-h-[600px]">
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1 }}
-                className="absolute inset-0"
-              >
-                <img
-                  src={heroSectionImage.src || heroSectionImage}
-                  alt="Premium dehydrated ingredients"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute" />
-              </motion.div>
-
-              {/* Floating Range Card - Restored to Absolute */}
+            {/* Hero Range Card */}
+            <div className="flex justify-center lg:justify-end items-center w-full mt-12 lg:mt-0">
               <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="absolute left-4 top-10 sm:left-10 bg-gradient-dark text-primary-foreground rounded-[2rem] p-6 sm:p-8 shadow-2xl border border-accent/20 w-[240px] sm:w-[280px] z-20"
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="w-full max-w-[320px] sm:max-w-[360px]"
               >
-                <div className="text-center mb-6">
-                  <h3 className="font-script text-3xl sm:text-4xl text-accent">Our Range</h3>
-                  <div className="flex items-center justify-center gap-2 mt-1">
-                    <span className="h-px w-6 bg-accent/30" />
-                    <Leaf className="h-3.5 w-3.5 text-accent" />
-                    <span className="h-px w-6 bg-accent/30" />
+                <div className="bg-gradient-dark text-primary-foreground rounded-[2rem] p-6 sm:p-8 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5)] border border-accent/20 w-full z-20">
+                  <div className="text-center mb-5">
+                    <h3 className="font-script text-3xl sm:text-4xl text-accent">Our Range</h3>
+                    <div className="flex items-center justify-center gap-2 mt-2">
+                      <span className="h-px w-6 bg-accent/30" />
+                      <Leaf className="h-3.5 w-3.5 text-accent" />
+                      <span className="h-px w-6 bg-accent/30" />
+                    </div>
                   </div>
-                </div>
-                
-                <div className="space-y-2">
-                  {heroRange.slice(0, 6).map((item, i) => (
-                    <motion.div
-                      key={item.label}
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.6 + i * 0.1 }}
-                    >
-                      <Link
-                        href={item.href}
-                        className="flex items-center justify-between gap-3 p-2 rounded-xl hover:bg-white/10 transition-all group"
+                  
+                  <div className="space-y-1 sm:space-y-1.5">
+                    {heroRange.map((item, i) => (
+                      <motion.div
+                        key={item.label}
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.3 + i * 0.1 }}
                       >
-                        <span className="flex items-center gap-3">
-                          <span className="h-8 w-8 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center text-sm">
-                            {item.icon}
+                        <Link
+                          href={item.href}
+                          className="flex items-center justify-between gap-3 p-1.5 sm:p-2 rounded-xl hover:bg-white/10 transition-all duration-300 group border border-transparent hover:border-accent/10"
+                        >
+                          <span className="flex items-center gap-3">
+                            <span className="h-8 w-8 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center text-sm shadow-inner group-hover:scale-110 transition-transform duration-300">
+                              {item.icon}
+                            </span>
+                            <span className="text-[13px] sm:text-sm font-bold tracking-wide">{item.label}</span>
                           </span>
-                          <span className="text-xs sm:text-sm font-bold tracking-tight">{item.label}</span>
-                        </span>
-                        <ArrowRight className="h-3 w-3 text-accent opacity-0 group-hover:opacity-100 transition-all -translate-x-1 group-hover:translate-x-0" />
-                      </Link>
-                    </motion.div>
-                  ))}
+                          <ArrowRight className="h-3.5 w-3.5 text-accent opacity-0 group-hover:opacity-100 transition-all duration-300 -translate-x-2 group-hover:translate-x-0" />
+                        </Link>
+                      </motion.div>
+                    ))}
+                  </div>
                 </div>
               </motion.div>
             </div>
@@ -228,10 +215,6 @@ export default function Home() {
             className="flex flex-col md:flex-row md:items-end justify-between gap-10 mb-20"
           >
             <div className="max-w-3xl">
-              <div className="flex items-center gap-4 mb-6">
-                <span className="h-px w-12 bg-accent" />
-                <span className="text-xs font-bold tracking-[0.5em] text-accent uppercase">Explore Our Range</span>
-              </div>
               <h2 className="font-serif text-4xl sm:text-6xl font-bold text-white leading-[1.1]">
                 Premium <span className="font-script text-accent italic">Dehydrated</span> <br />
                 Export Quality

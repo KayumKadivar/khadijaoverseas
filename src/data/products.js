@@ -14,25 +14,25 @@ export const mainCategories = [
   {
     slug: "?category=white",
     name: "White Onion",
-    short: "Premium quality dehydrated white onions available in flakes, powder, and granules.",
+    short: "Delivering a crisp, sweet flavor and pure white color. Perfect for premium sauces, instant soups, and ready-to-eat meals worldwide.",
     image: whiteOnion,
   },
   {
     slug: "?category=red",
     name: "Red Onion",
-    short: "Vibrant and pungent red onions, ideal for spice mixes and gourmet preparations.",
+    short: "Renowned for its sharp, pungent taste and deep color. The ultimate ingredient for robust spice blends and gourmet culinary creations.",
     image: redOnion,
   },
   {
     slug: "?category=pink",
     name: "Pink Onion",
-    short: "Mild flavored pink onions offering a unique visual touch and delicate aroma.",
+    short: "A perfect balance of mild sweetness and delicate aroma. Ideal for specialized seasonings and visually appealing culinary dishes.",
     image: pinkOnion,
   },
   {
     slug: "?category=garlic",
     name: "Garlic",
-    short: "Strong aromatic garlic processed to preserve its intense flavor and medicinal properties.",
+    short: "Packed with intense flavor, rich aroma, and natural allicin. An indispensable ingredient for savory food manufacturing and seasoning.",
     image: garlicFlakes,
   },
 ];

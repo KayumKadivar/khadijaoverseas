@@ -60,10 +60,9 @@ export default function AboutPage() {
                 <div className="rounded-2xl overflow-hidden shadow-elegant border border-border/50">
                   <img src={ourStoryImg.src || ourStoryImg} alt="Premium dehydrated onion and garlic ingredients" className="w-full h-auto object-cover" loading="lazy" />
                 </div>
-                <div className="hidden md:block absolute -bottom-10 -right-6 w-2/3 rounded-2xl overflow-hidden shadow-elegant border-4 border-background">
-                  <img src={cooking2.src || cooking2} alt="Chef seasoning gourmet dish with dehydrated flakes" className="w-full h-auto" loading="lazy" />
+                <div className="absolute -top-6 -left-6 h-20 w-20 sm:h-24 sm:w-24 rounded-full bg-background/80 backdrop-blur-md border border-accent/20 shadow-xl flex items-center justify-center animate-float z-10">
+                  <Leaf className="h-10 w-10 sm:h-12 sm:w-12 text-accent" />
                 </div>
-                <div className="absolute -top-6 -left-6 h-24 w-24 rounded-full bg-accent/20 animate-float" />
               </div>
             </FadeUp>
           </div>
