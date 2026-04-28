@@ -32,32 +32,6 @@
   background: hsl(42 78% 52% / 0.12);
 }
 
-/* breadcrumb */
-.pdp-breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: hsl(140 15% 35%);
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-}
-.pdp-breadcrumb__link {
-  transition: color 0.2s;
-}
-.pdp-breadcrumb__link:hover {
-  color: hsl(140 55% 14%);
-}
-.pdp-breadcrumb__sep {
-  width: 0.85rem; height: 0.85rem;
-  color: hsl(140 15% 35% / 0.45);
-  flex-shrink: 0;
-}
-.pdp-breadcrumb__current {
-  color: hsl(140 55% 14%);
-  font-weight: 600;
-}
 
 /* hero grid */
 .pdp-hero__grid {

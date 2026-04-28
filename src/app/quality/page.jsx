@@ -9,10 +9,9 @@ import { FadeUp, Stagger, StaggerItem } from "@/components/Reveal";
 export default function QualityPage() {
   return (
     <>
-      <section className="bg-gradient-hero py-16 md:py-24 text-center">
+      <section className="py-20 text-center">
         <div className="container mx-auto px-4">
           <FadeUp>
-            <span className="text-xs font-semibold tracking-[0.3em] text-accent uppercase">Quality</span>
             <h1 className="mt-3 font-serif text-4xl md:text-6xl text-primary font-bold">Quality You Can Trust</h1>
             <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-base md:text-lg">
               Every batch is processed and tested under strict international quality standards.

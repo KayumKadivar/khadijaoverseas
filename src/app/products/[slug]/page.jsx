@@ -222,16 +222,7 @@ export default function ProductDetailPage() {
         <div className="pdp-hero__blur pdp-hero__blur--right" />
 
         <div className="container mx-auto px-4">
-          {/* breadcrumb */}
-          <FadeUp>
-            <nav className="pdp-breadcrumb" aria-label="Breadcrumb">
-              <Link href="/" className="pdp-breadcrumb__link">Home</Link>
-              <ChevronRight className="pdp-breadcrumb__sep" />
-              <Link href="/products" className="pdp-breadcrumb__link">Products</Link>
-              <ChevronRight className="pdp-breadcrumb__sep" />
-              <span className="pdp-breadcrumb__current">{product.name}</span>
-            </nav>
-          </FadeUp>
+       
 
           {/* two-column hero */}
           <div className="pdp-hero__grid">

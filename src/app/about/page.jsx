@@ -13,19 +13,16 @@ export default function AboutPage() {
     <>
 
       {/* Story */}
-      <section className="py-24 relative overflow-hidden">
+      <section className="py-16 relative overflow-hidden">
         {/* Subtle background element */}
         <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
         
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-4 relative z-10 py-8">
           <div className="grid lg:grid-cols-[1fr_1fr] gap-16 items-center">
             
             {/* Left: Text Content */}
             <FadeUp>
-              <div className="flex items-center gap-3 mb-4">
-                <span className="h-px w-10 bg-accent" />
-                <span className="text-xs font-bold tracking-[0.3em] text-accent uppercase">Discover Our Journey</span>
-              </div>
+            
               <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary font-bold leading-tight mb-8">
                 A Legacy of <span className="italic text-accent/90">Premium</span> Export
               </h2>
@@ -87,7 +84,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-20 bg-secondary/40 mt-20">
+      <section className="py-16 bg-secondary/40">
         <div className="container mx-auto px-4">
           <SectionHeading kicker="Our Values" title="What Drives Us" />
           <Stagger className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -112,7 +109,7 @@ export default function AboutPage() {
       </section>
 
       {/* In the Kitchen */}
-      <section className="py-20">
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <SectionHeading kicker="In The Kitchen" title="From Our Kitchens to Yours" subtitle="See how our dehydrated ingredients elevate everyday cooking and gourmet dishes." />
           <Stagger className="mt-12 grid md:grid-cols-3 gap-6">
