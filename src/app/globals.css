@@ -94,7 +94,7 @@
 
 @layer utilities {
   .bg-gradient-hero {
-    background: linear-gradient(135deg, hsl(44 50% 96%) 0%, hsl(42 45% 90%) 100%);
+    background: linear-gradient(135deg, hsl(350 100% 98%) 0%, hsl(350 100% 94%) 100%);
   }
   .bg-gradient-dark {
     background: linear-gradient(135deg, hsl(140 55% 10%) 0%, hsl(140 45% 18%) 100%);

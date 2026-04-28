@@ -45,17 +45,17 @@ export default function Home() {
       {/* HERO SECTION */}
       <section className="relative flex items-center overflow-hidden bg-gradient-hero">
         {/* Background decorative elements */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 0.15, scale: 1 }}
           transition={{ duration: 1.5 }}
-          className="absolute -left-20 top-20 h-96 w-96 rounded-full bg-primary blur-[120px] pointer-events-none" 
+          className="absolute -left-20 top-20 h-96 w-96 rounded-full bg-primary blur-[120px] pointer-events-none"
         />
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 0.1, scale: 1 }}
           transition={{ duration: 2, delay: 0.5 }}
-          className="absolute -right-20 bottom-16 h-[500px] w-[500px] rounded-full bg-accent blur-[150px] pointer-events-none" 
+          className="absolute -right-20 bottom-16 h-[500px] w-[500px] rounded-full bg-accent blur-[150px] pointer-events-none"
         />
         <div className="pointer-events-none absolute -left-10 top-20 z-0 hidden sm:block opacity-90">
           <svg
@@ -78,7 +78,7 @@ export default function Home() {
         <div className="container mx-auto px-4 pt-28 pb-16 relative z-10">
           <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-12 items-center">
             {/* Hero Content */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -88,22 +88,22 @@ export default function Home() {
                 {/* Background Leaf Watermark */}
                 <div className="absolute -left-12 sm:-left-24 -top-8 opacity-40 pointer-events-none -z-10 animate-pulse" style={{ animationDuration: '4s' }}>
                   <svg width="120" height="120" viewBox="0 0 24 24" fill="#a3e635" className="-rotate-12">
-                    <path d="M17 8C8 10 5 16 5 22C5 22 4 19 4 15C4 11 7 8 11 6C15 4 20 2 20 2C20 2 19 6 17 8Z" opacity="0.9"/>
-                    <path d="M11 6C8 4 4 3 2 3C2 3 4 6 5 9C6 12 9 14 12 14C15 14 17 11 17 11C17 11 14 10 11 6Z" opacity="0.7"/>
-                    <path d="M17 8C20 8 22 10 22 13C22 16 19 19 15 19C11 19 9 16 9 16C9 16 12 16 15 13C18 10 17 8 17 8Z" opacity="0.7"/>
+                    <path d="M17 8C8 10 5 16 5 22C5 22 4 19 4 15C4 11 7 8 11 6C15 4 20 2 20 2C20 2 19 6 17 8Z" opacity="0.9" />
+                    <path d="M11 6C8 4 4 3 2 3C2 3 4 6 5 9C6 12 9 14 12 14C15 14 17 11 17 11C17 11 14 10 11 6Z" opacity="0.7" />
+                    <path d="M17 8C20 8 22 10 22 13C22 16 19 19 15 19C11 19 9 16 9 16C9 16 12 16 15 13C18 10 17 8 17 8Z" opacity="0.7" />
                   </svg>
                 </div>
               </div>
-              
+
               <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-primary leading-[1.1] tracking-tight text-balance">
                 Premium Dehydrated Food <br />
                 <span className="text-accent italic font-script capitalize">Products</span> Exporter from India
               </h1>
-              
+
               <p className="mt-8 text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed">
                 Khadija Overseas is a trusted exporter of premium dehydrated food products from Gujarat, India. Supplying high-quality dehydrated onion and garlic products to food manufacturers and bulk buyers worldwide.
               </p>
-              
+
               <div className="mt-10 flex flex-col sm:flex-row gap-5">
                 <Link href="/products" className="group inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-10 py-5 rounded-2xl text-sm font-bold tracking-widest uppercase hover:bg-primary-glow shadow-elegant transition-all">
                   Explore Products
@@ -134,7 +134,7 @@ export default function Home() {
                       <span className="h-px w-6 bg-accent/30" />
                     </div>
                   </div>
-                  
+
                   <div className="space-y-1 sm:space-y-1.5">
                     {heroRange.map((item, i) => (
                       <motion.div
@@ -191,7 +191,7 @@ export default function Home() {
       <section className="py-20 sm:py-32 bg-background overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -222,21 +222,20 @@ export default function Home() {
               </Link>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1 }}
               className="relative"
             >
-              <div className="relative rounded-[3rem] overflow-hidden shadow-2xl">
+              <div className="relative rounded overflow-hidden shadow-2xl">
                 <img
                   src={ingredientsFlatlay.src || ingredientsFlatlay}
                   alt="Dehydrated onions and garlic"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
               </div>
-              <div className="absolute -bottom-8 -left-8 h-32 w-32 rounded-full bg-accent/10 blur-2xl animate-pulse" />
             </motion.div>
           </div>
         </div>
@@ -247,9 +246,9 @@ export default function Home() {
         <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
           <Globe className="absolute top-0 right-0 h-[600px] w-[600px] text-white" />
         </div>
-        
+
         <div className="container mx-auto px-4 relative">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -280,7 +279,7 @@ export default function Home() {
             ))}
           </div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -298,7 +297,7 @@ export default function Home() {
       {/* CTA SECTION */}
       <section className="py-20 sm:py-32 bg-background relative overflow-hidden">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}

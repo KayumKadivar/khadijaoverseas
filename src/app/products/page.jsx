@@ -96,7 +96,7 @@ function ProductsContent() {
 export default function ProductsPage() {
   return (
     <main className="bg-background min-h-screen">
-      <section className="pt-40 pb-24">
+      <section className="pt-24 pb-24">
         <Suspense fallback={<div className="container mx-auto px-4 py-20 text-center">Loading Products...</div>}>
           <ProductsContent />
         </Suspense>
