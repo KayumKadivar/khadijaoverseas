@@ -20,7 +20,7 @@ export default function ContactPage() {
         <div className="container mx-auto px-4">
           <FadeUp>
             <span className="text-xs font-semibold tracking-[0.3em] text-accent uppercase">Contact Us</span>
-            <h1 className="mt-3 font-serif text-4xl md:text-6xl text-primary font-bold">Get In Touch</h1>
+            <h1 className="mt-6 font-serif text-4xl md:text-6xl text-primary font-bold">Get In Touch</h1>
             <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
               Have a question or want to request a quote? Send us a message and we'll get back to you.
             </p>
@@ -70,7 +70,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="pb-20">
+      <section className="pb-16">
         <div className="container mx-auto px-4">
           <div className="rounded-2xl overflow-hidden shadow-elegant border border-border">
             <iframe

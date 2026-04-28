@@ -442,7 +442,7 @@
   display: grid;
   gap: 1.75rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .pdp-specs-tables__row { grid-template-columns: 1fr 1fr; }
 }
 

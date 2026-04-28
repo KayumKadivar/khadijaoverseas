@@ -6,10 +6,10 @@ import { Stagger, StaggerItem, FadeUp } from "@/components/Reveal";
 export default function IndustriesPage() {
   return (
     <>
-      <section className="py-16 text-center">
+      <section className="pb-16 pt-22 text-center">
         <div className="container mx-auto px-4">
           <FadeUp>
-            <h1 className="mt-3 font-serif text-4xl md:text-6xl text-primary font-bold">Industries We Serve</h1>
+            <h1 className="mt-6 font-serif text-4xl md:text-6xl text-primary font-bold">Industries We Serve</h1>
             <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-base md:text-lg">
               From food processing to HoReCa, our dehydrated products power kitchens and factories across the globe.
             </p>
@@ -17,7 +17,7 @@ export default function IndustriesPage() {
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="pb-16">
         <div className="container mx-auto px-4">
           <Stagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {industries.map((i) => (

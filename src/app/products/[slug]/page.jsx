@@ -381,13 +381,15 @@ export default function ProductDetailPage() {
                 <FadeUp delay={0.06}>
                   <SpecTable id="spec-general" sectionKey="general" items={pdfSpecs.general} />
                 </FadeUp>
-                <FadeUp delay={0.1}>
-                  <SpecTable id="spec-technical" sectionKey="technical" items={pdfSpecs.technical} highlighted />
-                </FadeUp>
-                <div className="pdp-specs-tables__row">
-                  <FadeUp delay={0.13}>
-                    <SpecTable id="spec-packaging" sectionKey="packaging" items={pdfSpecs.packaging} />
-                  </FadeUp>
+                <div className="pdp-specs-tables__row items-start">
+                  <div className="flex flex-col gap-[1.75rem]">
+                    <FadeUp delay={0.1}>
+                      <SpecTable id="spec-technical" sectionKey="technical" items={pdfSpecs.technical} highlighted />
+                    </FadeUp>
+                    <FadeUp delay={0.13}>
+                      <SpecTable id="spec-packaging" sectionKey="packaging" items={pdfSpecs.packaging} />
+                    </FadeUp>
+                  </div>
                   <FadeUp delay={0.16}>
                     <SpecTable id="spec-container" sectionKey="container" items={pdfSpecs.container} />
                   </FadeUp>
