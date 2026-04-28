@@ -4,7 +4,7 @@ import { ArrowRight, Leaf } from "lucide-react";
 const ProductCard = ({ product }) => (
   <Link
     href={`/products/${product.slug}`}
-    className="group relative block aspect-[4/5] rounded-3xl overflow-hidden shadow-elegant hover:shadow-gold transition-all duration-700 bg-card border border-primary/10"
+    className="group relative block aspect-[4/5] rounded-2xl overflow-hidden shadow-elegant hover:shadow-gold transition-all duration-700 bg-card border border-primary/10"
   >
     {/* Product Image */}
     <div className="absolute inset-0 overflow-hidden">

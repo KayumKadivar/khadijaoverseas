@@ -1,7 +1,13 @@
 import Link from "next/link";
 import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, MessageCircle } from "lucide-react";
 import logo from "@/assets/logo.webp";
-import { products } from "@/data/products";
+
+const footerProducts = [
+  { label: "White Onion", href: "/products?category=white" },
+  { label: "Red Onion", href: "/products?category=red" },
+  { label: "Pink Onion", href: "/products?category=pink" },
+  { label: "Garlic", href: "/products?category=garlic" },
+];
 
 const Footer = () => {
   return (
@@ -52,9 +58,9 @@ const Footer = () => {
           <div>
             <h4 className="font-serif text-accent text-lg mb-5">Our Products</h4>
             <ul className="space-y-2.5 text-sm">
-              {products.slice(0, 7).map((p) => (
-                <li key={p.slug}>
-                  <Link href={`/products/${p.slug}`} className="text-primary-foreground/70 hover:text-accent transition-colors">{p.name}</Link>
+              {footerProducts.map((p) => (
+                <li key={p.href}>
+                  <Link href={p.href} className="text-primary-foreground/70 hover:text-accent transition-colors">{p.label}</Link>
                 </li>
               ))}
             </ul>

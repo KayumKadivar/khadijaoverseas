@@ -8,13 +8,6 @@ import cooking2 from "@/assets/cooking-2.webp";
 import SectionHeading from "@/components/SectionHeading";
 import { FadeUp, Stagger, StaggerItem } from "@/components/Reveal";
 
-const stats = [
-  { v: "10+", l: "Years of Experience", icon: Factory },
-  { v: "25+", l: "Countries Exported", icon: Globe },
-  { v: "50+", l: "Products", icon: Leaf },
-  { v: "100%", l: "Customer Satisfaction", icon: Users },
-];
-
 export default function AboutPage() {
   return (
     <>
@@ -86,18 +79,7 @@ export default function AboutPage() {
                   alt="Premium dehydrated onion and garlic ingredients in elegant wooden bowls" 
                   className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" 
                   loading="lazy" 
-                />
-                
-                {/* Floating Badge */}
-                <div className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-xl flex items-center gap-4 border border-white/20">
-                  <div className="h-12 w-12 rounded-full bg-accent text-white flex items-center justify-center font-bold text-xl">
-                    10+
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Years of</p>
-                    <p className="font-serif font-bold text-primary text-lg">Excellence</p>
-                  </div>
-                </div>
+                />                
               </div>
             </FadeUp>
           </div>
@@ -153,28 +135,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="py-16 bg-gradient-dark text-primary-foreground relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute -left-20 top-10 text-9xl">🌿</div>
-          <div className="absolute -right-20 bottom-10 text-9xl">🍃</div>
-        </div>
-        <div className="container mx-auto px-4 relative">
-          <Stagger className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((s) => (
-              <StaggerItem key={s.l}>
-                <div className="text-center">
-                  <div className="h-16 w-16 mx-auto rounded-full border-2 border-accent/40 flex items-center justify-center mb-4">
-                    <s.icon className="h-7 w-7 text-accent" />
-                  </div>
-                  <div className="font-serif text-4xl md:text-5xl font-bold text-primary-foreground">{s.v}</div>
-                  <div className="mt-2 text-accent text-sm font-semibold tracking-wider">{s.l}</div>
-                </div>
-              </StaggerItem>
-            ))}
-          </Stagger>
-        </div>
-      </section>
+    
     </>
   );
 }

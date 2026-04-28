@@ -71,7 +71,7 @@ function ProductsContent() {
       </FadeUp>
 
       {/* Products Grid - Using Homepage spacing (gap-8) and FadeUp style */}
-      <div className="mt-20">
+      <div className="mt-10">
         <Stagger key={activeTag} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {filteredProducts.map((p) => (
             <StaggerItem key={p.slug}>
@@ -82,7 +82,7 @@ function ProductsContent() {
       </div>
 
       {filteredProducts.length === 0 && (
-        <div className="mt-20 text-center py-24 bg-secondary/20 rounded-[3rem] border-2 border-dashed border-border">
+        <div className="mt-20 text-center py-24 bg-secondary/20 rounded-[2rem] border-2 border-dashed border-border">
           <div className="flex justify-center mb-6">
             <Leaf className="h-12 w-12 text-primary/10" />
           </div>

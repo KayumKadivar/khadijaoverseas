@@ -39,6 +39,52 @@ const heroRange = [
   { icon: rangeIcons["garlic-minced"], label: "Garlic Minced", href: "/products/garlic-minced" },
 ];
 
+/* ── reusable animation variants ── */
+const fadeIn = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const fadeDown = {
+  hidden: { opacity: 0, y: -30 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const fadeLeft = {
+  hidden: { opacity: 0, x: -60 },
+  visible: { opacity: 1, x: 0 },
+};
+
+const fadeRight = {
+  hidden: { opacity: 0, x: 60 },
+  visible: { opacity: 1, x: 0 },
+};
+
+const scaleUp = {
+  hidden: { opacity: 0, scale: 0.85 },
+  visible: { opacity: 1, scale: 1 },
+};
+
+const staggerContainer = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const staggerItem = {
+  hidden: { opacity: 0, y: 25 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.4, 0, 0.2, 1] } },
+};
+
 export default function Home() {
   return (
     <>
@@ -57,34 +103,43 @@ export default function Home() {
           transition={{ duration: 2, delay: 0.5 }}
           className="absolute -right-20 bottom-16 h-[500px] w-[500px] rounded-full bg-accent blur-[150px] pointer-events-none"
         />
-        <div className="pointer-events-none absolute -left-10 top-20 z-0 hidden sm:block opacity-90">
+        <motion.div
+          className="pointer-events-none absolute -left-10 top-20 z-0 hidden sm:block"
+          initial={{ opacity: 0, rotate: -30 }}
+          animate={{ opacity: 0.9, rotate: -18 }}
+          transition={{ duration: 1.2, delay: 0.3 }}
+        >
           <svg
             width="220"
             height="220"
             viewBox="0 0 220 220"
-            className="-rotate-[18deg]"
             aria-hidden="true"
           >
             <path d="M77 148c-33-28-35-77-12-115 42 18 64 61 52 103-7 25-20 45-40 61z" fill="#7abf54" fillOpacity="0.7" />
             <path d="M126 162c-28-24-33-62-15-96 37 16 57 50 48 83-5 19-16 35-33 48z" fill="#8fd067" fillOpacity="0.55" />
           </svg>
-        </div>
-        <div className="pointer-events-none absolute -bottom-14 -right-12 z-0 opacity-90">
+        </motion.div>
+        <motion.div
+          className="pointer-events-none absolute -bottom-14 -right-12 z-0"
+          initial={{ opacity: 0, rotate: 15 }}
+          animate={{ opacity: 0.9, rotate: 0 }}
+          transition={{ duration: 1.2, delay: 0.5 }}
+        >
           <svg width="240" height="240" viewBox="0 0 240 240" aria-hidden="true">
             <path d="M219 48c-40 8-78 41-87 82-8 36 6 73 38 101 26-26 42-57 44-90 2-31-6-62-23-93-2-3-3-3-5 0-4 0-7 0-11 0h44z" fill="#7fbf49" fillOpacity="0.45" />
             <ellipse cx="183" cy="187" rx="36" ry="24" fill="#6fa53f" fillOpacity="0.35" />
           </svg>
-        </div>
+        </motion.div>
         <div className="container mx-auto px-4 pt-28 pb-16 relative z-10">
           <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-12 items-center">
             {/* Hero Content */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="mb-6 relative z-10">
+            <div>
+              <motion.div
+                className="mb-6 relative z-10"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6 }}
+              >
                 {/* Background Leaf Watermark */}
                 <div className="absolute -left-12 sm:-left-24 -top-8 opacity-40 pointer-events-none -z-10 animate-pulse" style={{ animationDuration: '4s' }}>
                   <svg width="120" height="120" viewBox="0 0 24 24" fill="#a3e635" className="-rotate-12">
@@ -93,56 +148,86 @@ export default function Home() {
                     <path d="M17 8C20 8 22 10 22 13C22 16 19 19 15 19C11 19 9 16 9 16C9 16 12 16 15 13C18 10 17 8 17 8Z" opacity="0.7" />
                   </svg>
                 </div>
-              </div>
+              </motion.div>
 
-              <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-primary leading-[1.1] tracking-tight text-balance">
+              <motion.h1
+                className="font-serif text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold text-primary leading-[1.1] tracking-tight text-balance"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2, ease: [0.4, 0, 0.2, 1] }}
+              >
                 Premium Dehydrated Food <br />
-                <span className="text-accent italic font-script capitalize">Products</span> Exporter from India
-              </h1>
+                <motion.span
+                  className="text-accent italic font-script capitalize"
+                  initial={{ opacity: 0, x: -30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.7, delay: 0.6 }}
+                >
+                  Products
+                </motion.span>{" "}
+                Exporter from India
+              </motion.h1>
 
-              <p className="mt-8 text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed">
+              <motion.p
+                className="mt-8 text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: 0.5 }}
+              >
                 Khadija Overseas is a trusted exporter of premium dehydrated food products from Gujarat, India. Supplying high-quality dehydrated onion and garlic products to food manufacturers and bulk buyers worldwide.
-              </p>
+              </motion.p>
 
-              <div className="mt-10 flex flex-col sm:flex-row gap-5">
-                <Link href="/products" className="group inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-10 py-5 rounded-2xl text-sm font-bold tracking-widest uppercase hover:bg-primary-glow shadow-elegant transition-all">
-                  Explore Products
-                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
-                </Link>
-                <Link href="/contact" className="group inline-flex items-center justify-center gap-3 border-2 border-primary/20 text-primary px-10 py-5 rounded-2xl text-sm font-bold tracking-widest uppercase hover:bg-primary hover:text-primary-foreground transition-all">
-                  Get a Quote
-                  <Phone className="h-5 w-5" />
-                </Link>
-              </div>
-            </motion.div>
+              <motion.div
+                className="mt-10 flex flex-col sm:flex-row gap-5"
+                variants={staggerContainer}
+                initial="hidden"
+                animate="visible"
+              >
+                <motion.div variants={staggerItem} custom={0}>
+                  <Link href="/products" className="group inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-10 py-5 rounded-2xl text-sm font-bold tracking-widest uppercase hover:bg-primary-glow shadow-elegant transition-all">
+                    Explore Products
+                    <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
+                  </Link>
+                </motion.div>
+                <motion.div variants={staggerItem} custom={1}>
+                  <Link href="/contact" className="group inline-flex items-center justify-center gap-3 border-2 border-primary/20 text-primary px-10 py-5 rounded-2xl text-sm font-bold tracking-widest uppercase hover:bg-primary hover:text-primary-foreground transition-all">
+                    Get a Quote
+                    <Phone className="h-5 w-5" />
+                  </Link>
+                </motion.div>
+              </motion.div>
+            </div>
 
             {/* Hero Range Card */}
             <div className="flex justify-center lg:justify-end items-center w-full mt-12 lg:mt-0">
               <motion.div
                 initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
                 className="w-full max-w-[320px] sm:max-w-[360px]"
               >
                 <div className="bg-gradient-dark text-primary-foreground rounded-[2rem] p-6 sm:p-8 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.5)] border border-accent/20 w-full z-20">
-                  <div className="text-center mb-5">
+                  <motion.div
+                    className="text-center mb-5"
+                    initial={{ opacity: 0, y: -15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.6 }}
+                  >
                     <h3 className="font-script text-3xl sm:text-4xl text-accent">Our Range</h3>
                     <div className="flex items-center justify-center gap-2 mt-2">
                       <span className="h-px w-6 bg-accent/30" />
                       <Leaf className="h-3.5 w-3.5 text-accent" />
                       <span className="h-px w-6 bg-accent/30" />
                     </div>
-                  </div>
+                  </motion.div>
 
                   <div className="space-y-1 sm:space-y-1.5">
                     {heroRange.map((item, i) => (
                       <motion.div
                         key={item.label}
-                        initial={{ opacity: 0, x: -10 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.3 + i * 0.1 }}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.7 + i * 0.06, duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
                       >
                         <Link
                           href={item.href}
@@ -192,50 +277,87 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              variants={fadeLeft}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.9, ease: [0.4, 0, 0.2, 1] }}
             >
-              <div className="flex items-center gap-3 mb-6">
+              <motion.div
+                className="flex items-center gap-3 mb-6"
+                variants={fadeDown}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
                 <span className="h-px w-8 bg-accent" />
                 <span className="text-xs font-bold tracking-[0.4em] text-accent uppercase">History & Values</span>
-              </div>
-              <h2 className="font-serif text-3xl sm:text-5xl md:text-6xl text-primary font-bold leading-tight">
+              </motion.div>
+
+              <motion.h2
+                className="font-serif text-3xl sm:text-5xl md:text-6xl text-primary font-bold leading-tight"
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
                 Quality You Can Trust,<br />
                 <span className="italic text-accent/80">Service You Can Rely On</span>
-              </h2>
-              <div className="mt-8 space-y-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
-                <p>
+              </motion.h2>
+
+              <motion.div
+                className="mt-8 space-y-4 text-base sm:text-lg text-muted-foreground leading-relaxed"
+                variants={staggerContainer}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+              >
+                <motion.p variants={staggerItem}>
                   We, <strong className="text-primary font-bold">THE KHADIJAH GLOBAL</strong>, are a trusted exporter and supplier of high-quality dehydrated products, including White, Red, and Pink Onion and Dehydrated Garlic, available in various forms such as flakes, chopped, minced, granules, and powder.
-                </p>
-                <p>
+                </motion.p>
+                <motion.p variants={staggerItem}>
                   We serve food processing, seasoning, snack, and HoReCa industries worldwide, delivering products as per customer requirements. With a strong commitment to quality, consistency, and timely delivery, we ensure every shipment meets high standards and reaches our clients reliably, every time.
-                </p>
-                <p>
+                </motion.p>
+                <motion.p variants={staggerItem}>
                   Based in Wankaner, Gujarat, India, we operate with a strong sourcing network and reliable logistics support. Our location provides excellent connectivity to major ports like Mundra, along with well-developed transport networks, ensuring smooth and efficient export operations worldwide.
-                </p>
-              </div>
-              <Link href="/about" className="mt-10 inline-flex items-center gap-4 bg-primary text-primary-foreground px-8 py-4 rounded-2xl text-sm font-bold tracking-widest uppercase hover:bg-primary-glow shadow-elegant transition-all group">
-                Discover Our Story
-                <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
-              </Link>
+                </motion.p>
+              </motion.div>
+
+              <motion.div
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.6 }}
+              >
+                <Link href="/about" className="mt-10 inline-flex items-center gap-4 bg-primary text-primary-foreground px-8 py-4 rounded-2xl text-sm font-bold tracking-widest uppercase hover:bg-primary-glow shadow-elegant transition-all group">
+                  Discover Our Story
+                  <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2" />
+                </Link>
+              </motion.div>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1 }}
+              variants={fadeRight}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 1, delay: 0.2 }}
               className="relative"
             >
-              <div className="relative rounded overflow-hidden shadow-2xl">
+              <motion.div
+                className="relative rounded overflow-hidden shadow-2xl"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.4 }}
+              >
                 <img
                   src={ingredientsFlatlay.src || ingredientsFlatlay}
                   alt="Dehydrated onions and garlic"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover transition-transform duration-700"
                 />
-              </div>
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -249,40 +371,69 @@ export default function Home() {
 
         <div className="container mx-auto px-4 relative">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.8 }}
             className="flex flex-col md:flex-row md:items-end justify-between gap-10 mb-20"
           >
-            <div className="max-w-3xl">
+            <motion.div
+              className="max-w-3xl"
+              variants={fadeLeft}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+            >
               <h2 className="font-serif text-4xl sm:text-6xl font-bold text-white leading-[1.1]">
                 Premium <span className="font-script text-accent italic">Dehydrated</span> <br />
                 Export Quality
               </h2>
-            </div>
-            <p className="max-w-sm text-white/50 text-xl leading-relaxed border-l-4 border-accent/20 pl-8">
+            </motion.div>
+            <motion.p
+              className="max-w-sm text-white/50 text-xl leading-relaxed border-l-4 border-accent/20 pl-8"
+              variants={fadeRight}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
               Sourced from the heart of Gujarat, processed with precision for the global market.
-            </p>
+            </motion.p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <motion.div
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-60px" }}
+          >
             {mainCategories.map((p, idx) => (
               <motion.div
                 key={p.slug}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
+                variants={{
+                  hidden: { opacity: 0, y: 50, scale: 0.95 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    transition: { duration: 0.6, delay: idx * 0.12, ease: [0.4, 0, 0.2, 1] },
+                  },
+                }}
               >
                 <ProductCard product={p} />
               </motion.div>
             ))}
-          </div>
+          </motion.div>
 
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            variants={scaleUp}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.5 }}
             className="mt-20 flex flex-col items-center"
           >
             <Link href="/products" className="group relative inline-flex items-center gap-6 bg-transparent text-white px-12 py-6 rounded-full text-sm font-bold tracking-[0.3em] uppercase border border-white/10 hover:border-accent transition-all duration-500 overflow-hidden">
@@ -298,14 +449,23 @@ export default function Home() {
       <section className="py-20 sm:py-32 bg-background relative overflow-hidden">
         <div className="container mx-auto px-4">
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            variants={scaleUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.9, ease: [0.4, 0, 0.2, 1] }}
             className="relative rounded-[3rem] sm:rounded-[5rem] overflow-hidden bg-gradient-hero border border-border shadow-2xl p-10 sm:p-24"
           >
             <div className="grid lg:grid-cols-[1.1fr_auto] gap-16 items-center">
               <div>
-                <div className="flex items-center gap-4 mb-8">
+                <motion.div
+                  className="flex items-center gap-4 mb-8"
+                  variants={fadeLeft}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                >
                   <div className="h-16 w-16 rounded-2xl bg-primary flex items-center justify-center shadow-lg">
                     <Phone className="h-8 w-8 text-accent" />
                   </div>
@@ -313,19 +473,44 @@ export default function Home() {
                     <span className="text-xs font-bold tracking-widest text-accent uppercase">Let's Connect</span>
                     <h3 className="text-lg font-bold text-primary">Call Support</h3>
                   </div>
-                </div>
-                <h2 className="font-serif text-4xl sm:text-6xl font-bold text-primary leading-tight">
+                </motion.div>
+
+                <motion.h2
+                  className="font-serif text-4xl sm:text-6xl font-bold text-primary leading-tight"
+                  variants={fadeUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.3 }}
+                >
                   Ready to elevate your <br />
                   <span className="text-accent italic font-script">Culinary</span> business?
-                </h2>
-                <p className="mt-8 text-xl text-muted-foreground leading-relaxed max-w-2xl">
+                </motion.h2>
+
+                <motion.p
+                  className="mt-8 text-xl text-muted-foreground leading-relaxed max-w-2xl"
+                  variants={fadeUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.7, delay: 0.45 }}
+                >
                   Whether you need bulk supply or custom processing, we are here to provide the best solutions for your global requirements.
-                </p>
+                </motion.p>
               </div>
-              <Link href="/contact" className="inline-flex items-center justify-center gap-5 bg-primary text-primary-foreground px-12 py-7 rounded-[2rem] text-sm font-bold tracking-[0.2em] uppercase hover:bg-primary-glow shadow-2xl transition-all active:scale-95">
-                Get Quotation
-                <ArrowRight className="h-6 w-6" />
-              </Link>
+
+              <motion.div
+                variants={fadeRight}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.5 }}
+              >
+                <Link href="/contact" className="inline-flex items-center justify-center gap-5 bg-primary text-primary-foreground px-12 py-7 rounded-[2rem] text-sm font-bold tracking-[0.2em] uppercase hover:bg-primary-glow shadow-2xl transition-all active:scale-95">
+                  Get Quotation
+                  <ArrowRight className="h-6 w-6" />
+                </Link>
+              </motion.div>
             </div>
           </motion.div>
         </div>
