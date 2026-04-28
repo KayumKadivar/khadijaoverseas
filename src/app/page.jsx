@@ -57,7 +57,24 @@ export default function Home() {
           transition={{ duration: 2, delay: 0.5 }}
           className="absolute -right-20 bottom-16 h-[500px] w-[500px] rounded-full bg-accent blur-[150px] pointer-events-none" 
         />
-
+        <div className="pointer-events-none absolute -left-10 top-20 z-0 hidden sm:block opacity-90">
+          <svg
+            width="220"
+            height="220"
+            viewBox="0 0 220 220"
+            className="-rotate-[18deg]"
+            aria-hidden="true"
+          >
+            <path d="M77 148c-33-28-35-77-12-115 42 18 64 61 52 103-7 25-20 45-40 61z" fill="#7abf54" fillOpacity="0.7" />
+            <path d="M126 162c-28-24-33-62-15-96 37 16 57 50 48 83-5 19-16 35-33 48z" fill="#8fd067" fillOpacity="0.55" />
+          </svg>
+        </div>
+        <div className="pointer-events-none absolute -bottom-14 -right-12 z-0 opacity-90">
+          <svg width="240" height="240" viewBox="0 0 240 240" aria-hidden="true">
+            <path d="M219 48c-40 8-78 41-87 82-8 36 6 73 38 101 26-26 42-57 44-90 2-31-6-62-23-93-2-3-3-3-5 0-4 0-7 0-11 0h44z" fill="#7fbf49" fillOpacity="0.45" />
+            <ellipse cx="183" cy="187" rx="36" ry="24" fill="#6fa53f" fillOpacity="0.35" />
+          </svg>
+        </div>
         <div className="container mx-auto px-4 pt-28 pb-16 relative z-10">
           <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-12 items-center">
             {/* Hero Content */}
@@ -147,6 +164,27 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1]">
+          <svg
+            width="100%"
+            height="72"
+            viewBox="0 0 1440 140"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+            className="h-10 w-full sm:h-16"
+          >
+            <path
+              d="M0 76c126 48 316 67 529 34 203-32 380-19 509 17 132 37 280 31 402-2V140H0V76z"
+              fill="#f8f6eb"
+              fillOpacity="0.95"
+            />
+            <path
+              d="M0 96c158 48 347 52 547 22 197-30 369-22 516 12 134 30 258 34 377 21V140H0V96z"
+              fill="#e7f0dd"
+              fillOpacity="0.85"
+            />
+          </svg>
+        </div>
       </section>
 
       {/* ABOUT SECTION */}
@@ -167,12 +205,15 @@ export default function Home() {
                 Quality You Can Trust,<br />
                 <span className="italic text-accent/80">Service You Can Rely On</span>
               </h2>
-              <div className="mt-8 space-y-6 text-lg text-muted-foreground leading-relaxed">
+              <div className="mt-8 space-y-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
                 <p>
-                  We, <strong className="text-primary font-bold">KHADIJA OVERSEAS</strong>, are a trusted exporter and supplier of high-quality dehydrated products, including White, Red, and Pink <strong className="text-primary">Onion and Dehydrated Garlic</strong>.
+                  We, <strong className="text-primary font-bold">THE KHADIJAH GLOBAL</strong>, are a trusted exporter and supplier of high-quality dehydrated products, including White, Red, and Pink Onion and Dehydrated Garlic, available in various forms such as flakes, chopped, minced, granules, and powder.
                 </p>
                 <p>
-                  We serve food processing, seasoning, snack, and HoReCa industries worldwide. Based in Wankaner, Gujarat, India, we operate with strong sourcing and reliable logistics support.
+                  We serve food processing, seasoning, snack, and HoReCa industries worldwide, delivering products as per customer requirements. With a strong commitment to quality, consistency, and timely delivery, we ensure every shipment meets high standards and reaches our clients reliably, every time.
+                </p>
+                <p>
+                  Based in Wankaner, Gujarat, India, we operate with a strong sourcing network and reliable logistics support. Our location provides excellent connectivity to major ports like Mundra, along with well-developed transport networks, ensuring smooth and efficient export operations worldwide.
                 </p>
               </div>
               <Link href="/about" className="mt-10 inline-flex items-center gap-4 bg-primary text-primary-foreground px-8 py-4 rounded-2xl text-sm font-bold tracking-widest uppercase hover:bg-primary-glow shadow-elegant transition-all group">

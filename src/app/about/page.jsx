@@ -2,7 +2,7 @@
 
 import { CheckCircle2, Award, Globe, Users, Factory, Leaf } from "lucide-react";
 import ingredientsFlatlay from "@/assets/ingredients-flatlay.webp";
-import ourStoryImg from "@/assets/our-story.webp";
+import premiumIngredientsImg from "@/assets/premium-ingredients.png";
 import cooking1 from "@/assets/cooking-1.webp";
 import cooking2 from "@/assets/cooking-2.webp";
 import SectionHeading from "@/components/SectionHeading";
@@ -18,50 +18,85 @@ const stats = [
 export default function AboutPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative bg-gradient-hero py-16 md:py-24">
-        <div className="container mx-auto px-4 text-center">
-          <FadeUp>
-            <span className="text-xs font-semibold tracking-[0.3em] text-accent uppercase">About Us</span>
-            <h1 className="mt-3 font-serif text-4xl md:text-6xl text-primary font-bold">Who We Are</h1>
-            <p className="mt-4 text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
-              A trusted name in the dehydrated food industry with over a decade of experience delivering premium quality products from India to the world.
-            </p>
-          </FadeUp>
-        </div>
-      </section>
 
       {/* Story */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <section className="py-24 relative overflow-hidden">
+        {/* Subtle background element */}
+        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid lg:grid-cols-[1fr_1fr] gap-16 items-center">
+            
+            {/* Left: Text Content */}
             <FadeUp>
-              <h2 className="font-serif text-3xl md:text-5xl text-primary font-bold leading-tight">Our Story</h2>
-              <p className="mt-5 text-muted-foreground leading-relaxed">
-                Khadija Overseas is a trusted name in the dehydrated food industry. With over a decade of experience, we are a leading manufacturer, supplier and exporter of premium quality dehydrated products from India.
-              </p>
-              <ul className="mt-6 space-y-3">
-                {[
-                  "State-of-the-art processing unit",
-                  "Strict quality control at every step",
-                  "Hygienic packaging & handling",
-                  "Customer satisfaction is our priority",
-                ].map((p) => (
-                  <li key={p} className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
-                    <span className="text-foreground/80">{p}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className="flex items-center gap-3 mb-4">
+                <span className="h-px w-10 bg-accent" />
+                <span className="text-xs font-bold tracking-[0.3em] text-accent uppercase">Discover Our Journey</span>
+              </div>
+              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary font-bold leading-tight mb-8">
+                A Legacy of <span className="italic text-accent/90">Premium</span> Export
+              </h2>
+              
+              <div className="space-y-5 text-muted-foreground leading-relaxed text-[15px] sm:text-base">
+                <p className="text-lg text-primary/80 font-medium leading-relaxed">
+                  We, <strong className="text-primary font-bold">THE KHADIJAH GLOBAL</strong>, are a trusted exporter and supplier of high-quality dehydrated food products, serving food processing, seasoning, snack, and HoReCa industries in India and worldwide.
+                </p>
+                <p>
+                  With a strong sourcing network and good industry experience, we focus on providing consistent quality and value to our customers. Our product range includes Dehydrated White Onion, Red Onion, and Pink Onion, along with Dehydrated Garlic, available in forms such as flakes, chopped, minced, granules, and powder.
+                </p>
+                <p>
+                  All products are processed in certified manufacturing facilities, maintaining proper hygiene, food safety, and quality standards. We work closely with experienced manufacturers and follow strict quality checks at every stage, from raw material sourcing to final delivery, to meet international standards and customer requirements.
+                </p>
+                
+                <div className="flex flex-col sm:flex-row gap-6 py-4">
+                  <div className="flex items-start gap-3">
+                     <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                       <Globe className="h-5 w-5 text-primary" />
+                     </div>
+                     <div>
+                       <h4 className="font-bold text-primary text-sm">Global Reach</h4>
+                       <p className="text-xs mt-1">Serving clients worldwide efficiently.</p>
+                     </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                     <div className="h-10 w-10 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
+                       <Award className="h-5 w-5 text-accent" />
+                     </div>
+                     <div>
+                       <h4 className="font-bold text-primary text-sm">Certified Quality</h4>
+                       <p className="text-xs mt-1">Maintaining international food standards.</p>
+                     </div>
+                  </div>
+                </div>
+
+                <p>
+                  With strong coordination and reliable logistics support, we ensure smooth export operations. Based in Wankaner, Gujarat, India, we have good connectivity to major ports like Mundra. We have the ability to deliver goods on time and as per customer requirements, making us a reliable partner for long-term business.
+                </p>
+              </div>
             </FadeUp>
 
-            <FadeUp delay={0.2}>
-              <div className="relative">
-                <div className="rounded-2xl overflow-hidden shadow-elegant border border-border/50">
-                  <img src={ourStoryImg.src || ourStoryImg} alt="Premium dehydrated onion and garlic ingredients" className="w-full h-auto object-cover" loading="lazy" />
-                </div>
-                <div className="absolute -top-6 -left-6 h-20 w-20 sm:h-24 sm:w-24 rounded-full bg-background/80 backdrop-blur-md border border-accent/20 shadow-xl flex items-center justify-center animate-float z-10">
-                  <Leaf className="h-10 w-10 sm:h-12 sm:w-12 text-accent" />
+            {/* Right: Image & Badge */}
+            <FadeUp delay={0.2} className="relative">
+              {/* Decorative Frame */}
+              <div className="absolute inset-0 -translate-x-4 translate-y-4 border-2 border-accent/30 rounded-2xl -z-10" />
+              
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <img 
+                  src={premiumIngredientsImg.src || premiumIngredientsImg} 
+                  alt="Premium dehydrated onion and garlic ingredients in elegant wooden bowls" 
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" 
+                  loading="lazy" 
+                />
+                
+                {/* Floating Badge */}
+                <div className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-xl flex items-center gap-4 border border-white/20">
+                  <div className="h-12 w-12 rounded-full bg-accent text-white flex items-center justify-center font-bold text-xl">
+                    10+
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Years of</p>
+                    <p className="font-serif font-bold text-primary text-lg">Excellence</p>
+                  </div>
                 </div>
               </div>
             </FadeUp>

@@ -32,7 +32,7 @@ const ProductCard = ({ product }) => (
         <h3 className="font-serif text-xl md:text-2xl text-white font-bold leading-tight drop-shadow-sm">
           {product.name.replace("Dehydrated ", "")}
         </h3>
-        <p className="text-white/80 text-xs mt-2 line-clamp-2 transition-opacity duration-500 leading-relaxed">
+        <p className="text-white/80 text-md mt-2 line-clamp-2 transition-opacity duration-500 leading-relaxed">
           {product.short}
         </p>
         
