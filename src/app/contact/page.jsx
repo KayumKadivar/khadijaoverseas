@@ -65,7 +65,7 @@ export default function ContactPage() {
               {[
                 { i: MapPin, t: "Address", v: "Wankaner,\nMorbi, Gujarat – 363 621, India" },
                 { i: Phone, t: "Phone", v: "+91 81286 95587" },
-                { i: Mail, t: "Email", v: "info@khadijaoverseas.com" },
+                { i: Mail, t: "Email", v: "info@khadijaexim.com" },
                 { i: Clock, t: "Working Hours", v: "Mon - Sat: 9:00 AM - 7:00 PM" },
               ].map((c) => (
                 <li key={c.t} className="flex gap-4">

@@ -241,7 +241,7 @@ export default function Home() {
       <section className="py-20 md:py-28 bg-background">
         <div className="container mx-auto px-4">
           <SectionHeading kicker="Industries" title="Industries We Serve" subtitle="Our dehydrated products are widely used across multiple industries worldwide." />
-          <Stagger className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <Stagger className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {industries.map((i) => (
               <StaggerItem key={i.name}>
                 <div className="group bg-card rounded-2xl p-7 shadow-soft hover:shadow-elegant border border-border/50 transition-all hover:-translate-y-1">
@@ -258,7 +258,7 @@ export default function Home() {
       </section>
 
       {/* WHY CHOOSE US — replaces workers image with cooking image */}
-      <section className="py-20 md:py-28 bg-secondary/40 relative overflow-hidden">
+      {/* <section className="py-20 md:py-28 bg-secondary/40 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 pointer-events-none">
           <Image src={cooking2} alt="" fill className="object-cover" />
           <div className="absolute inset-0 bg-secondary/80" />
@@ -285,7 +285,7 @@ export default function Home() {
             ))}
           </Stagger>
         </div>
-      </section>
+      </section> */}
 
       {/* CERTIFICATIONS */}
       {/* <section className="py-16 bg-card border-y border-border">
@@ -307,7 +307,7 @@ export default function Home() {
       </section> */}
 
       {/* CTA */}
-      <section className="relative py-20 overflow-hidden">
+      {/* <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0">
           <Image src={ctaBg} alt="" fill className="object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/70" />
@@ -333,7 +333,7 @@ export default function Home() {
             </FadeUp>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }

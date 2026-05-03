@@ -19,7 +19,7 @@ export default function IndustriesPage() {
 
       <section className="pb-16">
         <div className="container mx-auto px-4">
-          <Stagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <Stagger className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {industries.map((i) => (
               <StaggerItem key={i.name}>
                 <div className="group relative bg-card rounded-2xl p-8 shadow-soft hover:shadow-elegant border border-border/50 transition-all hover:-translate-y-1 overflow-hidden">

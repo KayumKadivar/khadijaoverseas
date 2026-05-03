@@ -228,12 +228,46 @@ export const products = [
 ];
 
 export const industries = [
-  { name: "Food Processing", desc: "Used in soups, sauces, ready-to-eat meals and seasonings.", icon: "🏭" },
-  { name: "Snacks & Namkeen", desc: "Enhances taste and shelf life of snacks and namkeen products.", icon: "🍿" },
-  { name: "Spices & Seasoning", desc: "Perfect ingredient for spice mixes and seasoning blends.", icon: "🧂" },
-  { name: "HoReCa", desc: "Ideal for hotels, restaurants, catering and cloud kitchens.", icon: "🍽️" },
-  { name: "Retail & Wholesale", desc: "Supplied to retailers and wholesalers worldwide.", icon: "🛒" },
-  { name: "Pharma & Nutraceutical", desc: "Used in herbal formulations and nutraceutical products.", icon: "💊" },
+  { 
+    name: "Food Processing", 
+    desc: "Used in ready-to-eat meals, frozen foods, and packaged products to ensure consistent taste and extended shelf life.", 
+    icon: "🏭" 
+  },
+  { 
+    name: "Seasoning & Spice", 
+    desc: "Widely used in masala blends and spice mixes, delivering strong aroma and uniform quality in every batch.", 
+    icon: "🧂" 
+  },
+  { 
+    name: "Snacks & Namkeen", 
+    desc: "Ideal for chips, namkeen, extruded snacks, and flavored products to enhance taste and maintain product stability.", 
+    icon: "🍿" 
+  },
+  { 
+    name: "Instant Foods", 
+    desc: "Commonly used in instant noodles, soup mixes, and ready-to-cook products due to quick rehydration and rich flavor.", 
+    icon: "🍜" 
+  },
+  { 
+    name: "Sauces & Condiments", 
+    desc: "An essential ingredient in ketchup, mayonnaise, pasta sauces, dips, salad dressings, and chutneys.", 
+    icon: "🍅" 
+  },
+  { 
+    name: "HoReCa (Hotels, Restaurants & Catering)", 
+    desc: "Supports professional kitchens by saving preparation time, reducing wastage, and ensuring consistent taste.", 
+    icon: "🏨" 
+  },
+  { 
+    name: "Bakery (Savory Products)", 
+    desc: "Used in breads, biscuits, savory muffins, and baked snacks to improve flavor and texture.", 
+    icon: "🥯" 
+  },
+  { 
+    name: "Importers & Distributors", 
+    desc: "We supply bulk quantities to global importers, wholesalers, and distributors serving local markets.", 
+    icon: "🚢" 
+  },
 ];
 
 export const certifications = ["ISO 22000", "HACCP", "FDA", "HALAL", "FSSAI"];

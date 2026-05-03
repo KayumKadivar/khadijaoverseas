@@ -95,14 +95,14 @@ const Footer = () => {
               </li>
               <li className="flex gap-3">
                 <Mail className="h-5 w-5 text-accent shrink-0" />
-                <Link href="mailto:info@khadijaoverseas.com" className="text-primary-foreground/80 hover:text-accent">info@khadijaoverseas.com</Link>
+                <Link href="mailto:info@khadijaexim.com" className="text-primary-foreground/80 hover:text-accent">info@khadijaexim.com</Link>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-12 pt-6 border-t border-primary-foreground/10 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-primary-foreground/60">
-          <p>© 2026 Khadija Overseas. All Rights Reserved.</p>
+        <div className="mt-12 pt-6 border-t border-primary-foreground/10 flex flex-col md:flex-row justify-between items-center gap-3 text-lg text-primary-foreground/60">
+          <p>© 2026 Khadija Exim. All Rights Reserved.</p>
 
         </div>
       </div>
