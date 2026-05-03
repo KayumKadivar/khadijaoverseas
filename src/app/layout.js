@@ -1,6 +1,7 @@
 import "./globals.css";
-import Navbar from "@/components/layout/Navbar";
+import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import SocialSidebar from "@/components/SocialSidebar";
 import { Toaster } from "sonner";
 
 export const metadata = {
@@ -12,8 +13,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
       <body className="min-h-full flex flex-col font-sans" suppressHydrationWarning>
-        <Navbar />
+        <Header />
         <main>{children}</main>
+        <SocialSidebar />
         <Footer />
         <Toaster position="top-right" richColors />
       </body>

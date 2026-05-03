@@ -16,17 +16,17 @@ export default function AboutPage() {
       <section className="py-16 relative overflow-hidden">
         {/* Subtle background element */}
         <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
-        
+
         <div className="container mx-auto px-4 relative z-10 py-8">
           <div className="grid lg:grid-cols-[1fr_1fr] gap-16 items-center">
-            
+
             {/* Left: Text Content */}
             <FadeUp>
-            
+
               <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary font-bold leading-tight mb-8">
                 A Legacy of <span className="italic text-accent/90">Premium</span> Export
               </h2>
-              
+
               <div className="space-y-5 text-muted-foreground leading-relaxed text-[15px] sm:text-base">
                 <p className="text-lg text-primary/80 font-medium leading-relaxed">
                   We, <strong className="text-primary font-bold">THE KHADIJAH GLOBAL</strong>, are a trusted exporter and supplier of high-quality dehydrated food products, serving food processing, seasoning, snack, and HoReCa industries in India and worldwide.
@@ -37,25 +37,25 @@ export default function AboutPage() {
                 <p>
                   All products are processed in certified manufacturing facilities, maintaining proper hygiene, food safety, and quality standards. We work closely with experienced manufacturers and follow strict quality checks at every stage, from raw material sourcing to final delivery, to meet international standards and customer requirements.
                 </p>
-                
+
                 <div className="flex flex-col sm:flex-row gap-6 py-4">
                   <div className="flex items-start gap-3">
-                     <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                       <Globe className="h-5 w-5 text-primary" />
-                     </div>
-                     <div>
-                       <h4 className="font-bold text-primary text-sm">Global Reach</h4>
-                       <p className="text-xs mt-1">Serving clients worldwide efficiently.</p>
-                     </div>
+                    <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                      <Globe className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-primary text-sm">Global Reach</h4>
+                      <p className="text-xs mt-1">Serving clients worldwide efficiently.</p>
+                    </div>
                   </div>
                   <div className="flex items-start gap-3">
-                     <div className="h-10 w-10 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
-                       <Award className="h-5 w-5 text-accent" />
-                     </div>
-                     <div>
-                       <h4 className="font-bold text-primary text-sm">Certified Quality</h4>
-                       <p className="text-xs mt-1">Maintaining international food standards.</p>
-                     </div>
+                    <div className="h-10 w-10 rounded-full bg-accent/10 flex items-center justify-center shrink-0">
+                      <Award className="h-5 w-5 text-accent" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-primary text-sm">Certified Quality</h4>
+                      <p className="text-xs mt-1">Maintaining international food standards.</p>
+                    </div>
                   </div>
                 </div>
 
@@ -69,14 +69,14 @@ export default function AboutPage() {
             <FadeUp delay={0.2} className="relative">
               {/* Decorative Frame */}
               <div className="absolute inset-0 -translate-x-4 translate-y-4 border-2 border-accent/30 rounded-2xl -z-10" />
-              
+
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src={premiumIngredientsImg.src || premiumIngredientsImg} 
-                  alt="Premium dehydrated onion and garlic ingredients in elegant wooden bowls" 
-                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700" 
-                  loading="lazy" 
-                />                
+                <img
+                  src={premiumIngredientsImg.src || premiumIngredientsImg}
+                  alt="Premium dehydrated onion and garlic ingredients in elegant wooden bowls"
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                />
               </div>
             </FadeUp>
           </div>
@@ -100,7 +100,7 @@ export default function AboutPage() {
                     <v.icon className="h-6 w-6 text-accent" />
                   </div>
                   <h3 className="font-serif text-lg text-primary font-semibold">{v.t}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{v.d}</p>
+                  <p className="mt-2 text-md text-muted-foreground leading-relaxed">{v.d}</p>
                 </div>
               </StaggerItem>
             ))}
@@ -132,7 +132,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-    
+
     </>
   );
 }

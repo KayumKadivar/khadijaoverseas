@@ -3,20 +3,20 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
-import { Home as HomeIcon, Info, ShoppingBag, Factory, ShieldCheck, Mail, ArrowRight, Menu, X, Phone, Globe } from "lucide-react";
+import { Home as HomeIcon, Info, ShoppingBag, Factory, ShieldCheck, Mail, ArrowRight, Menu, X, Phone, Globe, Newspaper } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
+import logo from "@/assets/logo.png"
+import Image from "next/image";
 
 const links = [
   { to: "/", label: "Home", icon: HomeIcon },
   { to: "/about", label: "About Us", icon: Info },
   { to: "/products", label: "Products", icon: ShoppingBag },
   { to: "/industries", label: "Industries", icon: Factory },
-  { to: "/quality", label: "Quality", icon: ShieldCheck },
-  { to: "/contact", label: "Contact", icon: Mail },
 ];
 
-const Navbar = () => {
+const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
@@ -52,11 +52,8 @@ const Navbar = () => {
         )}
       >
         <nav className="container mx-auto px-4 flex items-center justify-between gap-4">
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="leading-tight">
-              <div className="font-serif font-bold text-primary text-lg sm:text-xl tracking-tight">KHADIJA</div>
-              <div className="font-serif font-bold text-primary text-lg sm:text-xl tracking-tight -mt-1 text-accent">OVERSEAS</div>
-            </div>
+          <Link href="/" className="flex items-center gap-2">
+          <Image src={logo} alt="KHADIJA EXIM" width={250} height={250} />
           </Link>
 
           {/* Desktop Links */}
@@ -68,7 +65,7 @@ const Navbar = () => {
                   <Link
                     href={l.to}
                     className={cn(
-                      "px-4 py-2 text-sm font-semibold transition-all rounded-full",
+                      "px-4 py-2 text-md font-semibold transition-all rounded-full",
                       isActive ? "text-primary font-bold" : "text-foreground/70 hover:text-primary"
                     )}
                   >
@@ -132,9 +129,8 @@ const Navbar = () => {
 
               {/* Menu Header */}
               <div className="relative flex items-center justify-between p-6 border-b border-border/50 bg-secondary/20">
-                <Link href="/" onClick={() => setOpen(false)} className="leading-tight">
-                  <div className="font-serif font-bold text-primary text-xl tracking-tight">KHADIJA</div>
-                  <div className="font-serif font-bold text-accent text-xl tracking-tight -mt-1">OVERSEAS</div>
+                <Link href="/" onClick={() => setOpen(false)} className="flex items-center gap-2">
+                  <Image src={logo} alt="KHADIJA EXIM" className="h-10 w-auto object-contain" />
                 </Link>
                 <button 
                   onClick={() => setOpen(false)} 
@@ -211,4 +207,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Header;

@@ -85,7 +85,7 @@ export default function QualityPage() {
                 <div className="h-24 w-24 mx-auto rounded-full border-2 border-primary/20 flex items-center justify-center font-serif font-bold text-primary text-sm group-hover:border-accent group-hover:text-accent transition-colors shadow-soft">
                   {c.split(" ")[0]}
                 </div>
-                <div className="mt-2 text-[10px] tracking-widest text-muted-foreground uppercase">Certified</div>
+                <div className="mt-2 text-[13px] tracking-widest text-muted-foreground uppercase">Certified</div>
               </div>
             ))}
           </div>

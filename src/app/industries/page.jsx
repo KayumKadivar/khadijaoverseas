@@ -26,7 +26,7 @@ export default function IndustriesPage() {
                   <div className="absolute -right-4 -top-4 text-7xl opacity-10 group-hover:opacity-30 transition-opacity">{i.icon}</div>
                   <div className="h-14 w-14 rounded-xl bg-gradient-dark flex items-center justify-center text-3xl mb-5">{i.icon}</div>
                   <h3 className="font-serif text-xl text-primary font-semibold">{i.name}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{i.desc}</p>
+                  <p className="mt-2 text-md text-muted-foreground leading-relaxed">{i.desc}</p>
                 </div>
               </StaggerItem>
             ))}

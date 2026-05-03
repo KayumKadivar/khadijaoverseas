@@ -364,10 +364,10 @@ export default function ProductDetailPage() {
                   if (!pdfSpecs?.[key]?.length) return null;
                   const Icon = meta.icon;
                   return (
-                    <a key={key} href={`#spec-${key}`} className="pdp-specs-nav__link">
+                    <Link key={key} href={`#spec-${key}`} className="pdp-specs-nav__link">
                       <Icon className="pdp-specs-nav__link-icon" />
                       {meta.title}
-                    </a>
+                    </Link>
                   );
                 })}
               </div>
