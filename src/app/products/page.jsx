@@ -52,7 +52,7 @@ function ProductsContent() {
 
       {/* Tags Section - Restored to Light Style */}
       <FadeUp delay={0.1}>
-        <div className="mt-12 flex flex-wrap justify-center gap-3">
+        <div className="mt-8 flex flex-wrap justify-center gap-3">
           {tags.map((tag) => (
             <button
               key={tag.id}
@@ -72,7 +72,7 @@ function ProductsContent() {
 
       {/* Products Grid - Using Homepage spacing (gap-8) and FadeUp style */}
       <div className="mt-10">
-        <Stagger key={activeTag} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <Stagger key={activeTag} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
           {filteredProducts.map((p) => (
             <StaggerItem key={p.slug}>
               <ProductCard product={p} />

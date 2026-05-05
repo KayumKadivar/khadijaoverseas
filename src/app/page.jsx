@@ -158,7 +158,7 @@ export default function Home() {
                 <span className="text-[#07170A]"> Premium Dehydrated Food </span>
                 <span className="text-[#1D1308]"> Products Exporter from India</span>
               </h1>
-              <p className="mt-6 text-base md:text-lg font-semibold text-[#000] leading-relaxed">
+              <p className="mt-6 text-base md:text-lg text-[#000000] leading-relaxed">
                 Khadija Exim is a trusted exporter of premium dehydrated food products from Gujarat, India. Supplying high-quality dehydrated onion, garlic and vegetables to food manufacturers, importers and bulk buyers worldwide.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
