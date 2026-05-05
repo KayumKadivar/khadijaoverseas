@@ -20,23 +20,8 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 relative z-10 py-8">
           <div className="grid lg:grid-cols-12 gap-16 items-center">
 
-            {/*Left: Image & Badge */}
-            <FadeUp delay={0.2} className="relative lg:col-span-5">
-              {/* Decorative Frame */}
-              <div className="absolute inset-0 -translate-x-4 translate-y-4 border-2 border-accent/30 rounded-2xl -z-10" />
-
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img
-                  src={premiumIngredientsImg.src || premiumIngredientsImg}
-                  alt="Premium dehydrated onion and garlic ingredients in elegant wooden bowls"
-                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                />
-              </div>
-            </FadeUp>
-
             {/* Right: Text Content */}
-            <FadeUp className="lg:col-span-7">
+            <FadeUp className="lg:col-span-7 order-1 lg:order-2">
               <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary font-bold leading-tight mb-8">
                 A Legacy of <span className="italic text-accent/90">Premium</span> Export
               </h2>
@@ -79,6 +64,21 @@ export default function AboutPage() {
                 <p className="font-medium text-primary/80">
                   Our goal is simple: to be a reliable, long-term dehydrated food products export partner for importers and food manufacturers across the globe.
                 </p>
+              </div>
+            </FadeUp>
+
+            {/*Left: Image & Badge */}
+            <FadeUp delay={0.2} className="relative lg:col-span-5 order-2 lg:order-1">
+              {/* Decorative Frame */}
+              <div className="absolute inset-0 -translate-x-4 translate-y-4 border-2 border-accent/30 rounded-2xl -z-10" />
+
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                <img
+                  src={premiumIngredientsImg.src || premiumIngredientsImg}
+                  alt="Premium dehydrated onion and garlic ingredients in elegant wooden bowls"
+                  className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                />
               </div>
             </FadeUp>
 

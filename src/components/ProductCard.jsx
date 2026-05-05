@@ -3,7 +3,7 @@ import { ArrowRight, Leaf } from "lucide-react";
 
 const ProductCard = ({ product }) => (
   <Link
-    href={`/products/${product.slug}`}
+    href={product.slug.startsWith("?") ? `/products${product.slug}` : `/products/${product.slug}`}
     className="group relative block aspect-[4/5] rounded-2xl overflow-hidden shadow-elegant hover:shadow-gold transition-all duration-700 bg-card border border-primary/10"
   >
     {/* Product Image */}
@@ -26,14 +26,12 @@ const ProductCard = ({ product }) => (
     </div>
 
     {/* Product Info - now always visible */}
-    <div className="absolute inset-x-0 bottom-0 p-6 flex flex-col justify-end transition-transform duration-500">
-      <div className="bg-black/80 border border-white/10 rounded-2xl p-5 shadow-2xl">
-        <h3 className="font-serif text-xl md:text-2xl text-white font-bold leading-tight drop-shadow-sm">
-          {product.name.replace("Dehydrated ", "")}
-        </h3>
-        <div className="flex items-center justify-between mt-4">
-          <div className="h-px flex-1 bg-white/20 mr-4" />
-          <div className="h-10 w-10 rounded-full bg-accent text-accent-foreground flex items-center justify-center shadow-gold transition-transform duration-500 group-hover:scale-110">
+    <div className="absolute inset-x-0 bottom-0 p-6 flex flex-col justify-end gap-3 transition-transform duration-500">
+      <div className="bg-black/80 border border-white/10 rounded-md p-4 shadow-2xl">
+        <div className="flex items-center justify-between">
+          <h3 className="font-serif text-xl md:text-2xl text-white font-bold leading-tight drop-shadow-sm px-1">
+            {product.name.replace("Dehydrated ", "")}
+          </h3>          <div className="h-10 w-10 rounded-full bg-accent text-accent-foreground flex items-center justify-center shadow-gold transition-transform duration-500 group-hover:scale-110">
             <ArrowRight className="h-5 w-5" />
           </div>
         </div>

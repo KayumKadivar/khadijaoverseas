@@ -18,16 +18,16 @@ export const mainCategories = [
     image: whiteOnion,
   },
   {
-    slug: "?category=red",
-    name: "Red Onion",
-    short: "Renowned for its sharp, pungent taste and deep color. The ultimate ingredient for robust spice blends and gourmet culinary creations.",
-    image: redOnion,
-  },
-  {
     slug: "?category=pink",
     name: "Pink Onion",
     short: "A perfect balance of mild sweetness and delicate aroma. Ideal for specialized seasonings and visually appealing culinary dishes.",
     image: pinkOnion,
+  },
+  {
+    slug: "?category=red",
+    name: "Red Onion",
+    short: "Renowned for its sharp, pungent taste and deep color. The ultimate ingredient for robust spice blends and gourmet culinary creations.",
+    image: redOnion,
   },
   {
     slug: "?category=garlic",
@@ -47,6 +47,15 @@ export const products = [
     image: whiteOnion,
     features: ["A-Grade Quality", "Clean Aroma", "8-20mm Size", "Hygienic Process"],
     specs: [{ label: "HSN Code", value: "07122000" }, { label: "Moisture", value: "Max 6%" }, { label: "Origin", value: "India" }]
+  },
+  {
+    slug: "white-onion-powder",
+    name: "Dehydrated White Onion Powder",
+    short: "Fine free-flowing culinary powder.",
+    description: "Our white onion powder is finely ground to 80-100 mesh, making it perfect for seasoning blends, snacks, and high-end food processing.",
+    image: onionPowder,
+    features: ["80-100 Mesh", "Intense Aroma", "Free Flowing", "100% Pure"],
+    specs: [{ label: "Mesh", value: "80 - 100" }, { label: "Moisture", value: "Max 6%" }, { label: "Quality", value: "Premium" }]
   },
   {
     slug: "white-onion-chopped",
@@ -75,15 +84,7 @@ export const products = [
     features: ["0.1-1mm Size", "Flowing Texture", "Natural Flavor", "Premium Grade"],
     specs: [{ label: "Size", value: "0.1 - 1 mm" }, { label: "Moisture", value: "Max 6%" }, { label: "Shelf Life", value: "18 Months" }]
   },
-  {
-    slug: "white-onion-powder",
-    name: "Dehydrated White Onion Powder",
-    short: "Fine free-flowing culinary powder.",
-    description: "Our white onion powder is finely ground to 80-100 mesh, making it perfect for seasoning blends, snacks, and high-end food processing.",
-    image: onionPowder,
-    features: ["80-100 Mesh", "Intense Aroma", "Free Flowing", "100% Pure"],
-    specs: [{ label: "Mesh", value: "80 - 100" }, { label: "Moisture", value: "Max 6%" }, { label: "Quality", value: "Premium" }]
-  },
+
 
   // --- RED ONION ---
   {
@@ -94,6 +95,15 @@ export const products = [
     image: redOnion,
     features: ["Deep Red Color", "Sharp Flavor", "Export Grade", "8-20mm"],
     specs: [{ label: "HSN Code", value: "07122000" }, { label: "Moisture", value: "Max 6%" }, { label: "Origin", value: "India" }]
+  },
+  {
+    slug: "red-onion-powder",
+    name: "Dehydrated Red Onion Powder",
+    short: "Potent and colorful red onion powder.",
+    description: "Finely ground red onion powder with exceptional aroma and color. A versatile ingredient for many global cuisines.",
+    image: redOnion,
+    features: ["Fine Powder", "Vibrant Red", "Rich Aroma", "Bulk Supply"],
+    specs: [{ label: "Mesh", value: "80 - 100" }, { label: "Moisture", value: "Max 6%" }, { label: "Packing", value: "25kg Carton" }]
   },
   {
     slug: "red-onion-chopped",
@@ -122,15 +132,7 @@ export const products = [
     features: ["Easy Dispersion", "Bold Taste", "Natural Ingredients", "HACCP"],
     specs: [{ label: "Size", value: "0.5 - 1 mm" }, { label: "Moisture", value: "Max 6%" }, { label: "Quality", value: "A-Grade" }]
   },
-  {
-    slug: "red-onion-powder",
-    name: "Dehydrated Red Onion Powder",
-    short: "Potent and colorful red onion powder.",
-    description: "Finely ground red onion powder with exceptional aroma and color. A versatile ingredient for many global cuisines.",
-    image: redOnion,
-    features: ["Fine Powder", "Vibrant Red", "Rich Aroma", "Bulk Supply"],
-    specs: [{ label: "Mesh", value: "80 - 100" }, { label: "Moisture", value: "Max 6%" }, { label: "Packing", value: "25kg Carton" }]
-  },
+
 
   // --- PINK ONION ---
   {
@@ -141,6 +143,15 @@ export const products = [
     image: pinkOnion,
     features: ["Unique Pink Hue", "Mild Taste", "Premium Selection", "Natural"],
     specs: [{ label: "HSN Code", value: "07122000" }, { label: "Moisture", value: "Max 6%" }, { label: "Origin", value: "India" }]
+  },
+  {
+    slug: "pink-onion-powder",
+    name: "Dehydrated Pink Onion Powder",
+    short: "Smooth pink powder for culinary excellence.",
+    description: "Finely milled pink onion powder that blends seamlessly into any liquid or dry formulation.",
+    image: pinkOnion,
+    features: ["Fine Mesh", "Consistent Color", "Rich Aroma", "100% Pure"],
+    specs: [{ label: "Mesh", value: "80 - 100" }, { label: "Moisture", value: "Max 6%" }, { label: "Quality", value: "Premium" }]
   },
   {
     slug: "pink-onion-chopped",
@@ -169,15 +180,6 @@ export const products = [
     features: ["Grain Texture", "Mild Aroma", "Consistent Quality", "Natural"],
     specs: [{ label: "Size", value: "0.5 - 1.5 mm" }, { label: "Moisture", value: "Max 6%" }, { label: "Packing", value: "25kg Bag" }]
   },
-  {
-    slug: "pink-onion-powder",
-    name: "Dehydrated Pink Onion Powder",
-    short: "Smooth pink powder for culinary excellence.",
-    description: "Finely milled pink onion powder that blends seamlessly into any liquid or dry formulation.",
-    image: pinkOnion,
-    features: ["Fine Mesh", "Consistent Color", "Rich Aroma", "100% Pure"],
-    specs: [{ label: "Mesh", value: "80 - 100" }, { label: "Moisture", value: "Max 6%" }, { label: "Quality", value: "Premium" }]
-  },
 
   // --- GARLIC ---
   {
@@ -188,6 +190,15 @@ export const products = [
     image: garlicFlakes,
     features: ["Rich Allicin", "Bold Aroma", "Uniform Flakes", "Export Quality"],
     specs: [{ label: "HSN Code", value: "07129030" }, { label: "Moisture", value: "Max 4%" }, { label: "Grade", value: "A-Grade" }]
+  },
+  {
+    slug: "garlic-powder",
+    name: "Dehydrated Garlic Powder",
+    short: "Fine free-flowing garlic powder.",
+    description: "Pure dehydrated garlic powder ground to a fine mesh, ideal for soups, seasonings, and health supplements.",
+    image: garlicPowder,
+    features: ["80-100 Mesh", "Strong Aroma", "Free Flowing", "100% Pure"],
+    specs: [{ label: "Mesh Size", value: "80-100" }, { label: "Moisture", value: "Max 5%" }, { label: "Quality", value: "A-Grade" }]
   },
   {
     slug: "garlic-chopped",
@@ -216,57 +227,49 @@ export const products = [
     features: ["Grainy Texture", "Powerful Aroma", "No Additives", "Premium Grade"],
     specs: [{ label: "Size", value: "0.5 - 1.5 mm" }, { label: "Moisture", value: "Max 6%" }, { label: "Shelf Life", value: "18 Months" }]
   },
-  {
-    slug: "garlic-powder",
-    name: "Dehydrated Garlic Powder",
-    short: "Fine free-flowing garlic powder.",
-    description: "Pure dehydrated garlic powder ground to a fine mesh, ideal for soups, seasonings, and health supplements.",
-    image: garlicPowder,
-    features: ["80-100 Mesh", "Strong Aroma", "Free Flowing", "100% Pure"],
-    specs: [{ label: "Mesh Size", value: "80-100" }, { label: "Moisture", value: "Max 5%" }, { label: "Quality", value: "A-Grade" }]
-  },
+
 ];
 
 export const industries = [
-  { 
-    name: "Food Processing", 
-    desc: "Used in ready-to-eat meals, frozen foods, and packaged products to ensure consistent taste and extended shelf life.", 
-    icon: "🏭" 
+  {
+    name: "Food Processing",
+    desc: "Used in ready-to-eat meals, frozen foods, and packaged products to ensure consistent taste and extended shelf life.",
+    icon: "🏭"
   },
-  { 
-    name: "Seasoning & Spice", 
-    desc: "Widely used in masala blends and spice mixes, delivering strong aroma and uniform quality in every batch.", 
-    icon: "🧂" 
+  {
+    name: "Seasoning & Spice",
+    desc: "Widely used in masala blends and spice mixes, delivering strong aroma and uniform quality in every batch.",
+    icon: "🧂"
   },
-  { 
-    name: "Snacks & Namkeen", 
-    desc: "Ideal for chips, namkeen, extruded snacks, and flavored products to enhance taste and maintain product stability.", 
-    icon: "🍿" 
+  {
+    name: "Snacks & Namkeen",
+    desc: "Ideal for chips, namkeen, extruded snacks, and flavored products to enhance taste and maintain product stability.",
+    icon: "🍿"
   },
-  { 
-    name: "Instant Foods", 
-    desc: "Commonly used in instant noodles, soup mixes, and ready-to-cook products due to quick rehydration and rich flavor.", 
-    icon: "🍜" 
+  {
+    name: "Instant Foods",
+    desc: "Commonly used in instant noodles, soup mixes, and ready-to-cook products due to quick rehydration and rich flavor.",
+    icon: "🍜"
   },
-  { 
-    name: "Sauces & Condiments", 
-    desc: "An essential ingredient in ketchup, mayonnaise, pasta sauces, dips, salad dressings, and chutneys.", 
-    icon: "🍅" 
+  {
+    name: "Sauces & Condiments",
+    desc: "An essential ingredient in ketchup, mayonnaise, pasta sauces, dips, salad dressings, and chutneys.",
+    icon: "🍅"
   },
-  { 
-    name: "HoReCa (Hotels, Restaurants & Catering)", 
-    desc: "Supports professional kitchens by saving preparation time, reducing wastage, and ensuring consistent taste.", 
-    icon: "🏨" 
+  {
+    name: "HoReCa (Hotels, Restaurants & Catering)",
+    desc: "Supports professional kitchens by saving preparation time, reducing wastage, and ensuring consistent taste.",
+    icon: "🏨"
   },
-  { 
-    name: "Bakery (Savory Products)", 
-    desc: "Used in breads, biscuits, savory muffins, and baked snacks to improve flavor and texture.", 
-    icon: "🥯" 
+  {
+    name: "Bakery (Savory Products)",
+    desc: "Used in breads, biscuits, savory muffins, and baked snacks to improve flavor and texture.",
+    icon: "🥯"
   },
-  { 
-    name: "Importers & Distributors", 
-    desc: "We supply bulk quantities to global importers, wholesalers, and distributors serving local markets.", 
-    icon: "🚢" 
+  {
+    name: "Importers & Distributors",
+    desc: "We supply bulk quantities to global importers, wholesalers, and distributors serving local markets.",
+    icon: "🚢"
   },
 ];
 

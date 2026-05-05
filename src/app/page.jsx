@@ -8,11 +8,11 @@ import { motion } from "framer-motion";
 // Assets
 import heroSpread from "@/assets/hero-spread.jpg";
 import ingredientsFlatlay from "@/assets/ingredients-flatlay.webp";
-import cooking2 from "@/assets/cooking-2.webp";
-import ctaBg from "@/assets/cta-bg.webp";
+// import cooking2 from "@/assets/cooking-2.webp";
+// import ctaBg from "@/assets/cta-bg.webp";
 
 // Data and Components
-import { products, industries, certifications } from "@/data/products";
+import { products, mainCategories, industries, certifications } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
 import SectionHeading from "@/components/SectionHeading";
 import { FadeUp, Stagger, StaggerItem } from "@/components/Reveal";
@@ -154,25 +154,12 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               className="xl:col-span-6"
             >
-              <div className="mb-6">
-                <div className="text-xs tracking-[0.3em] font-bold text-primary uppercase">Welcome to Khadija Overseas</div>
-                <div className="mt-2 flex items-center gap-2">
-                  <span className="h-[2px] w-16 bg-accent" />
-                  <Leaf className="h-3.5 w-3.5 text-accent" />
-                </div>
-              </div>
-              <h1 className="font-serif text-5xl md:text-6xl lg:text-[4.25rem] font-bold text-primary leading-[1.05] text-balance">
-                <span className="">Premium Dehydrated</span> <br />
-                <motion.span
-                  className="text-accent italic font-script capitalize"
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.7, delay: 0.6 }}
-                >Food Products </motion.span> <br />
-                <span className="">Exporter from India</span>
+              <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold  leading-[1.05] text-balance">
+                <span className="text-[#07170A]"> Premium Dehydrated Food </span>
+                <span className="text-[#1D1308]"> Products Exporter from India</span>
               </h1>
-              <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-md leading-relaxed">
-                KKhadija Exim is a trusted exporter of premium dehydrated food products from Gujarat, India. Supplying high-quality dehydrated onion, garlic and vegetables to food manufacturers, importers and bulk buyers worldwide.
+              <p className="mt-6 text-base md:text-lg font-semibold text-[#000] leading-relaxed">
+                Khadija Exim is a trusted exporter of premium dehydrated food products from Gujarat, India. Supplying high-quality dehydrated onion, garlic and vegetables to food manufacturers, importers and bulk buyers worldwide.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link href="/products" className="group inline-flex items-center gap-2 bg-primary text-primary-foreground px-7 py-4 rounded-lg text-xs font-bold tracking-[0.15em] uppercase hover:bg-primary-glow shadow-soft hover:shadow-elegant transition-all">
@@ -260,35 +247,31 @@ export default function Home() {
       </section >
 
       {/* PRODUCTS — premium framed section */}
-      < section className="relative py-28  overflow-hidden bg-gradient-dark" >
+      < section className="relative py-16 overflow-hidden bg-gradient-dark" >
         {/* Background Texture Only */}
         < div className="absolute inset-0 overflow-hidden pointer-events-none" >
           <div className="absolute inset-0 opacity-[0.03] grayscale invert" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/carbon-fibre.png')" }} />
         </div >
 
         <div className="container mx-auto px-4 relative">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-">
             <div className="max-w-2xl">
-              <div className="flex items-center gap-3 mb-4">
+              <div className="flex items-center gap-3 mb-10">
                 <span className="h-px w-8 bg-accent" />
-                <span className="text-xs font-bold tracking-[0.4em] text-accent uppercase">Our Product Range</span>
+                <span className="font-serif text-4xl md:text-6xl font-bold text-accent leading-tight">Our Product Range</span>
               </div>
-              <h2 className="font-serif text-4xl md:text-6xl font-bold text-white leading-tight">
-                Premium <span className="font-script text-accent italic">Dehydrated</span>
-              </h2>
             </div>
           </div>
 
-          {/* Featured Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {products.slice(0, 4).map((p, idx) => (
+            {mainCategories.map((p, idx) => (
               <FadeUp key={p.slug} delay={idx * 0.1}>
                 <ProductCard product={p} />
               </FadeUp>
             ))}
           </div>
 
-          <FadeUp className="mt-20 flex flex-col items-center gap-6" delay={0.4}>
+          <FadeUp className="mt-10 flex flex-col items-center gap-4" delay={0.4}>
             <div className="flex items-center gap-4 text-white/40 mb-2">
               <span className="h-px w-20 bg-white/10" />
               <Leaf className="h-5 w-5" />
@@ -307,7 +290,7 @@ export default function Home() {
       {/* INDUSTRIES */}
       < section className="py-16 bg-background" >
         <div className="container mx-auto px-4">
-          <SectionHeading kicker="Industries" title="Industries We Serve" subtitle="Our dehydrated products are widely used across multiple industries worldwide." />
+          <SectionHeading title="Industries We Serve" subtitle="Our dehydrated products are widely used across multiple industries worldwide." />
           <Stagger className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {industries.map((i) => (
               <StaggerItem key={i.name}>
