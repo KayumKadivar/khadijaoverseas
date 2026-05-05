@@ -46,14 +46,14 @@ const Header = () => {
       <header
         className={cn(
           "fixed top-0 inset-x-0 z-50 transition-all duration-500",
-          scrolled 
-            ? "bg-background/95 backdrop-blur-xl shadow-sm py-2 border-b border-border/50" 
+          scrolled
+            ? "bg-background/95 backdrop-blur-xl shadow-sm py-2 border-b border-border/50"
             : "bg-transparent py-4 border-b border-transparent"
         )}
       >
         <nav className="container mx-auto px-4 flex items-center justify-between gap-4">
           <Link href="/" className="flex items-center gap-2">
-          <Image src={logo} alt="KHADIJA EXIM" width={250} height={250} />
+            <Image src={logo} alt="KHADIJA EXIM" width={250} height={250} />
           </Link>
 
           {/* Desktop Links */}
@@ -71,9 +71,9 @@ const Header = () => {
                   >
                     {l.label}
                     {isActive && (
-                      <motion.span 
+                      <motion.span
                         layoutId="nav-active"
-                        className="absolute bottom-0 left-4 right-4 h-0.5 bg-[#1E3D2F] rounded-full" 
+                        className="absolute bottom-0 left-4 right-4 h-0.5 bg-[#1E3D2F] rounded-full"
                       />
                     )}
                   </Link>
@@ -90,8 +90,8 @@ const Header = () => {
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
 
-            <button 
-              onClick={() => setOpen(true)} 
+            <button
+              onClick={() => setOpen(true)}
               className="lg:hidden p-2.5 rounded-xl bg-primary/5 text-primary hover:bg-primary/10 transition-colors"
               aria-label="Open Menu"
             >
@@ -106,16 +106,16 @@ const Header = () => {
         {open && (
           <div className="fixed inset-0 z-[100] lg:hidden">
             {/* Backdrop */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setOpen(false)}
               className="absolute inset-0 bg-primary/20 backdrop-blur-md"
             />
-            
+
             {/* Sidebar */}
-            <motion.div 
+            <motion.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
@@ -132,8 +132,8 @@ const Header = () => {
                 <Link href="/" onClick={() => setOpen(false)} className="flex items-center gap-2">
                   <Image src={logo} alt="KHADIJA EXIM" className="h-10 w-auto object-contain" />
                 </Link>
-                <button 
-                  onClick={() => setOpen(false)} 
+                <button
+                  onClick={() => setOpen(false)}
                   className="p-3 rounded-2xl bg-white shadow-soft text-primary hover:text-accent transition-colors"
                 >
                   <X className="h-6 w-6" />
@@ -142,7 +142,7 @@ const Header = () => {
 
               {/* Menu Links */}
               <div className="flex-1 overflow-y-auto no-scrollbar p-6 space-y-4">
-                
+
                 <div className="flex flex-col gap-2.5">
                   {links.map((l, idx) => {
                     const isActive = l.to === "/" ? pathname === "/" : pathname.startsWith(l.to);
@@ -159,8 +159,8 @@ const Header = () => {
                           onClick={() => setOpen(false)}
                           className={cn(
                             "group flex items-center gap-4 px-5 py-4 rounded-2xl text-[1.1rem] font-bold transition-all border relative overflow-hidden",
-                            isActive 
-                              ? "bg-primary text-primary-foreground border-primary shadow-elegant" 
+                            isActive
+                              ? "bg-primary text-primary-foreground border-primary shadow-elegant"
                               : "bg-white text-primary border-primary/5 hover:bg-primary/5 hover:border-primary/20"
                           )}
                         >
@@ -180,15 +180,15 @@ const Header = () => {
                     );
                   })}
                 </div>
-                
+
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 }}
                   className="mt-10"
                 >
-                  <Link 
-                    href="/contact" 
+                  <Link
+                    href="/contact"
                     onClick={() => setOpen(false)}
                     className="relative group block w-full bg-gradient-gold p-[2px] rounded-2xl shadow-gold active:scale-95 transition-transform"
                   >

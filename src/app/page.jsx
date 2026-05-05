@@ -217,16 +217,16 @@ export default function Home() {
       </section>
 
       {/* ABOUT — factory image replaced with onion/garlic ingredients */}
-      <section className="py-20 md:py-28 relative overflow-hidden bg-background">
+      <section className="py-16 relative overflow-hidden bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid gap-12 items-center">
-            <div className="col-span-12 lg:col-span-7">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
+            <div className="lg:col-span-7">
               <FadeUp>
                 <span className="text-sm font-semibold tracking-[0.25em] text-accent uppercase">About Us</span>
-                <h2 className="mt-3 font-serif text-2xl md:text-4xl text-primary font-bold leading-tight text-balance">
+                <h2 className="mt-3 font-serif text-3xl md:text-5xl text-primary font-bold leading-tight text-balance">
                   Trusted Dehydrated Food Products Export Partner from India
                 </h2>
-                <p className="mt-5 text-muted-foreground leading-relaxed">
+                <p className="mt-5 text-muted-foreground leading-relaxed text-xl">
                   We <strong className="text-primary">Khadija Exim</strong> is a trusted dehydrated vegetables exporter from Gujarat, India. We supply premium dehydrated onion, garlic and vegetables — available in flakes, powder, granules, minced and chopped forms — to food manufacturers, importers and distributors worldwide. Our focus is on consistent quality, reliable supply and long-term trade partnerships with global buyers.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-4">
@@ -241,7 +241,7 @@ export default function Home() {
                 </div>
               </FadeUp>
             </div>
-            <div className="col-span-12 lg:col-span-5 lg:col-start-8">
+            <div className="lg:col-span-5">
               <FadeUp delay={0.2}>
                 <div className="relative">
                   <div className="relative rounded-2xl overflow-hidden shadow-elegant ">
@@ -305,7 +305,7 @@ export default function Home() {
       </section >
 
       {/* INDUSTRIES */}
-      < section className="py-20 md:py-28 bg-background" >
+      < section className="py-16 bg-background" >
         <div className="container mx-auto px-4">
           <SectionHeading kicker="Industries" title="Industries We Serve" subtitle="Our dehydrated products are widely used across multiple industries worldwide." />
           <Stagger className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">

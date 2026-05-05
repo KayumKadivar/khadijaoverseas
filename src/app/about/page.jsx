@@ -18,10 +18,10 @@ export default function AboutPage() {
         <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
 
         <div className="container mx-auto px-4 relative z-10 py-8">
-          <div className="grid lg:grid-cols-[1fr_1fr] gap-16 items-center">
+          <div className="grid lg:grid-cols-12 gap-16 items-center">
 
             {/*Left: Image & Badge */}
-            <FadeUp delay={0.2} className="relative">
+            <FadeUp delay={0.2} className="relative lg:col-span-5">
               {/* Decorative Frame */}
               <div className="absolute inset-0 -translate-x-4 translate-y-4 border-2 border-accent/30 rounded-2xl -z-10" />
 
@@ -36,7 +36,7 @@ export default function AboutPage() {
             </FadeUp>
 
             {/* Right: Text Content */}
-            <FadeUp>
+            <FadeUp className="lg:col-span-7">
               <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary font-bold leading-tight mb-8">
                 A Legacy of <span className="italic text-accent/90">Premium</span> Export
               </h2>
