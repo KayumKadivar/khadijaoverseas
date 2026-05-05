@@ -260,10 +260,7 @@ export default function ProductDetailPage() {
                   Get Wholesale Quote
                   <ArrowRight className="pdp-btn__icon" />
                 </Link>
-                <button onClick={handleDownload} className="pdp-btn pdp-btn--outline">
-                  <Download className="pdp-btn__icon" />
-                  Download Specs
-                </button>
+             
               </div>
 
               {/* origin + production badges */}

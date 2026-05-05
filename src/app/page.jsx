@@ -19,50 +19,116 @@ import { FadeUp, Stagger, StaggerItem } from "@/components/Reveal";
 
 // Range card item list — exact order matching the reference
 const onionRange = [
-  { slug: "onion-flakes", label: "Onion Flakes", icon: "🧅" },
-  { slug: "onion-powder", label: "Onion Powder", icon: "🥣" },
-  { slug: "onion-granules", label: "Onion Granules", icon: "🌰" },
-  { slug: "onion-minced", label: "Minced Onion", icon: "🍥" },
-  { slug: "onion-chopped", label: "Chopped Onion", icon: "🍥" },
+  { slug: "onion-flakes", label: "Onion Flakes", icon: "Onion" },
+  { slug: "onion-powder", label: "Onion Powder", icon: "Powder" },
+  { slug: "onion-granules", label: "Onion Granules", icon: "Granules" },
+  { slug: "onion-minced", label: "Minced Onion", icon: "Minced" },
 ];
 const garlicRange = [
-  { slug: "garlic-flakes", label: "Garlic Flakes", icon: "🧄" },
-  { slug: "garlic-powder", label: "Garlic Powder", icon: "🥣" },
-  { slug: "garlic-granules", label: "Garlic Granules", icon: "🌰" },
-  { slug: "garlic-minced", label: "Chopped Garlic", icon: "🌿" },
-  { slug: "garlic-chopped", label: "Minced Garlic", icon: "🍥" },
+  { slug: "garlic-flakes", label: "Garlic Flakes", icon: "Garlic" },
+  { slug: "garlic-powder", label: "Garlic Powder", icon: "Powder" },
+  { slug: "garlic-granules", label: "Garlic Granules", icon: "Granules" },
+  { slug: "garlic-minced", label: "Chopped Garlic", icon: "Minced" },
 ];
 
 
-const RangeItem = ({ slug, label, icon }) => (
-  <li>
-    <Link
-      href={`/products/${slug}`}
-      className="flex items-center justify-between gap-2 px-2 py-2 rounded-lg hover:bg-primary-foreground/10 transition-colors group"
-    >
-      <span className="flex items-center gap-3">
-        <span className="h-8 w-8 rounded-full border border-accent/70 flex items-center justify-center text-sm bg-primary-foreground/[0.03]">
-          {icon}
+const RangeItem = ({ slug, label, icon }) => {
+  const IconComponent = ({ name }) => {
+    const iconStyles = "h-4 w-4 text-accent";
+    switch (name) {
+      case "Onion":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={iconStyles}>
+            <path d="M12 20c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z" />
+            <path d="M12 4v4" />
+            <path d="M12 16v4" />
+            <circle cx="12" cy="12" r="3" />
+          </svg>
+        );
+      case "Garlic":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={iconStyles}>
+            <path d="M12 22c4.418 0 8-3.582 8-8 0-4-3-7-3-7s-1-3-5-3-5 3-5 3-3 3-3 7c0 4.418 3.582 8 8 8z" />
+            <path d="M12 22V10" />
+          </svg>
+        );
+      case "Powder":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={iconStyles}>
+            <path d="M6 13h12M8 9h8M10 5h4M4 17h16M2 21h20" />
+          </svg>
+        );
+      case "Granules":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={iconStyles}>
+            <rect x="4" y="4" width="4" height="4" rx="1" />
+            <rect x="10" y="4" width="4" height="4" rx="1" />
+            <rect x="16" y="4" width="4" height="4" rx="1" />
+            <rect x="4" y="10" width="4" height="4" rx="1" />
+            <rect x="10" y="10" width="4" height="4" rx="1" />
+            <rect x="16" y="10" width="4" height="4" rx="1" />
+            <rect x="4" y="16" width="4" height="4" rx="1" />
+            <rect x="10" y="16" width="4" height="4" rx="1" />
+            <rect x="16" y="16" width="4" height="4" rx="1" />
+          </svg>
+        );
+      case "Minced":
+        return (
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={iconStyles}>
+            <path d="M3 6h18M3 12h18M3 18h18" />
+            <path d="M7 3v18M17 3v18" />
+          </svg>
+        );
+      default:
+        return <Leaf className={iconStyles} />;
+    }
+  };
+
+  return (
+    <li>
+      <Link
+        href={`/products/${slug}`}
+        className="flex items-center justify-between gap-2 px-2 py-1.5 rounded-lg hover:bg-white/5 transition-colors group"
+      >
+        <span className="flex items-center gap-3">
+          <span className="h-8 w-8 rounded-full border border-accent/30 flex items-center justify-center bg-accent/5 transition-colors group-hover:bg-accent/10">
+            <IconComponent name={icon} />
+          </span>
+          <span className="font-medium text-sm text-white/90 group-hover:text-white transition-colors">{label}</span>
         </span>
-        <span className="font-medium text-sm">{label}</span>
-      </span>
-      <ArrowRight className="h-4 w-4 text-accent transition-transform group-hover:translate-x-0.5" />
-    </Link>
-  </li>
-);
+        <ArrowRight className="h-3.5 w-3.5 text-accent/70 transition-transform group-hover:translate-x-0.5 group-hover:text-accent" />
+      </Link>
+    </li>
+  );
+};
 
 export default function Home() {
   return (
     <>
       {/* HERO — exact match to reference: cream left, food image right, centered range card, trust bar */}
-      <section className="relative overflow-hidden bg-gradient-hero">
-        {/* Decorative leaves stay fixed during scroll */}
-        <div className="pointer-events-none fixed top-24 left-2 text-7xl opacity-30 animate-float-slow -z-0" aria-hidden>🌿</div>
-        <div className="pointer-events-none fixed top-40 right-6 text-6xl opacity-25 animate-float -z-0" aria-hidden>🍃</div>
-        <div className="pointer-events-none fixed bottom-32 left-10 text-5xl opacity-20 animate-float -z-0" aria-hidden>🌱</div>
-
+      <section className="relative overflow-hidden bg-gradient-hero lg:min-h-screen lg:flex lg:items-center">
         {/* Cream/beige background on the LEFT 50% */}
         <div className="absolute inset-y-0 left-0 w-full lg:w-1/2 bg-background z-0" />
+
+        {/* Decorative Realistic Leaf — Top Left */}
+        <div className="absolute top-[-15%] left-[-10%] text-[#2D5A27] animate-float-slow pointer-events-none z-10 hidden lg:block">
+          <svg width="450" height="450" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="rotate-[-20deg] blur-[2px] opacity-40">
+            <path d="M10 90C10 90 20 80 45 55C70 30 90 10 90 10C90 10 70 15 45 40C20 65 10 90 10 90Z" fill="currentColor" />
+            <path d="M10 90L90 10" stroke="#1B3A2A" strokeWidth="0.5" strokeOpacity="0.5" />
+            <path d="M35 65C40 65 45 70 45 70" stroke="#1B3A2A" strokeWidth="0.3" strokeOpacity="0.4" />
+            <path d="M50 50C55 50 60 55 60 55" stroke="#1B3A2A" strokeWidth="0.3" strokeOpacity="0.4" />
+            <path d="M25 55C20 55 15 50 15 50" stroke="#1B3A2A" strokeWidth="0.3" strokeOpacity="0.4" />
+            <path d="M40 40C35 40 30 35 30 35" stroke="#1B3A2A" strokeWidth="0.3" strokeOpacity="0.4" />
+          </svg>
+        </div>
+
+        {/* Decorative Realistic Leaf — Bottom Right */}
+        <div className="absolute bottom-[-10%] right-[-5%] text-[#2D5A27] animate-float pointer-events-none z-10 hidden lg:block">
+          <svg width="400" height="400" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="rotate-[160deg] blur-[1px] opacity-50">
+            <path d="M10 90C10 90 20 80 45 55C70 30 90 10 90 10C90 10 70 15 45 40C20 65 10 90 10 90Z" fill="currentColor" />
+            <path d="M10 90L90 10" stroke="#1B3A2A" strokeWidth="0.5" strokeOpacity="0.5" />
+          </svg>
+        </div>
 
         {/* Right-side food photography — covers only right 50% */}
         <div className="absolute inset-y-0 right-0 w-full lg:w-1/2 z-0">
@@ -79,8 +145,8 @@ export default function Home() {
           <div className="absolute inset-0 bg-background/55 lg:hidden" />
         </div>
 
-        <div className="container mx-auto px-4 pt-36 pb-32 relative z-10">
-          <div className="grid xl:grid-cols-12 gap-6 items-center min-h-[600px]">
+        <div className="container mx-auto px-4 pt-28 pb-16 lg:pt-20 lg:pb-0 relative z-10">
+          <div className="grid xl:grid-cols-12 gap-6 items-center">
             {/* LEFT: copy (4 cols) */}
             <motion.div
               initial={{ opacity: 0, x: -40 }}
@@ -106,30 +172,29 @@ export default function Home() {
                 <span className="">Exporter from India</span>
               </h1>
               <p className="mt-6 text-base md:text-lg text-muted-foreground max-w-md leading-relaxed">
-                Khadija Overseas is a trusted exporter of premium dehydrated food products from Gujarat, India. Supplying high-quality dehydrated onion and garlic products to food manufacturers and bulk buyers worldwide.
+                KKhadija Exim is a trusted exporter of premium dehydrated food products from Gujarat, India. Supplying high-quality dehydrated onion, garlic and vegetables to food manufacturers, importers and bulk buyers worldwide.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link href="/products" className="group inline-flex items-center gap-2 bg-primary text-primary-foreground px-7 py-4 rounded-lg text-xs font-bold tracking-[0.15em] uppercase hover:bg-primary-glow shadow-soft hover:shadow-elegant transition-all">
-                  Explore Products
+                  Our Products
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
                 <Link href="/contact" className="group inline-flex items-center gap-2 border-2 border-primary text-primary px-7 py-4 rounded-lg text-xs font-bold tracking-[0.15em] uppercase hover:bg-primary hover:text-primary-foreground transition-all">
-                  Get a Quote
+                  Inquiry now
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
             </motion.div>
 
-            {/* CENTER: floating range card (4 cols, centered between text and image) */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               className="lg:col-sapn-4 xl:col-span-3 flex justify-start"
             >
-              <div className="bg-gradient-dark text-primary-foreground rounded-3xl p-6 shadow-2xl shadow-primary/30 border border-accent/30 w-full max-w-[320px] ring-1 ring-black/5">
-                <div className="text-center mb-3">
-                  <h3 className="font-script text-4xl text-accent leading-none italic">Our Range</h3>
+              <div className="bg-[#162E22] text-primary-foreground rounded-3xl p-5 shadow-2xl shadow-black/40 border border-accent/20 w-full max-w-[285px] ring-1 ring-white/5">
+                <div className="text-center mb-2">
+                  <h3 className="font-script text-3xl text-accent leading-none italic">Our Range</h3>
                   <div className="flex items-center justify-center gap-2 mt-2">
                     <span className="h-px w-12 bg-accent/60" />
                     <Leaf className="h-3.5 w-3.5 text-accent" />
@@ -154,62 +219,64 @@ export default function Home() {
       {/* ABOUT — factory image replaced with onion/garlic ingredients */}
       <section className="py-20 md:py-28 relative overflow-hidden bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <FadeUp>
-              <span className="text-xs font-semibold tracking-[0.25em] text-accent uppercase">About Us</span>
-              <h2 className="mt-3 font-serif text-3xl md:text-5xl text-primary font-bold leading-tight text-balance">
-                Quality You Can Trust,<br />Service You Can Rely On
-              </h2>
-              <p className="mt-5 text-muted-foreground leading-relaxed">
-                We, <strong className="text-primary">KHADIJA OVERSEAS</strong>, are a trusted exporter and supplier of high-quality dehydrated products, including White, Red, and Pink <strong className="text-primary">Onion and Dehydrated Garlic</strong>, available in various forms such as flakes, chopped, minced, granules, and powder.
-              </p>
-              <p className="mt-4 text-muted-foreground leading-relaxed">
-                We serve food processing, seasoning, snack, and HoReCa industries worldwide. Based in Wankaner, Gujarat, India, we operate with strong sourcing and reliable logistics support to major ports like Mundra.
-              </p>
-              <Link href="/about" className="mt-8 inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3.5 rounded-lg text-sm font-semibold tracking-wider uppercase hover:bg-primary-glow shadow-soft transition-all group">
-                Read More About Us
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </FadeUp>
-
-            <FadeUp delay={0.2}>
-              <div className="relative">
-                <div className="relative rounded-2xl overflow-hidden shadow-elegant">
-                  <Image
-                    src={ingredientsFlatlay}
-                    alt="Premium variety of dehydrated onions and garlic"
-                    className="w-full h-auto"
-                  />
+          <div className="grid gap-12 items-center">
+            <div className="col-span-12 lg:col-span-7">
+              <FadeUp>
+                <span className="text-sm font-semibold tracking-[0.25em] text-accent uppercase">About Us</span>
+                <h2 className="mt-3 font-serif text-2xl md:text-4xl text-primary font-bold leading-tight text-balance">
+                  Trusted Dehydrated Food Products Export Partner from India
+                </h2>
+                <p className="mt-5 text-muted-foreground leading-relaxed">
+                  We <strong className="text-primary">Khadija Exim</strong> is a trusted dehydrated vegetables exporter from Gujarat, India. We supply premium dehydrated onion, garlic and vegetables — available in flakes, powder, granules, minced and chopped forms — to food manufacturers, importers and distributors worldwide. Our focus is on consistent quality, reliable supply and long-term trade partnerships with global buyers.
+                </p>
+                <div className="mt-8 flex flex-wrap gap-4">
+                  <Link href="/about" className="group inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3.5 rounded-lg text-sm font-semibold tracking-wider uppercase hover:bg-primary-glow shadow-soft transition-all group">
+                    Know More
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
+                  <Link href="/" className="group inline-flex items-center gap-2 border-2 border-primary text-primary px-7 py-4 rounded-lg text-xs font-bold tracking-[0.15em] uppercase hover:bg-primary hover:text-primary-foreground transition-all">
+                    Our Products
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
                 </div>
-                <div className="absolute -top-6 -right-6 h-24 w-24 rounded-full bg-accent/20 animate-float" />
-              </div>
-            </FadeUp>
+              </FadeUp>
+            </div>
+            <div className="col-span-12 lg:col-span-5 lg:col-start-8">
+              <FadeUp delay={0.2}>
+                <div className="relative">
+                  <div className="relative rounded-2xl overflow-hidden shadow-elegant ">
+                    <Image
+                      src={ingredientsFlatlay}
+                      alt="Premium variety of dehydrated onions and garlic"
+                      className="w-full h-auto"
+                    />
+                  </div>
+                  <div className="absolute -top-6 -right-6 h-24 w-24 rounded-full bg-accent/20 animate-float" />
+                </div>
+              </FadeUp>
+            </div>
           </div>
-        </div>
-      </section>
+        </div >
+      </section >
 
       {/* PRODUCTS — premium framed section */}
-      <section className="relative py-28  overflow-hidden bg-gradient-dark">
+      < section className="relative py-28  overflow-hidden bg-gradient-dark" >
         {/* Background Texture Only */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        < div className="absolute inset-0 overflow-hidden pointer-events-none" >
           <div className="absolute inset-0 opacity-[0.03] grayscale invert" style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/carbon-fibre.png')" }} />
-        </div>
+        </div >
 
         <div className="container mx-auto px-4 relative">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
             <div className="max-w-2xl">
               <div className="flex items-center gap-3 mb-4">
                 <span className="h-px w-8 bg-accent" />
-                <span className="text-xs font-bold tracking-[0.4em] text-accent uppercase">Our Production</span>
+                <span className="text-xs font-bold tracking-[0.4em] text-accent uppercase">Our Product Range</span>
               </div>
               <h2 className="font-serif text-4xl md:text-6xl font-bold text-white leading-tight">
-                Premium <span className="font-script text-accent italic">Dehydrated</span> <br />
-                Nature's Best
+                Premium <span className="font-script text-accent italic">Dehydrated</span>
               </h2>
             </div>
-            <p className="max-w-sm text-white/60 text-lg leading-relaxed border-l-2 border-accent/30 pl-6">
-              Carefully crafted dehydrated ingredients — bold flavor, long shelf life, and export-grade quality for global markets.
-            </p>
           </div>
 
           {/* Featured Grid */}
@@ -235,10 +302,10 @@ export default function Home() {
           </FadeUp>
         </div>
 
-      </section>
+      </section >
 
       {/* INDUSTRIES */}
-      <section className="py-20 md:py-28 bg-background">
+      < section className="py-20 md:py-28 bg-background" >
         <div className="container mx-auto px-4">
           <SectionHeading kicker="Industries" title="Industries We Serve" subtitle="Our dehydrated products are widely used across multiple industries worldwide." />
           <Stagger className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -255,7 +322,7 @@ export default function Home() {
             ))}
           </Stagger>
         </div>
-      </section>
+      </section >
 
       {/* WHY CHOOSE US — replaces workers image with cooking image */}
       {/* <section className="py-20 md:py-28 bg-secondary/40 relative overflow-hidden">

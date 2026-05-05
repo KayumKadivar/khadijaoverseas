@@ -28,14 +28,9 @@ const ProductCard = ({ product }) => (
     {/* Product Info - now always visible */}
     <div className="absolute inset-x-0 bottom-0 p-6 flex flex-col justify-end transition-transform duration-500">
       <div className="bg-black/80 border border-white/10 rounded-2xl p-5 shadow-2xl">
-        <span className="text-[10px] tracking-[0.2em] font-bold text-accent uppercase mb-1 block">Premium Export</span>
         <h3 className="font-serif text-xl md:text-2xl text-white font-bold leading-tight drop-shadow-sm">
           {product.name.replace("Dehydrated ", "")}
         </h3>
-        <p className="text-white/80 text-md mt-2 line-clamp-2 transition-opacity duration-500 leading-relaxed">
-          {product.short}
-        </p>
-        
         <div className="flex items-center justify-between mt-4">
           <div className="h-px flex-1 bg-white/20 mr-4" />
           <div className="h-10 w-10 rounded-full bg-accent text-accent-foreground flex items-center justify-center shadow-gold transition-transform duration-500 group-hover:scale-110">

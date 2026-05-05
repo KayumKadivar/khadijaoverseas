@@ -73,7 +73,7 @@ const Header = () => {
                     {isActive && (
                       <motion.span 
                         layoutId="nav-active"
-                        className="absolute bottom-0 left-4 right-4 h-0.5 bg-accent rounded-full" 
+                        className="absolute bottom-0 left-4 right-4 h-0.5 bg-[#1E3D2F] rounded-full" 
                       />
                     )}
                   </Link>
