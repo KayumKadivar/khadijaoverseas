@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, MessageCircle } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/footerlogo.png";
 import Image from "next/image";
 
 const WhatsAppIcon = ({ className }) => (
@@ -28,7 +28,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <Link href="/">
-                <Image src={logo} alt="Khadija Exxim" className="h-14 w-auto object-contain" />
+                <Image src={logo} alt="Khadija Exim" className="h-14 w-auto object-contain" />
               </Link>
             </div>
             <p className="text-primary-foreground/70 text-md leading-relaxed mb-5">
@@ -39,7 +39,7 @@ const Footer = () => {
                 { Icon: Facebook, href: "https://www.facebook.com/share/18ZVbBxn91/" },
                 { Icon: Instagram, href: "https://www.instagram.com/khadija_exim" },
                 { Icon: Linkedin, href: "https://www.linkedin.com/in/rahil-sherasiya-ba4239292" },
-                { Icon: WhatsAppIcon, href: "https://wa.me/918128695587" },
+                { Icon: WhatsAppIcon, href: "https://wa.me/+918128695587" },
               ].map((social, i) => (
                 <Link
                   key={i}
@@ -91,7 +91,7 @@ const Footer = () => {
               </li>
               <li className="flex gap-3">
                 <Phone className="h-5 w-5 text-accent shrink-0" />
-                <Link href="tel:+8128695587" className="text-primary-foreground/80 hover:text-accent">+91 81286 95587</Link>
+                <Link href="tel:+918128695587" className="text-primary-foreground/80 hover:text-accent">+91 81286 95587</Link>
               </li>
               <li className="flex gap-3">
                 <Mail className="h-5 w-5 text-accent shrink-0" />
