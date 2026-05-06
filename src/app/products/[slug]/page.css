@@ -41,8 +41,8 @@
 }
 @media (min-width: 1024px) {
   .pdp-hero__grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 5rem;
     align-items: center;
   }
 }
@@ -56,6 +56,7 @@
   background: hsl(42 45% 92% / 0.5);
   border: 1px solid hsl(140 55% 14% / 0.08);
   box-shadow: 0 20px 50px -15px hsl(140 40% 15% / 0.14);
+  max-width: 520px;
 }
 @media (min-width: 768px) {
   .pdp-hero__image-frame { border-radius: 2rem; }
@@ -118,7 +119,6 @@
 }
 
 .pdp-hero__title {
-  margin-top: 1.25rem;
   font-family: 'Playfair Display', serif;
   font-size: 2rem;
   font-weight: 700;

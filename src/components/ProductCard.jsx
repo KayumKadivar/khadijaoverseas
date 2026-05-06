@@ -18,12 +18,6 @@ const ProductCard = ({ product }) => (
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
     </div>
 
-    {/* Decorative Leaf - now always visible */}
-    <div className="absolute top-4 right-4 transition-all duration-500">
-      <div className="h-10 w-10 rounded-full bg-accent/30 border border-accent/40 flex items-center justify-center">
-        <Leaf className="h-5 w-5 text-accent" />
-      </div>
-    </div>
 
     {/* Product Info - now always visible */}
     <div className="absolute inset-x-0 bottom-0 p-6 flex flex-col justify-end gap-3 transition-transform duration-500">
