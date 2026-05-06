@@ -214,7 +214,7 @@ export default function Home() {
                   Trusted Dehydrated Food Products Export Partner from India
                 </h2>
                 <p className="mt-5 text-muted-foreground leading-relaxed text-xl">
-                  We <strong className="text-primary">Khadija Exim</strong> is a trusted dehydrated vegetables exporter from Gujarat, India. We supply premium dehydrated onion, garlic and vegetables — available in flakes, powder, granules, minced and chopped forms — to food manufacturers, importers and distributors worldwide. Our focus is on consistent quality, reliable supply and long-term trade partnerships with global buyers.
+                <strong className="text-primary">Khadija Exim</strong> is a trusted dehydrated vegetables exporter from Gujarat, India. We supply premium dehydrated onion, garlic and vegetables — available in flakes, powder, granules, minced and chopped forms — to food manufacturers, importers and distributors worldwide. Our focus is on consistent quality, reliable supply and long-term trade partnerships with global buyers.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-4">
                   <Link href="/about" className="group inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3.5 rounded-lg text-sm font-semibold tracking-wider uppercase hover:bg-primary-glow shadow-soft transition-all group">
@@ -306,84 +306,6 @@ export default function Home() {
           </Stagger>
         </div>
       </section >
-
-      {/* WHY CHOOSE US — replaces workers image with cooking image */}
-      {/* <section className="py-20 md:py-28 bg-secondary/40 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20 pointer-events-none">
-          <Image src={cooking2} alt="" fill className="object-cover" />
-          <div className="absolute inset-0 bg-secondary/80" />
-        </div>
-        <div className="container mx-auto px-4 relative">
-          <SectionHeading kicker="Why Choose Us" title="Why Choose Khadija Overseas?" subtitle="We ensure premium quality products and the best experience for our clients." />
-          <Stagger className="mt-14 grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
-            {[
-              { t: "Premium Quality", d: "Premium quality at every processing step." },
-              { t: "Advanced Processing", d: "Modern technology ensures hygiene and quality." },
-              { t: "Global Standards", d: "Products meet international standards." },
-              { t: "Timely Delivery", d: "On-time delivery across the globe." },
-              { t: "Customer Support", d: "Our team is always ready to support you." },
-            ].map((w) => (
-              <StaggerItem key={w.t}>
-                <div className="bg-card rounded-2xl p-6 text-center shadow-soft hover:shadow-elegant transition-all hover:-translate-y-1 h-full border border-border/50">
-                  <div className="h-14 w-14 mx-auto rounded-full bg-gradient-gold flex items-center justify-center mb-4 shadow-gold">
-                    <CheckCircle2 className="h-7 w-7 text-primary" />
-                  </div>
-                  <h4 className="font-serif text-base text-primary font-semibold">{w.t}</h4>
-                  <p className="mt-2 text-md text-muted-foreground leading-relaxed">{w.d}</p>
-                </div>
-              </StaggerItem>
-            ))}
-          </Stagger>
-        </div>
-      </section> */}
-
-      {/* CERTIFICATIONS */}
-      {/* <section className="py-16 bg-card border-y border-border">
-        <div className="container mx-auto px-4">
-          <FadeUp>
-            <p className="text-center text-md font-semibold tracking-[0.3em] text-muted-foreground uppercase mb-8">Certifications & Compliance</p>
-            <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16">
-              {certifications.map((c) => (
-                <div key={c} className="text-center group cursor-default">
-                  <div className="h-20 w-20 mx-auto rounded-full border-2 border-primary/20 flex items-center justify-center font-serif font-bold text-primary group-hover:border-accent group-hover:text-accent transition-colors">
-                    {c.split(" ")[0]}
-                  </div>
-                  <div className="mt-2 text-[13px] tracking-widest text-muted-foreground uppercase">Certified</div>
-                </div>
-              ))}
-            </div>
-          </FadeUp>
-        </div>
-      </section> */}
-
-      {/* CTA */}
-      {/* <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0">
-          <Image src={ctaBg} alt="" fill className="object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/70" />
-        </div>
-        <div className="container mx-auto px-4 relative">
-          <div className="grid md:grid-cols-2 gap-8 items-center text-primary-foreground">
-            <FadeUp>
-              <div className="flex items-center gap-4">
-                <div className="h-16 w-16 rounded-full border-2 border-accent flex items-center justify-center shrink-0">
-                  <Phone className="h-7 w-7 text-accent" />
-                </div>
-                <div>
-                  <h3 className="font-serif text-2xl md:text-3xl font-bold">Need Bulk Supply?</h3>
-                  <p className="text-primary-foreground/80 text-sm mt-1">We provide customized solutions for your business needs.</p>
-                </div>
-              </div>
-            </FadeUp>
-            <FadeUp delay={0.15} className="md:text-right">
-              <Link href="/contact" className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-7 py-4 rounded-lg text-sm font-semibold tracking-wider uppercase hover:bg-accent-glow shadow-gold transition-all group">
-                Get a Quote
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </FadeUp>
-          </div>
-        </div>
-      </section> */}
     </>
   );
 }

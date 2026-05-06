@@ -2,7 +2,6 @@
 @import "tailwindcss";
 
 @theme {
-  /* Khadija Overseas — Premium dehydrated foods palette */
   --color-background: hsl(44 38% 97%);
   --color-foreground: hsl(140 35% 12%);
 

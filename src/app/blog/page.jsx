@@ -34,7 +34,7 @@ export default function BlogPage() {
                   <div className="absolute inset-0 bg-primary/10 animate-pulse" />
                   {/* Image placeholder since we don't have real images yet */}
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                    <span className="text-primary/40 font-serif italic">Khadija Overseas</span>
+                    <span className="text-primary/40 font-serif italic">Khadija Exim</span>
                   </div>
                   <div className="absolute top-4 left-4">
                     <span className="bg-white/90 backdrop-blur-md text-primary px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase flex items-center gap-1.5 shadow-sm">

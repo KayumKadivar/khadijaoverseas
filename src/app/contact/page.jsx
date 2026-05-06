@@ -123,7 +123,7 @@ export default function ContactPage() {
         <div className="container mx-auto px-4">
           <div className="rounded-2xl overflow-hidden shadow-elegant border border-border">
             <iframe
-              title="Khadija Overseas Location"
+              title="Khadija Exim Location"
               src="https://www.google.com/maps?q=Wankaner,Rajkot,Gujarat,India&output=embed"
               className="w-full h-[400px] border-0"
               loading="lazy"

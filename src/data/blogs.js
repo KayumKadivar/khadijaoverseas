@@ -17,7 +17,7 @@ export const blogs = [
     author: "Quality Team",
     image: "/images/blog/quality.jpg",
     category: "Export Guide",
-    content: "When it comes to food exports, quality is non-negotiable. At Khadija Overseas, we adhere to strict international standards to ensure our dehydrated products are safe and premium..."
+    content: "When it comes to food exports, quality is non-negotiable. At Khadija Exim, we adhere to strict international standards to ensure our dehydrated products are safe and premium..."
   },
   {
     slug: "future-of-dehydrated-food-industry",

@@ -66,7 +66,7 @@ export default function BlogPost() {
           </div>
 
           <div className="relative aspect-[16/9] rounded-3xl overflow-hidden mb-16 shadow-elegant bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
-             <span className="text-primary/20 font-serif italic text-2xl">Khadija Overseas</span>
+             <span className="text-primary/20 font-serif italic text-2xl">Khadija Exim</span>
           </div>
 
           <div className="prose prose-lg max-w-none prose-headings:font-serif prose-headings:text-primary prose-p:text-muted-foreground prose-strong:text-primary">

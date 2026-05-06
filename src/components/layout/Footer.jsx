@@ -28,7 +28,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <Link href="/">
-                <Image src={logo} alt="Khadija Overseas" className="h-14 w-auto object-contain" />
+                <Image src={logo} alt="Khadija Exxim" className="h-14 w-auto object-contain" />
               </Link>
             </div>
             <p className="text-primary-foreground/70 text-md leading-relaxed mb-5">
@@ -91,7 +91,7 @@ const Footer = () => {
               </li>
               <li className="flex gap-3">
                 <Phone className="h-5 w-5 text-accent shrink-0" />
-                <Link href="tel:+916351403200" className="text-primary-foreground/80 hover:text-accent">+91 81286 95587</Link>
+                <Link href="tel:+8128695587" className="text-primary-foreground/80 hover:text-accent">+91 81286 95587</Link>
               </li>
               <li className="flex gap-3">
                 <Mail className="h-5 w-5 text-accent shrink-0" />

@@ -5,8 +5,8 @@ import SocialSidebar from "@/components/SocialSidebar";
 import { Toaster } from "sonner";
 
 export const metadata = {
-  title: "Khadija Overseas | Premium Dehydrated Onion & Garlic Supplier from India",
-  description: "Khadija Overseas is a leading dehydrated food products supplier and exporter from India. We deliver premium quality products that meet international standards.",
+  title: "Khadija Exim | Premium Dehydrated Onion & Garlic Supplier from India",
+  description: "Khadija Exim is a leading dehydrated food products supplier and exporter from India. We deliver premium quality products that meet international standards.",
 };
 
 export default function RootLayout({ children }) {
