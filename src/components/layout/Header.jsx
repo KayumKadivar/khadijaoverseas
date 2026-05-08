@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { Home as HomeIcon, Info, ShoppingBag, Factory, ShieldCheck, Mail, ArrowRight, Menu, X, Phone, Globe, Newspaper } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
-import logo from "@/assets/logo.png"
+import logo from "@/assets/logo.webp"
 import Image from "next/image";
 
 const links = [
@@ -38,7 +38,8 @@ const Header = () => {
   }, [open]);
 
   useEffect(() => {
-    setOpen(false);
+    const frame = requestAnimationFrame(() => setOpen(false));
+    return () => cancelAnimationFrame(frame);
   }, [pathname]);
 
   return (
@@ -86,7 +87,7 @@ const Header = () => {
             <Link href="/contact"
               className="hidden lg:inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-2.5 rounded-full text-sm font-bold hover:bg-primary-glow shadow-soft transition-all group"
             >
-              GET A QUOTE
+              Inquiry now
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
 

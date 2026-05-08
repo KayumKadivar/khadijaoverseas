@@ -1,7 +1,6 @@
-export const metadata = {
-  title: "About Us | Khadija Exim | Premium Dehydrated Food Products Exporter from India",
-  description: "Khadija Exim is a trusted dehydrated food products exporter from Gujarat, India. We supply premium dehydrated onion, garlic and vegetables to importers and food manufacturers worldwide.",
-};
+import { buildSeoMetadata, pageSeo } from "@/lib/seo";
+
+export const metadata = buildSeoMetadata(pageSeo.about);
 
 export default function AboutLayout({ children }) {
   return children;

@@ -49,7 +49,7 @@ export default function ContactPage() {
             <span className="text-xs font-semibold tracking-[0.3em] text-accent uppercase">Contact Us</span>
             <h1 className="mt-6 font-serif text-4xl md:text-6xl text-primary font-bold">Get In Touch</h1>
             <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
-              Have a question or want to request a quote? Send us a message and we'll get back to you.
+              Have a question or want to request a quote? Send us a message and we&apos;ll get back to you.
             </p>
           </FadeUp>
         </div>
@@ -59,11 +59,11 @@ export default function ContactPage() {
         <div className="container mx-auto px-4 grid lg:grid-cols-5 gap-10">
           <FadeUp className="lg:col-span-2">
             <h3 className="font-serif text-2xl text-primary font-bold">Contact Information</h3>
-            <p className="mt-2 text-muted-foreground text-sm">We're here to help with bulk orders, samples and partnership inquiries.</p>
+            <p className="mt-2 text-muted-foreground text-sm">We&apos;re here to help with bulk orders, samples and partnership inquiries.</p>
 
             <ul className="mt-8 space-y-6">
               {[
-                { i: MapPin, t: "Address", v: "Wankaner,\nMorbi, Gujarat – 363 621, India" },
+                { i: MapPin, t: "Address", v: "Wankaner, Gujarat, India" },
                 { i: Phone, t: "Phone", v: "+91 81286 95587" },
                 { i: Mail, t: "Email", v: "info@khadijaexim.com" },
               ].map((c) => (
@@ -123,9 +123,11 @@ export default function ContactPage() {
           <div className="rounded-2xl overflow-hidden shadow-elegant border border-border">
             <iframe
               title="Khadija Exim Location"
-              src="https://www.google.com/maps?q=Wankaner,Rajkot,Gujarat,India&output=embed"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d58923.66909311726!2d70.953562!3d22.626581!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395996311bc629a5%3A0x2f2a2a32a4622135!2sWankaner%2C%20Gujarat%20363621%2C%20India!5e0!3m2!1sen!2sus!4v1778266022246!5m2!1sen!2sus"
               className="w-full h-[400px] border-0"
+              allowFullScreen=""
               loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
         </div>

@@ -2,7 +2,7 @@
 
 import { CheckCircle2, Award, Globe, Users, Factory, Leaf } from "lucide-react";
 import ingredientsFlatlay from "@/assets/ingredients-flatlay.webp";
-import premiumIngredientsImg from "@/assets/premium-ingredients.png";
+import premiumIngredientsImg from "@/assets/premium-ingredients.webp";
 import cooking1 from "@/assets/cooking-1.webp";
 import cooking2 from "@/assets/cooking-2.webp";
 import SectionHeading from "@/components/SectionHeading";
@@ -23,7 +23,7 @@ export default function AboutPage() {
             {/* Right: Text Content */}
             <FadeUp className="lg:col-span-7 order-1 lg:order-2">
               <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary font-bold leading-tight mb-8">
-                A Legacy of <span className="italic text-accent/90">Premium</span> Export
+                India&apos;s Trusted <span className="italic text-accent/90">Dehydrated</span> Food Products Exporter
               </h2>
 
               <div className="space-y-5 text-muted-foreground leading-relaxed text-[15px] sm:text-base">
@@ -31,7 +31,7 @@ export default function AboutPage() {
                   <strong className="text-primary font-bold">Khadija Exim</strong> is a leading dehydrated food products exporter and supplier based in Wankaner, Gujarat, India. We specialize in exporting premium quality dehydrated onion and garlic products — including onion flakes, onion powder, onion granules, garlic flakes, garlic powder and garlic granules — to food manufacturers, importers, distributors and bulk buyers worldwide.
                 </p>
                 <p>
-                  Gujarat is India's leading agri-export hub, home to some of the country's most reliable dehydrated vegetable suppliers and exporters. Operating from this strategic location, we have built strong sourcing networks with certified manufacturing facilities and reliable logistics support through major ports including Mundra — one of India's largest ports for agri commodity exports.
+                  Gujarat is India&apos;s leading agri-export hub, home to some of the country&apos;s most reliable dehydrated vegetable suppliers and exporters. Operating from this strategic location, we have built strong sourcing networks with certified manufacturing facilities and reliable logistics support through major ports including Mundra — one of India&apos;s largest ports for agri commodity exports.
                 </p>
                 <p>
                   Every product we supply goes through strict quality checks at every stage — from raw material sourcing and processing to final packaging and shipment — ensuring consistent quality, hygiene and food safety standards that meet international buyer requirements.

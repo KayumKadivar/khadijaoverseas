@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, MessageCircle } from "lucide-react";
-import logo from "@/assets/footerlogo.png";
+import logo from "@/assets/footerlogo.webp";
 import Image from "next/image";
 
 const WhatsAppIcon = ({ className }) => (
@@ -87,7 +87,7 @@ const Footer = () => {
             <ul className="space-y-4 text-sm">
               <li className="flex gap-3">
                 <MapPin className="h-5 w-5 text-accent shrink-0 mt-0.5" />
-                <span className="text-primary-foreground/80">Wankaner, Morbi,<br /> Gujarat – 363 621, India</span>
+                <span className="text-primary-foreground/80">Wankaner, Gujarat, India</span>
               </li>
               <li className="flex gap-3">
                 <Phone className="h-5 w-5 text-accent shrink-0" />

@@ -23,7 +23,7 @@ export default function IndustriesPage() {
             {industries.map((i) => (
               <StaggerItem key={i.name}>
                 <div className="group relative bg-card rounded-2xl p-8 shadow-soft hover:shadow-elegant border border-border/50 transition-all hover:-translate-y-1 overflow-hidden">
-                  <div className="absolute -right-4 -top-4 text-7xl opacity-10 group-hover:opacity-30 transition-opacity">{i.icon}</div>
+                  <div className="absolute -right-4 -top-4 text-7xl opacity-10 group-hover:opacity-30 transition-opacity" aria-hidden="true">{i.icon}</div>
                   <div className="h-14 w-14 rounded-xl bg-gradient-dark flex items-center justify-center text-3xl mb-5">{i.icon}</div>
                   <h3 className="font-serif text-xl text-primary font-semibold">{i.name}</h3>
                   <p className="mt-2 text-md text-muted-foreground leading-relaxed">{i.desc}</p>
