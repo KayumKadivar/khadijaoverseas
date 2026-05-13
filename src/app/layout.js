@@ -6,6 +6,7 @@ import JsonLd from "@/components/JsonLd";
 import { buildBusinessJsonLd } from "@/lib/schema";
 import logo from "@/assets/logo.webp";
 import { Toaster } from "sonner";
+import Script from "next/script";
 
 export const metadata = {
   title: "Khadija Exim | Premium Dehydrated Onion & Garlic Supplier from India",
@@ -26,6 +27,21 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-0F7LDMTZXM"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-0F7LDMTZXM');
+          `}
+        </Script>
+      </head>
       <body className="min-h-full flex flex-col font-sans" suppressHydrationWarning>
         <JsonLd data={businessJsonLd} />
         <Header />
