@@ -46,7 +46,7 @@ export default function ContactPage() {
       <section className="pt-22 pb-16 text-center">
         <div className="container mx-auto px-4">
           <FadeUp>
-            <span className="text-xs font-semibold tracking-[0.3em] text-accent uppercase">Contact Us</span>
+            {/* <span className="text-xs font-semibold tracking-[0.3em] text-accent uppercase">Contact Us</span> */}
             <h1 className="mt-6 font-serif text-4xl md:text-6xl text-primary font-bold">Get In Touch</h1>
             <p className="mt-4 text-muted-foreground max-w-xl mx-auto">
               Have a question or want to request a quote? Send us a message and we&apos;ll get back to you.

@@ -110,7 +110,7 @@ export default function HomePageClient() {
         <div className="absolute inset-y-0 left-0 w-full lg:w-1/2 bg-transparent z-0" />
 
         {/* Decorative Realistic Leaf — Top Left */}
-        <div className="absolute top-[-15%] left-[-10%] text-[#2D5A27] animate-float-slow pointer-events-none z-10 hidden lg:block">
+        {/* <div className="absolute top-[-15%] left-[-10%] text-[#2D5A27] animate-float-slow pointer-events-none z-10 hidden lg:block">
           <svg width="450" height="450" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="rotate-[-20deg] blur-[2px] opacity-40">
             <path d="M10 90C10 90 20 80 45 55C70 30 90 10 90 10C90 10 70 15 45 40C20 65 10 90 10 90Z" fill="currentColor" />
             <path d="M10 90L90 10" stroke="#1B3A2A" strokeWidth="0.5" strokeOpacity="0.5" />
@@ -119,15 +119,15 @@ export default function HomePageClient() {
             <path d="M25 55C20 55 15 50 15 50" stroke="#1B3A2A" strokeWidth="0.3" strokeOpacity="0.4" />
             <path d="M40 40C35 40 30 35 30 35" stroke="#1B3A2A" strokeWidth="0.3" strokeOpacity="0.4" />
           </svg>
-        </div>
+        </div> */}
 
         {/* Decorative Realistic Leaf — Bottom Right */}
-        <div className="absolute bottom-[-10%] right-[-5%] text-[#2D5A27] animate-float pointer-events-none z-10 hidden lg:block">
+        {/* <div className="absolute bottom-[-10%] right-[-5%] text-[#2D5A27] animate-float pointer-events-none z-10 hidden lg:block">
           <svg width="400" height="400" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className="rotate-[160deg] blur-[1px] opacity-50">
             <path d="M10 90C10 90 20 80 45 55C70 30 90 10 90 10C90 10 70 15 45 40C20 65 10 90 10 90Z" fill="currentColor" />
             <path d="M10 90L90 10" stroke="#1B3A2A" strokeWidth="0.5" strokeOpacity="0.5" />
           </svg>
-        </div>
+        </div> */}
 
         {/* Right-side food photography — covers only right 50% */}
         <div className="absolute inset-y-0 right-0 w-full lg:w-1/2 z-0">
@@ -277,7 +277,7 @@ export default function HomePageClient() {
               <span className="h-px w-20 bg-white/10" />
             </div>
             <Link href="/products" className="group relative inline-flex items-center gap-4 bg-transparent text-white px-10 py-5 rounded-full text-sm font-bold tracking-[0.2em] uppercase border border-white/20 hover:border-accent transition-all duration-500">
-              <span className="relative z-10">View All Collections</span>
+              <span className="relative z-10">View All Products</span>
               <div className="absolute inset-0 bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-full" />
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-2 relative z-10 group-hover:text-primary" />
             </Link>

@@ -23,7 +23,7 @@ export default async function sitemap() {
     url: `${baseUrl}/products/${product.slug}`,
     lastModified: new Date().toISOString(),
     changeFrequency: "weekly",
-    priority: 0.6,
+    priority: 0.8,
   }));
 
   return [...staticRoutes, ...productRoutes];
