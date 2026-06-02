@@ -59,7 +59,8 @@ export function parseProductSpecs(text) {
     const startIdx = text.indexOf(sectionTitle);
     if (startIdx === -1) return [];
     
-    const endIdx = nextSectionTitle ? text.indexOf(nextSectionTitle, startIdx) : text.length;
+    const nextIdx = nextSectionTitle ? text.indexOf(nextSectionTitle, startIdx) : -1;
+    const endIdx = nextIdx !== -1 ? nextIdx : text.length;
     const sectionText = text.substring(startIdx, endIdx);
     
     const pairs = [];

@@ -20,6 +20,7 @@
   margin-bottom: 2rem;
   text-transform: capitalize;
 }
+
 @media (min-width: 768px) {
   .pdp-title {
     font-size: 3.25rem;
@@ -33,6 +34,7 @@
   gap: 2rem;
   align-items: stretch;
 }
+
 @media (min-width: 1024px) {
   .pdp-hero-grid {
     grid-template-columns: 1.1fr 0.9fr;
@@ -46,6 +48,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .pdp-image-wrapper {
   position: relative;
   width: 100%;
@@ -57,16 +60,19 @@
   box-shadow: 0 15px 40px -15px hsl(140 40% 15% / 0.12);
   transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
+
 .pdp-image-wrapper:hover {
   transform: translateY(-4px);
   box-shadow: 0 25px 50px -15px hsl(140 40% 15% / 0.18);
 }
+
 .pdp-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
 .pdp-image-wrapper:hover .pdp-image {
   transform: scale(1.06);
 }
@@ -75,6 +81,7 @@
 .pdp-profile-col {
   display: flex;
 }
+
 .pdp-profile-card {
   width: 100%;
   background: white;
@@ -86,6 +93,7 @@
   flex-direction: column;
   justify-content: space-between;
 }
+
 @media (min-width: 768px) {
   .pdp-profile-card {
     padding: 2.5rem;
@@ -116,6 +124,7 @@
   border-bottom: 1px solid hsl(42 25% 86% / 0.5);
   padding-bottom: 0.85rem;
 }
+
 .pdp-profile-row:last-child {
   border-bottom: none;
   padding-bottom: 0;
@@ -142,6 +151,7 @@
   gap: 1rem;
   margin-top: 2rem;
 }
+
 @media (min-width: 480px) {
   .pdp-profile-actions {
     grid-template-columns: 1fr 1fr;
@@ -173,6 +183,7 @@
   color: white;
   box-shadow: 0 8px 24px -8px hsl(140 55% 14% / 0.3);
 }
+
 .pdp-btn-redesign--primary:hover {
   background: hsl(140 45% 20%);
   transform: translateY(-2px);
@@ -184,6 +195,7 @@
   color: hsl(140 55% 14%);
   border: 2px solid hsl(140 55% 14% / 0.2);
 }
+
 .pdp-btn-redesign--outline:hover {
   border-color: hsl(140 55% 14%);
   background: hsl(140 55% 14% / 0.03);
@@ -205,6 +217,7 @@
   overflow: hidden;
   transition: box-shadow 0.3s ease;
 }
+
 .pdp-spec-box:hover {
   box-shadow: 0 15px 35px -10px hsl(140 40% 15% / 0.08);
 }
@@ -249,6 +262,7 @@
   padding: 0.95rem 0;
   gap: 0.35rem;
 }
+
 @media (min-width: 640px) {
   .spec-table-row {
     flex-direction: row;
@@ -269,6 +283,7 @@
   letter-spacing: 0.15em;
   color: hsl(140 15% 45%);
 }
+
 @media (min-width: 640px) {
   .spec-table-row__label {
     flex: 0 0 32%;
@@ -281,6 +296,7 @@
   color: hsl(140 55% 14%);
   line-height: 1.5;
 }
+
 @media (min-width: 640px) {
   .spec-table-row__value {
     flex: 1;
@@ -299,6 +315,7 @@
   gap: 0.75rem;
   margin-bottom: 2rem;
 }
+
 @media (min-width: 768px) {
   .pdp-related-redesign__header {
     flex-direction: row;
@@ -332,6 +349,7 @@
   color: hsl(140 55% 14%);
   white-space: nowrap;
 }
+
 .pdp-related-redesign__all:hover {
   color: hsl(140 45% 20%);
 }
@@ -341,9 +359,136 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 1.25rem;
 }
+
 @media (min-width: 1024px) {
   .pdp-related-redesign__grid {
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
   }
+}
+
+/* ─── NEW SECTIONS: DESCRIPTION, FEATURES, APPLICATIONS ────── */
+
+.pdp-section-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: hsl(140 55% 14%);
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.pdp-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -0.3rem;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background-color: hsl(42 78% 52%);
+  border-radius: 2px;
+}
+
+/* Description Section */
+.pdp-description-section {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 1.25rem;
+  border: 1px solid hsl(42 25% 86% / 0.7);
+  box-shadow: 0 10px 25px -10px hsl(140 40% 15% / 0.04);
+}
+
+.pdp-description__text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: hsl(140 15% 35%);
+}
+
+/* Features Section */
+.pdp-features-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.pdp-feature-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background-color: hsl(140 55% 14% / 0.04);
+  border: 1px solid hsl(140 55% 14% / 0.1);
+  padding: 0.75rem 1.25rem;
+  border-radius: 2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: hsl(140 55% 14%);
+  transition: all 0.3s ease;
+}
+
+.pdp-feature-pill:hover {
+  background-color: hsl(140 55% 14%);
+  color: white;
+  border-color: hsl(140 55% 14%);
+  transform: translateY(-2px);
+}
+
+.pdp-feature-pill:hover svg {
+  color: hsl(42 78% 52%);
+}
+
+/* Applications Section */
+.pdp-applications-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .pdp-applications-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.pdp-application-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid hsl(42 25% 86% / 0.7);
+  box-shadow: 0 5px 15px -5px hsl(140 40% 15% / 0.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pdp-application-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px -8px hsl(140 40% 15% / 0.08);
+}
+
+.pdp-application-icon {
+  font-size: 2rem;
+  line-height: 1;
+  background: hsl(42 78% 52% / 0.15);
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+}
+
+.pdp-application-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.pdp-application-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: hsl(140 55% 14%);
+}
+
+.pdp-application-desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: hsl(140 15% 45%);
 }
