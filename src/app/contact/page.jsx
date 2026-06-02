@@ -13,7 +13,7 @@ const WhatsAppIcon = ({ className }) => (
 )
 
 export default function ContactPage() {
-  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", subject: "", message: "" });
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -32,7 +32,7 @@ export default function ContactPage() {
 
       if (data.success) {
         toast.success("Thank you! We'll get back to you within 24 hours.", { id: toastId });
-        setForm({ name: "", email: "", subject: "", message: "" });
+        setForm({ name: "", email: "", phone: "", subject: "", message: "" });
       } else {
         toast.error("Something went wrong. Please try again later.", { id: toastId });
       }
@@ -88,10 +88,10 @@ export default function ContactPage() {
                   { Icon: Linkedin, href: "https://www.linkedin.com/in/rahil-sherasiya-ba4239292", color: "hover:text-[#0A66C2]" },
                   { Icon: WhatsAppIcon, href: "https://wa.me/918128695587", color: "hover:text-[#25D366]" },
                 ].map((social, i) => (
-                  <Link 
-                    key={i} 
-                    href={social.href} 
-                    target="_blank" 
+                  <Link
+                    key={i}
+                    href={social.href}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className={`h-11 w-11 rounded-full bg-secondary border border-border flex items-center justify-center text-primary/60 transition-all ${social.color} hover:bg-white hover:shadow-soft hover:scale-110`}
                   >
@@ -103,16 +103,95 @@ export default function ContactPage() {
           </FadeUp>
 
           <FadeUp delay={0.15} className="lg:col-span-3">
-            <form onSubmit={onSubmit} className="bg-card rounded-2xl p-6 md:p-8 shadow-elegant border border-border/50">
-              <div className="grid sm:grid-cols-2 gap-4">
-                <input name="name" required value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} placeholder="Your Name" className="px-4 py-3 rounded-lg bg-secondary border border-border focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition" />
-                <input name="email" required type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} placeholder="Your Email" className="px-4 py-3 rounded-lg bg-secondary border border-border focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition" />
+            <form onSubmit={onSubmit} className="bg-card rounded-2xl p-6 md:p-8 shadow-elegant border border-border/50 h-full flex flex-col justify-center">
+              <div className="grid sm:grid-cols-2 gap-6 mb-6">
+                {/* Name Input */}
+                <div className="flex flex-col gap-2">
+                  <label className="text-sm font-semibold text-gray-800">
+                    Name<span className="text-red-500 ml-0.5">*</span>
+                  </label>
+                  <input
+                    name="name"
+                    required
+                    value={form.name}
+                    onChange={(e) => setForm({ ...form, name: e.target.value })}
+                    placeholder="Name"
+                    className="px-5 py-3.5 rounded-full bg-gray-50 border border-gray-200 focus:bg-white focus:border-black focus:outline-none focus:ring-1 focus:ring-black transition-colors w-full text-gray-800 placeholder-gray-400"
+                  />
+                </div>
+                {/* Email Input */}
+                <div className="flex flex-col gap-2">
+                  <label className="text-sm font-semibold text-gray-800">
+                    Email<span className="text-red-500 ml-0.5">*</span>
+                  </label>
+                  <input
+                    name="email"
+                    required
+                    type="email"
+                    value={form.email}
+                    onChange={(e) => setForm({ ...form, email: e.target.value })}
+                    placeholder="Email"
+                    className="px-5 py-3.5 rounded-full bg-gray-50 border border-gray-200 focus:bg-white focus:border-black focus:outline-none focus:ring-1 focus:ring-black transition-colors w-full text-gray-800 placeholder-gray-400"
+                  />
+                </div>
               </div>
-              <input name="subject" required value={form.subject} onChange={(e) => setForm({ ...form, subject: e.target.value })} placeholder="Subject" className="mt-4 w-full px-4 py-3 rounded-lg bg-secondary border border-border focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition" />
-              <textarea name="message" required rows={6} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} placeholder="Your Message" className="mt-4 w-full px-4 py-3 rounded-lg bg-secondary border border-border focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition resize-none" />
-              <button type="submit" className="mt-5 inline-flex items-center gap-2 bg-primary text-primary-foreground px-7 py-3.5 rounded-lg text-sm font-semibold tracking-wider uppercase hover:bg-primary-glow shadow-soft transition-all">
-                <Send className="h-4 w-4" /> Send Message
-              </button>
+
+              <div className="grid sm:grid-cols-2 gap-6 mb-6">
+                {/* Phone Input */}
+                <div className="flex flex-col gap-2">
+                  <label className="text-sm font-semibold text-gray-800">
+                    Phone Number<span className="text-red-500 ml-0.5">*</span>
+                  </label>
+                  <input
+                    name="phone"
+                    required
+                    value={form.phone}
+                    onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                    placeholder="Phone Number"
+                    className="px-5 py-3.5 rounded-full bg-gray-50 border border-gray-200 focus:bg-white focus:border-black focus:outline-none focus:ring-1 focus:ring-black transition-colors w-full text-gray-800 placeholder-gray-400"
+                  />
+                </div>
+                {/* Subject Input */}
+                <div className="flex flex-col gap-2">
+                  <label className="text-sm font-semibold text-gray-800">
+                    Subject<span className="text-red-500 ml-0.5">*</span>
+                  </label>
+                  <input
+                    name="subject"
+                    required
+                    value={form.subject}
+                    onChange={(e) => setForm({ ...form, subject: e.target.value })}
+                    placeholder="Subject"
+                    className="px-5 py-3.5 rounded-full bg-gray-50 border border-gray-200 focus:bg-white focus:border-black focus:outline-none focus:ring-1 focus:ring-black transition-colors w-full text-gray-800 placeholder-gray-400"
+                  />
+                </div>
+              </div>
+
+              {/* Message Textarea */}
+              <div className="flex flex-col gap-2 mb-8">
+                <label className="text-sm font-semibold text-gray-800">
+                  Message
+                </label>
+                <textarea
+                  name="message"
+                  required
+                  rows={4}
+                  value={form.message}
+                  onChange={(e) => setForm({ ...form, message: e.target.value })}
+                  placeholder="Write Your Message Here..."
+                  className="px-5 py-4 rounded-3xl bg-gray-50 border border-gray-200 focus:bg-white focus:border-black focus:outline-none focus:ring-1 focus:ring-black transition-colors w-full text-gray-800 placeholder-gray-400 resize-none"
+                />
+              </div>
+
+              {/* Submit Button */}
+              <div className="mt-auto">
+                <button
+                  type="submit"
+                  className="bg-[#EF4444] text-white px-8 py-3.5 rounded-full text-base font-semibold hover:bg-red-600 transition-colors shadow-md w-max"
+                >
+                  Send Message
+                </button>
+              </div>
             </form>
           </FadeUp>
         </div>

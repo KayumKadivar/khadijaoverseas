@@ -43,7 +43,7 @@ const SocialSidebar = () => {
         </Link>
 
         {/* Instagram Button (Bottom) */}
-        <Link
+        {/* <Link
           href="https://www.instagram.com/khadija_exim"
           target="_blank"
           rel="noopener noreferrer"
@@ -53,19 +53,16 @@ const SocialSidebar = () => {
           className="group relative flex items-center h-14 w-14 hover:w-44 text-white rounded-full shadow-[0_8px_24px_rgba(225,48,108,0.4)] transition-all duration-300 ease-out overflow-hidden"
           title="Follow us on Instagram"
         >
-          {/* Glossy 3D Reflection overlay */}
           <div className="absolute top-[3px] left-[3px] right-[3px] h-[35%] bg-gradient-to-b from-white/45 to-transparent rounded-t-full pointer-events-none z-20" />
           
-          {/* Circular Icon Container */}
           <div className="flex-shrink-0 h-14 w-14 flex items-center justify-center z-10 transition-transform duration-300 group-hover:scale-110">
             <Instagram className="h-6 w-6 text-white" />
           </div>
           
-          {/* Slide-out Text */}
           <span className="text-white font-sans font-bold tracking-wider text-[14px] whitespace-nowrap pl-1 pr-6 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out transform translate-x-2 group-hover:translate-x-0 z-10">
             FOLLOW US
           </span>
-        </Link>
+        </Link> */}
       </div>
     </motion.div>
   );
