@@ -63,11 +63,11 @@ export default async function ProductDetailPage({ params }) {
 
   const pdfSpecs = findProductSpec(product.name, extractedPages);
 
-  const origin  = getSectionValue(pdfSpecs?.general, "Origin")       || getProductSpecValue(product, "Origin")              || "India";
-  const hsnCode = getSectionValue(pdfSpecs?.general, "HSN Code")     || getProductSpecValue(product, "HSN Code")            || "On request";
+  const origin = getSectionValue(pdfSpecs?.general, "Origin") || getProductSpecValue(product, "Origin") || "India";
+  const hsnCode = getSectionValue(pdfSpecs?.general, "HSN Code") || getProductSpecValue(product, "HSN Code") || "On request";
   const quality = getSectionValue(pdfSpecs?.general, "Quality Grade") || getProductSpecValue(product, ["Quality", "Grade"]) || "Export grade";
 
-  const related       = products.filter((p) => p.slug !== slug).slice(0, 4);
+  const related = products.filter((p) => p.slug !== slug).slice(0, 4);
   const productJsonLd = buildProductJsonLd({ product, seo: productSeo[slug], hsnCode, quality, origin, pdfSpecs });
 
   // Reusable inline spec renderer — no separate component needed
@@ -84,9 +84,8 @@ export default async function ProductDetailPage({ params }) {
         {items.map((item, i, arr) => (
           <div
             key={item.label}
-            className={`flex flex-col py-[0.95rem] gap-[0.35rem] sm:flex-row sm:items-baseline sm:justify-between sm:gap-6 ${
-              i !== arr.length - 1 ? "border-b border-[hsl(42,25%,86%,0.4)]" : ""
-            }`}
+            className={`flex flex-col py-[0.95rem] gap-[0.35rem] sm:flex-row sm:items-baseline sm:justify-between sm:gap-6 ${i !== arr.length - 1 ? "border-b border-[hsl(42,25%,86%,0.4)]" : ""
+              }`}
           >
             <span className="text-[0.72rem] font-bold uppercase tracking-[0.15em] text-[hsl(140,15%,45%)] sm:flex-[0_0_32%]">{item.label}</span>
             <span className="text-[0.95rem] font-medium text-[hsl(140,55%,14%)] leading-snug sm:flex-1">{item.value}</span>
@@ -126,13 +125,13 @@ export default async function ProductDetailPage({ params }) {
                 <h2 className="font-['Playfair_Display',Georgia,serif] text-[1.65rem] font-bold text-[hsl(140,55%,14%)] border-b-2 border-[hsl(42,78%,52%,0.3)] pb-3 mb-6">Product Profile</h2>
                 <div className="flex flex-col gap-[1.15rem] flex-1">
                   {[
-                    { label: "HSN Code",      value: hsnCode },
+                    { label: "HSN Code", value: hsnCode },
                     { label: "Quality Grade", value: quality },
-                    { label: "Origin",        value: origin  },
+                    { label: "Origin", value: origin },
                   ].map(({ label, value }) => (
                     <div key={label} className="flex justify-between items-center border-b border-[hsl(42,25%,86%,0.5)] pb-[0.85rem] last:border-b-0 last:pb-0">
-                      <span className="text-xs font-bold uppercase tracking-[0.16em] text-[hsl(140,15%,45%)]">{label}</span>
-                      <span className="text-base font-semibold text-[hsl(140,55%,14%)]">{value}</span>
+                      <span className="text-md font-bold uppercase tracking-[0.16em] text-[#202d24]">{label}</span>
+                      <span className="text-base font-semibold text-[#29352d]">{value}</span>
                     </div>
                   ))}
                 </div>
@@ -154,7 +153,7 @@ export default async function ProductDetailPage({ params }) {
           {/* Description */}
           {product.description && (
             <FadeUp delay={0.08}>
-              <div className="mt-16 max-w-4xl mx-auto">
+              <div className="mt-10 max-w-4xl mx-auto">
                 <h3 className="font-['Playfair_Display',Georgia,serif] text-2xl md:text-3xl font-bold text-[hsl(140,55%,14%)] mb-4">About this Product</h3>
                 <p className="text-base text-[hsl(140,15%,45%)] leading-relaxed">{product.description}</p>
               </div>
@@ -162,7 +161,7 @@ export default async function ProductDetailPage({ params }) {
           )}
 
           {/* Spec Boxes */}
-          <div className="flex flex-col gap-9 mt-16 max-w-4xl mx-auto">
+          <div className="flex flex-col gap-9 mt-10 max-w-4xl mx-auto">
 
             <FadeUp delay={0.1}>
               <div className="bg-white rounded-[1.25rem] border border-[hsl(42,25%,86%,0.7)] shadow-[0_10px_25px_-10px_hsl(140,40%,15%,0.04)] overflow-hidden transition-shadow duration-300 ease-in-out hover:shadow-[0_15px_35px_-10px_hsl(140,40%,15%,0.08)]" id="spec-technical">
@@ -211,45 +210,46 @@ export default async function ProductDetailPage({ params }) {
 
           </div>
 
-          {/* Features */}
-          {product.features?.length > 0 && (
-            <FadeUp delay={0.2}>
-              <div className="mt-16 max-w-4xl mx-auto">
-                <h3 className="font-['Playfair_Display',Georgia,serif] text-2xl md:text-3xl font-bold text-[hsl(140,55%,14%)] mb-6">Key Features</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-6">
-                  {product.features.map((feature, i) => (
-                    <div key={i} className="flex items-center gap-3 bg-white border border-[hsl(42,25%,86%,0.7)] rounded-xl px-4 py-3 shadow-sm hover:shadow-md transition-shadow">
-                      <svg className="w-5 h-5 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-sm font-medium text-[hsl(140,15%,45%)]">{feature}</span>
-                    </div>
+          {/* {product.whyhead} && ( */}
+          {product.whyhead && (
+            <FadeUp delay={0.22}>
+              <div className="mt-10 max-w-4xl mx-auto">
+                <h3 className="font-['Playfair_Display',Georgia,serif] text-2xl md:text-3xl font-bold text-[hsl(140,55%,14%)] mb-4">{product.whyhead}</h3>
+                <h4 className="text-lg font-semibold text-[hsl(140,55%,14%)] mb-6">{product.whysubhead}</h4>
+                <div className="prose prose-sm max-w-none">
+                  {product.whycon?.split('\n\n').map((paragraph, idx) => (
+                    <p key={idx} className="text-base text-[hsl(140,15%,45%)] leading-relaxed mb-4 last:mb-0">
+                      {paragraph.trim()}
+                    </p>
                   ))}
                 </div>
               </div>
             </FadeUp>
           )}
 
-          {/* Industries */}
-          <FadeUp delay={0.24}>
-            <div className="mt-16 max-w-4xl mx-auto">
-              <h3 className="font-['Playfair_Display',Georgia,serif] text-2xl md:text-3xl font-bold text-[hsl(140,55%,14%)] mb-6">Ideal Applications</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-6">
-                {industries.map((industry, i) => (
-                  <div key={i} className="flex items-start gap-4 p-5 bg-white border border-[hsl(42,25%,86%,0.7)] rounded-[1.25rem] shadow-sm hover:shadow-md transition-shadow">
-                    <span className="text-[hsl(42,78%,52%)] w-8 h-8 flex items-center justify-center shrink-0 mt-1">{industry.icon}</span>
-                    <div className="flex flex-col gap-1">
-                      <h4 className="font-bold text-[hsl(140,55%,14%)] text-lg">{industry.name}</h4>
-                      <p className="text-sm text-[hsl(140,15%,45%)] leading-relaxed">{industry.desc}</p>
+          {/* Industry Applications */}
+          {product.applications?.length > 0 && (
+            <FadeUp delay={0.26}>
+              <div className="mt-10 max-w-4xl mx-auto">
+                <h3 className="font-['Playfair_Display',Georgia,serif] text-2xl md:text-3xl font-bold text-[hsl(140,55%,14%)] mb-6">Industry Applications</h3>
+                <p className="text-sm font-semibold text-[hsl(42,78%,52%)] mb-6 uppercase tracking-[0.12em]">Where Is This Product Used?</p>
+                <div className="grid grid-cols-1 gap-3">
+                  {product.applications.map((app, idx) => (
+                    <div key={idx} className="flex items-start gap-2 rounded-lg hover:bg-[hsl(42,78%,52%,0.05)] transition-colors">
+                      <svg className="w-5 h-5 text-[hsl(42,78%,52%)] shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M8.293 5.293a1 1 0 011.414 0L10 6.586l.293-.293a1 1 0 111.414 1.414l-2 2a1 1 0 01-1.414 0l-2-2a1 1 0 010-1.414z" clipRule="evenodd" />
+                      </svg>
+                      <span className="text-base text-[hsl(140,15%,45%)] leading-relaxed">{app}</span>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-            </div>
-          </FadeUp>
+            </FadeUp>
+          )}
+     
 
           {/* Related Products */}
-          <section className="border-t border-[hsl(42,25%,86%,0.6)] pt-14 mt-20">
+          <section className="border-t border-[hsl(42,25%,86%,0.6)] pt-10 mt-10">
             <div className="flex flex-col gap-3 mb-8 md:flex-row md:items-end md:justify-between">
               <div>
                 <p className="text-[0.7rem] font-bold uppercase tracking-[0.2em] text-[hsl(42,78%,52%)]">Continue Browsing</p>
@@ -260,7 +260,7 @@ export default async function ProductDetailPage({ params }) {
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
-            <div className="grid grid-cols-2 gap-5 lg:grid-cols-4 lg:gap-6">
+            <div className="grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-2">
               {related.map((item, i) => (
                 <FadeUp key={item.slug} delay={i * 0.06}>
                   <ProductCard product={item} />
